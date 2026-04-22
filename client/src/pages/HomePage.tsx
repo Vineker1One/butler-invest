@@ -1,3 +1,5 @@
+import { Hero } from './Home/sections/Hero/Hero'
+
 export const HomePage = () => {
-  return <div>Главная страница</div>
+  return <Hero />
 }
