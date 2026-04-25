@@ -1,4 +1,5 @@
 import './Header.css'
+import menuIcon from '@/assets/icons/menu-icon.png'
 
 export const Header = () => {
   return (
@@ -10,7 +11,10 @@ export const Header = () => {
         </p>
       </div>
 
-      <button className="header__menu">Меню</button>
+      <button className="header__menu">
+        <img src={menuIcon} alt="menu" />
+        <span>МЕНЮ</span>
+      </button>
     </header>
   )
 }
