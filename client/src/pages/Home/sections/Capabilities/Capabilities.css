@@ -1,0 +1,297 @@
+.capabilities {
+  background: #f3efe6;
+  padding: clamp(4rem, 7vw, 7rem) 2.5rem;
+  
+}
+
+.capabilities__container {
+  width: min(100%, clamp(50rem, 80vw, 90rem));
+  margin: 0 auto;
+  
+}
+
+.capabilities__title {
+  grid-column: 1 / 2; /* 👈 левая колонка */
+  max-width: 32rem;
+  text-align: center;
+}
+
+.capabilities__title p {
+  margin: 0 0 0.25rem;
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-weight: 300;
+  color: #000000;
+}
+
+.capabilities__title h2 {
+  margin: 0;
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #000000;
+  font-family: "Novelist", serif;
+}
+
+.capabilities__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+.capability {
+  position: relative;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
+  z-index: 0;
+  width: min(100%, 90rem);
+  margin: 0 auto;
+
+}
+
+.capability--normal {
+  grid-template-areas: "text image";
+}
+
+/* 2 и 4 */
+.capability--reverse {
+  grid-template-areas: "image text";
+}
+
+.capability__text > * {
+  position: relative;
+  z-index: 2;
+}
+
+.capability__text {
+  grid-area: text;
+  width: min(100%, 32rem);
+
+  background: transparent;
+  border-radius: 0.75rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  text-align: center;
+
+  position: relative;
+  z-index: -1;
+}
+
+.capability__text::before {
+  content: "";
+  position: absolute;
+
+  top: 50%;
+  transform: translateY(-50%);
+width: 100vw;
+  height: 100%;
+  background: #F8F6EF;
+  border-radius: 1rem;
+
+  z-index: 1; /* было 0 */
+}
+
+.capability--normal .capability__text::before {
+  left: 0;
+  right: auto;
+}
+
+/* 2 и 4 — фон уходит влево */
+.capability--reverse .capability__text::before {
+  right: 0;
+  left: auto;
+}
+
+.capability__text h3 {
+  margin: 0 0 1.5rem;
+  font-size: clamp(1rem, 1.25vw, 1.25rem);
+  font-weight: 700;
+  line-height: 1.25;
+  text-decoration: underline;
+  color: #111;
+}
+
+.capability__text p {
+  margin: 0;
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  font-weight: 300;
+  line-height: 1.25;
+  color: #111;
+}
+
+.capability__image-wrapper {
+  grid-area: image;
+  position: relative;
+  z-index: 1;
+  width: min(100%, 32rem);
+  height: clamp(18rem, 28vw, 26rem);
+  overflow: visible;
+}
+
+.capability__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* 1 и 3: текст прижат к фото, фото прижато к тексту */
+.capability--normal .capability__text {
+  justify-self: end;
+}
+
+.capability--normal .capability__image-wrapper {
+  justify-self: start;
+}
+
+/* 2 и 4: фото прижато к тексту, текст прижат к фото */
+.capability--reverse .capability__image-wrapper {
+  justify-self: end;
+}
+
+.capability--reverse .capability__text {
+  justify-self: start;
+}
+
+
+.capability--normal .capability__image {
+  border-radius: 4rem 0 0 4rem;
+}
+
+.capability--reverse .capability__image {
+  border-radius: 0 4rem 4rem 0;
+}
+
+/* .capability__number {
+  position: absolute;
+  top: -2.5rem;
+  z-index: 3;
+
+  width: clamp(5rem, 7vw, 7rem);
+  height: clamp(5rem, 7vw, 7rem);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #a0a88a;
+} */
+
+/* 1 и 3 — номер справа сверху */
+/* .capability--normal .capability__number {
+  right: -2.5rem;
+}
+
+.capability--reverse .capability__number {
+  left: -2.5rem;
+} */
+
+.capability__number {
+  position: absolute;
+  z-index: 3;
+
+  width: clamp(5rem, 7vw, 7rem);
+  height: clamp(5rem, 7vw, 7rem);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+}
+
+.capability__number::before {
+  content: "";
+  position: absolute;
+
+  width: 65%;
+  height: 65%;
+
+  border-radius: 50%;
+  background: #fff;
+
+  z-index: 1;
+}
+
+/* зелёный круг — верхний */
+.capability__number::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  border-radius: 50%;
+  background: #a0a88a;
+
+  z-index: 2;
+}
+
+.capability__number span {
+  font-family: "Goznak";
+  font-size: clamp(4rem, 7vw, 6rem);
+  line-height: 1;
+  color: #000;
+  z-index: 3;
+}
+
+.capability__number--1 {
+  top: -2.5rem;
+  right: -2.5rem;
+}
+
+.capability__number--1::before {
+  left: -0.55rem;
+  bottom: -0.55rem;
+}
+
+.capability__number--2 {
+  top: -1.5rem;
+  left: -3rem;
+}
+
+.capability__number--2::before {
+  right: -0.55rem;
+  top: -0.55rem;
+}
+
+.capability__number--3 {
+  top: -1rem;
+  right: -3.2rem;
+}
+
+.capability__number--3::before {
+  left: -0.6rem;
+  top: -0.45rem;
+}
+
+.capability__number--4 {
+  top: -3rem;
+  left: -2rem;
+}
+
+.capability__number--4::before {
+  right: -0.6rem;
+  bottom: -0.55rem;
+}
+
+.capability {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+/* направления + вертикаль */
+.capability--normal {
+  transform: translateX(-60px) translateY(40px);
+}
+
+.capability--reverse {
+  transform: translateX(60px) translateY(40px);
+}
+
+/* активное состояние */
+.capability.visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}

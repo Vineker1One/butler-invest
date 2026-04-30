@@ -34,3 +34,22 @@
   src: url("../assets/fonts/GreatVibes-Regular.ttf") format("truetype");
   font-weight: 400;
 }
+
+@font-face {
+  font-family: "Great Vibes";
+  src: url("../assets/fonts/GreatVibes-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Novelist";
+  src: url("../assets/fonts/Novelist_free.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Goznak";
+  src: url("../assets/fonts/Gosznak-Semi\ Bold.otf") format("opentype");
+  font-weight: 600;
+}

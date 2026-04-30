@@ -21,6 +21,24 @@
   
 }
 
+.header__subtitle {
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+}
+
+/* .header__logo-text {
+  font-family: "Novelist";
+  font-weight: 400;
+
+  font-size: clamp(2.5rem, 3.5vw, 4.7rem);
+
+  letter-spacing: 0;
+  line-height: 1;
+
+  text-transform: uppercase;
+  -webkit-text-stroke: 0.3px #222;
+} */
+
+
 .header__menu {
     display: flex;
     flex-direction: column;

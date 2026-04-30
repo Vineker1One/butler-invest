@@ -58,12 +58,19 @@
 
 .about__card p {
   margin: 0;
-  font-size: clamp(1rem, 1.35vw, 1.25rem);
+  font-size: clamp(1rem, 1.35vw, 1.5rem);
   font-weight: 300;
   line-height: 1.2;
   text-align: justify;
-  color: #111;
+  color: #000000;
   text-indent: 2rem;
+}
+
+.about__card p span {
+  font-family: 'Novelist', serif;
+  font-weight: 400;
+  color: #000;
+  font-size: clamp(1.25rem, 1.3vw, 2rem);
 }
 
 .about__inline-logo {
