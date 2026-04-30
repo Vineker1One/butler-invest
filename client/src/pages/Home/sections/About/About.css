@@ -1,0 +1,116 @@
+.about {
+  background: #F3EFE6;
+  padding: 4rem 2.5rem;
+}
+
+.about__container {
+  width: min(100%, clamp(50rem, 60vw, 90rem));
+  margin: 0 auto;
+}
+
+.about__title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  margin-bottom: 1.5rem;
+
+  justify-content: flex-start; /* 👈 ключ */
+}
+.about__title-letter {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(6rem, 11vw, 9rem);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 0.7;
+  letter-spacing: 0;
+  color: #050505;
+  transform: translateY(0.4rem);
+}
+
+.about__title-text {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  color: #050505;
+}
+
+.about__header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.about__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.9fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.about__card {
+  background: #F8F6EF;
+  border-radius: 0.75rem;
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+    gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.about__card p {
+  margin: 0;
+  font-size: clamp(1rem, 1.35vw, 1.25rem);
+  font-weight: 300;
+  line-height: 1.2;
+  text-align: justify;
+  color: #111;
+  text-indent: 2rem;
+}
+
+.about__inline-logo {
+  height: 1.6rem;
+  vertical-align: middle;
+  margin: 0 0.25rem;
+}
+
+.about__image-wrapper {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  margin-top: clamp(0.5rem, 2vw, 1.5rem);
+  height: clamp(28rem, 40vw, 40rem);
+  align-self: end;
+  transform: translateY(2rem)
+}
+
+.about__image {
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 1024px) {
+
+
+  .about__image-wrapper {
+    height: clamp(24rem, 60vw, 34rem);
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 3rem 1.25rem;
+  }
+
+  .about__container {
+    width: 100%;
+  }
+
+  .about__image-wrapper {
+    height: 22rem;
+  }
+
+  .about__image {
+    object-position: center center;
+  }
+}

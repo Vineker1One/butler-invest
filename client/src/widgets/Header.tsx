@@ -1,11 +1,12 @@
 import './Header.css'
 import menuIcon from '@/assets/icons/menu-icon.png'
+import logo from "@/assets/images/hero/hero-logo.png";
 
 export const Header = () => {
   return (
     <header className="header">
       <div className="header__center">
-        <h1 className="header__title">ДВОРЕЦКИЙ</h1>
+        <img src={logo} alt="logo" className="header__logo" />
         <p className="header__subtitle">
           управляющий вашими инвестициями и активами
         </p>
@@ -13,7 +14,7 @@ export const Header = () => {
 
       <button className="header__menu">
         <img src={menuIcon} alt="menu" />
-        <span>МЕНЮ</span>
+        <p className='header_menu_text'>МЕНЮ</p>
       </button>
     </header>
   )

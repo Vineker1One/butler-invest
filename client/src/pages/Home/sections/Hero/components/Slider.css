@@ -1,68 +1,199 @@
 .slider {
   position: relative;
-  height: 100vh;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
 }
 
-.slider__image {
+.slider__slide {
   position: absolute;
   inset: 0;
 
-  background-size: cover;
-  background-position: center top;
   opacity: 0;
   transition: opacity 1.2s ease;
 }
 
+.slider__slide.active {
+  opacity: 1;
+}
+
+/* Размытый фон, чтобы не было пустых полос */
+.slider__image-bg {
+  position: absolute;
+  inset: -2rem;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  filter: blur(1.5rem) brightness(0.75);
+  transform: scale(1.05);
+}
+
+/* Основная картинка — не режется */
+.slider__image {
+  position: absolute;
+  inset: 0;
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
 .slider__image.active {
-    opacity: 1;
+  opacity: 1;
 }
 
-.slider__next {
-    position: absolute;
-    right: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-
-    background: transparent;
-    border: 1px solid white;
-    color: white;
-
-    padding: 1rem;
-    cursor: pointer;
-}
-
+/* Затемнение */
 .slider__overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+ 
 }
 
+/* Текст */
+.slider__content {
+  position: absolute;
+  left: clamp(1rem, 3vw, 2.5rem);
+
+  z-index: 2;
+
+  max-width: clamp(18rem, 40vw, 50rem);
+
+  padding: 1rem 1.5rem;
+
+  background: transparent;
+}
+
+.slider__content::before {
+  content: "";
+  position: absolute;
+  inset: -1rem; /* 👈 расширяем за пределы текста */
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border-radius: 1.5rem;
+
+  mask-image: radial-gradient(
+    ellipse at center,
+    rgba(0,0,0,1) 50%,
+    rgba(0,0,0,0) 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    rgba(0,0,0,1) 50%,
+    rgba(0,0,0,0) 100%
+  );
+
+
+  transition: opacity 0.6s ease;
+
+  z-index: -1;
+}
+
+.slider__content.active::before {
+  opacity: 1;
+}
+
+.slider__content p {
+  font-size: clamp(1.1rem, 1.2vw, 1.8rem);
+  font-weight: 300;
+  max-width: 100%;
+  animation: textFade 0.6s ease;
+}
+
+.slider__content--middle-white {
+  top: 40%;
+  transform: translateY(-50%);
+  color: white;
+
+}
+
+.slider__content--bottom-black {
+  bottom: 3rem;
+  color: #000;
+  left: 6rem;
+}
+
+/* Соцсети */
+.slider__socials {
+  position: absolute;
+  right: 2rem;
+  top: 20%;
+  transform: translateY(-50%);
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  z-index: 2;
+}
+
+.slider__socials img {
+  width: 3rem;
+  height: 3rem;
+  transition: 0.3s;
+}
+
+.slider__socials img:hover {
+  transform: scale(1.1);
+}
+
+/* Кнопка */
 .slider__next {
-    position: absolute;
-    right: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
 
-    width: 3rem;
-    height: 3rem;
+  background: none;
+  border: none;
+  padding: 0;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    background: rgba(255, 255, 255, 0.05);
-
-    color: white;
-    font-size: 1.2rem;
-
-    cursor: pointer;
-    z-index: 2;
-
-    transition: 0.3s;
+  cursor: pointer;
+  z-index: 2;
+  
 }
 
-.slider__next:hover {
-    background: rgba(255, 255, 255, 0.2);
+.slider__next img {
+  width: 3rem;  /* подгони под макет */
+  height: auto;
+
+  display: block;
 }
 
+.slider__next:hover img {
+  transform: translateX(4px);
+  transition: 0.3s;
+}
+
+
+@keyframes textFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slider__image--1 {
+  background-position: center top;
+}
+
+.slider__image--2 {
+  background-position: center center;
+}
+
+.slider__image--3 {
+  background-position: center 30%;
+}
