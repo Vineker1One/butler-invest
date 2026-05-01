@@ -1,7 +1,6 @@
 .capabilities {
   background: #f3efe6;
-  padding: clamp(4rem, 7vw, 7rem) 2.5rem;
-  
+  padding: clamp(2rem, 4vw, 3rem) 2.5rem;
 }
 
 .capabilities__container {

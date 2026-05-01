@@ -1,0 +1,125 @@
+.compare {
+    background: #f3efe6;
+    padding: clamp(2rem, 4vw, 3rem) 2.5rem;
+}
+
+.compare__container {
+    width: min(100%, clamp(50rem, 80vw, 90rem));
+    margin: 0 auto;
+}
+
+/* HEADER */
+.compare__header {
+    text-align: center;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.compare__header p {
+    font-size: clamp(1.4rem, 2.2vw, 2rem);
+    font-weight: 300;
+}
+
+.compare__header h2 {
+    font-family: "Novelist";
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 400;
+}
+
+/* GRID */
+.compare__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+/* CARD */
+.compare-card {
+    border-radius: 0.9375rem;
+    background: #f8f6ef;
+    box-shadow: 2.241px 5.229px 10.681px 0 rgba(46, 0, 0, 0.25);
+    padding: 1.75rem 1.25rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.compare-card h3 {
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 0;
+    text-decoration: underline;
+    text-underline-offset: 0.15rem;
+    text-decoration-thickness: 1px;
+    font-weight: 300;
+}
+
+.compare-card__header {
+    position: relative;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    min-height: 7.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.compare-card__header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 1px;
+    background: rgba(55, 39, 26, 0.39);
+}
+
+/* .compare-card h3::after {
+    content: "";
+    display: block;
+
+    width: 100%;
+    height: 1px;
+
+    background: rgba(0, 0, 0, 0.2);
+
+    margin: 1rem auto 0;
+} */
+
+/* LIST */
+.compare-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.compare-card li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.7rem;
+    font-size: 0.95rem;
+    line-height: 1.3;
+}
+
+.compare-card span {
+    font-family: "Novelist", serif;
+}
+
+/* PLUS */
+.compare-card li.plus::before {
+    content: "+";
+    position: absolute;
+    left: 0;
+    color: #a0ac7a;
+    font-weight: 700;
+}
+
+/* MINUS */
+.compare-card li.minus::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: #d85959;
+    font-weight: 700;
+}
