@@ -4,6 +4,7 @@ import { Capabilities } from "./Home/sections/Capabilities/Capabilities";
 import { Investments } from "./Home/sections/Investments/Investments";
 import { Compare } from "./Home/sections/Compare/Compare";
 import { Projects } from "./Home/sections/Projects/Projects";
+import { Calculator } from "./Home/sections/Calculator/Calculator";
 
 export const HomePage = () => {
     return (
@@ -14,6 +15,7 @@ export const HomePage = () => {
             <Investments />
             <Compare />
             <Projects />
+            <Calculator />
         </>
     );
 };
