@@ -5,6 +5,7 @@ import { Investments } from "./Home/sections/Investments/Investments";
 import { Compare } from "./Home/sections/Compare/Compare";
 import { Projects } from "./Home/sections/Projects/Projects";
 import { Calculator } from "./Home/sections/Calculator/Calculator";
+import { ContactForm } from "./Home/sections/ContactForm/ContactForm";
 
 export const HomePage = () => {
     return (
@@ -16,6 +17,7 @@ export const HomePage = () => {
             <Compare />
             <Projects />
             <Calculator />
+            <ContactForm />
         </>
     );
 };
