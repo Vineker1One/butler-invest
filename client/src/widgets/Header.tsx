@@ -1,22 +1,61 @@
-import './Header.css'
-import menuIcon from '@/assets/icons/menu-icon.png'
+import { useState } from 'react';
+import './Header.css';
+import menuIcon from '@/assets/icons/menu-icon.png';
 import logo from "@/assets/images/hero/hero-logo.png";
 
+const NAV_ITEMS = [
+  "Услуги",
+  "Инвестиционный план",
+  "Частые вопросы",
+  "Калькулятор доходности",
+  "Портфолио",
+  "Контакты"
+];
+
 export const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <header className="header">
+    <header className={`header ${isOpen ? 'header--open' : ''}`}>
       <div className="header__center">
         <img src={logo} alt="logo" className="header__logo" />
-        {/* <h1 className="header__logo-text">Дворецкий</h1> */}
         <p className="header__subtitle">
           управляющий вашими инвестициями и активами
         </p>
       </div>
 
-      <button className="header__menu">
+      <button 
+        className="header__menu" 
+        onClick={() => setIsOpen(!isOpen)}
+      >
         <img src={menuIcon} alt="menu" />
-        <p className='header_menu_text'>МЕНЮ</p>
+        <p className="header_menu_text">
+          {isOpen ? 'ЗАКРЫТЬ' : 'МЕНЮ'}
+        </p>
       </button>
+
+      {/* Выпадающее меню */}
+      <nav className={`header__nav ${isOpen ? 'header__nav--visible' : ''}`}>
+        <ul className="header__nav-list">
+          {NAV_ITEMS.map((item, index) => (
+            <li key={index} className="header__nav-item">
+              <a 
+                href="#" 
+                className="header__nav-link"
+                onClick={(e) => {
+                  e.preventDefault(); // Чтобы страница не прыгала
+                  setIsOpen(false);   // Закрываем меню при клике
+                }}
+              >
+                {item}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      
+      {/* Затемнение фона при открытом меню */}
+      {isOpen && <div className="header__overlay" onClick={() => setIsOpen(false)} />}
     </header>
-  )
-}
+  );
+};

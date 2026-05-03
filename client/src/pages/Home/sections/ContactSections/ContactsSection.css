@@ -1,0 +1,153 @@
+.contacts-section {
+  padding: 4rem 2rem;
+  background: #f5f3ee;
+}
+
+.contacts-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contacts-card {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  background: rgba(245, 243, 238, 0.95);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Левая часть */
+.contacts-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 3rem;
+}
+
+.contacts-title {
+  font-size: 3.4rem;
+  font-weight: 300;
+  color: #000;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+/* Телефоны */
+.contacts-phones {
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  padding: 0.5rem 0;
+}
+
+.phone-item span {
+  font-family: "Gilroy", sans-serif;
+  font-size: 1.7rem;
+  letter-spacing: 0.0875rem;
+}
+
+.phone-item:hover {
+  color: #8a9a6d;
+  transform: translateX(4px);
+}
+
+/* Соцсети */
+.contacts-socials {
+  display: flex;
+  gap: 4rem;
+  border-radius: 0.91725rem;
+    background: #99A180;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+
+.social-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(138, 154, 109, 0.3);
+}
+
+.contacts-map-wrapper {
+  border-radius: 1rem;
+  overflow: hidden;
+  height: 100%;
+  min-height: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Адрес */
+.contacts-address {
+  font-size: 1.5rem;
+  color: #000;
+  line-height: 1.6;
+}
+
+.contacts-address p {
+  margin: 0;
+}
+
+/* Карта */
+.contacts-map-wrapper {
+  border-radius: 1rem;
+  overflow: hidden;
+  min-height: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contacts-map-wrapper > * {
+  width: 100%;
+  height: 100%;
+}
+
+/* Адаптивность */
+@media (max-width: 900px) {
+  .contacts-card {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.5rem;
+  }
+
+  .contacts-map-wrapper {
+    min-height: 300px;
+    order: -1;
+  }
+
+  .contacts-title {
+    font-size: 2rem;
+  }
+
+  .contacts-section {
+    padding: 3rem 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .contacts-title {
+    font-size: 1.75rem;
+  }
+
+  .phone-item {
+    font-size: 1rem;
+  }
+
+  .social-link {
+    width: 44px;
+    height: 44px;
+  }
+
+  .contacts-map-wrapper {
+    min-height: 250px;
+  }
+}
