@@ -1,6 +1,6 @@
 import { Header } from "../../../../widgets/Header";
 import { Slider } from "./components/Slider";
-import { Socials } from "./components/Socials";
+// import { Socials } from "./components/Socials";
 import "./Hero.css";
 
 export const Hero = () => {

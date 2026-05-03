@@ -1,7 +1,7 @@
 import "./About.css";
 
 import aboutImage from "@/assets/images/about/about-bedroom.webp";
-import logoMini from "@/assets/images/hero/hero-logo.png";
+// import logoMini from "@/assets/images/hero/hero-logo.png";
 
 export const About = () => {
   return (
