@@ -1,0 +1,224 @@
+.investment-criteria {
+    background: #f3efe6;
+    padding: 5rem 2rem;
+}
+
+.investment-criteria__container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #F8F6EF;
+    border-radius: 2rem;
+    padding: 3rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== ЗАГОЛОВОК ===== */
+.investment-criteria__title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.3;
+    color: #000;
+    margin-bottom: 3rem;
+}
+
+/* ===== ИЗОБРАЖЕНИЕ ===== */
+.investment-criteria__image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.investment-criteria__image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== КНОПКА ===== */
+.investment-criteria__button {
+    display: block;
+    margin: 0 auto 3rem;
+
+    width: 14rem;
+    height: 3.2rem;
+
+    border-radius: 0.3125rem;
+    border: 1px solid #000;
+    font-family: "Gilroy", sans-serif;
+    background: #f3efe6;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #000;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.investment-criteria__button:hover {
+    background: #333;
+    color: #fff;
+    border-color: #333;
+    transform: translateY(-2px);
+}
+
+/* ===== ПОДЗАГОЛОВОК ===== */
+.investment-criteria__subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 2.5rem;
+}
+
+/* ===== КАРТОЧКИ ===== */
+.investment-criteria__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.criteria-card {
+    position: relative;
+    background: #99a180;
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    color: #fff;
+    overflow: hidden; /* 🔑 Обрезаем всё, что выходит за рамки */
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.criteria-card__content {
+    position: relative;
+    z-index: 2;
+}
+
+.criteria-card__title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+    color: #F3EFE6;
+    text-align: center;
+}
+
+.criteria-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* Отступ между абзацами */
+}
+
+.criteria-card__paragraph {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #F3EFE6;
+  margin: 0;
+  text-indent: 1rem; /* Красная строка для каждого абзаца */
+}
+
+.criteria-card__number {
+    position: absolute;
+    bottom: -4rem;
+    right: 1rem;
+    font-family: "Great Vibes", serif;
+    font-size: 9rem; /* 🔑 Очень большой размер */
+    font-weight: 400;
+    color: #f8f6ef;
+    line-height: 1;
+    white-space: nowrap; /* Не переносится */
+    pointer-events: none; /* Чтобы не мешала кликам */
+    z-index: 1;
+}
+
+/* ===== ВОПРОС ===== */
+.investment-criteria__question {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 2.5rem;
+}
+
+/* ===== ЭКСПЕРТНЫЙ ТЕКСТ ===== */
+.investment-criteria__expert-text {
+    background: #F3EFE6;
+    border-radius: 1.5rem;
+    padding: 3rem;
+    font-size: 1.2  rem;
+    line-height: 1.7;
+    color: #000;
+    text-indent: 2rem;
+    font-weight: 300;
+}
+
+.investment-criteria__expert-text p {
+    margin-bottom: 1.5rem;
+}
+
+.investment-criteria__expert-text p:last-child {
+    margin-bottom: 0;
+}
+
+.investment-criteria__expert-text .highlight {
+    font-family: "Novelist", serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #000;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 900px) {
+    .investment-criteria__cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .criteria-card {
+        min-height: 240px;
+    }
+
+    .investment-criteria__expert-text {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .investment-criteria__title {
+        font-size: 1.3rem;
+    }
+
+    .investment-criteria__image {
+        height: 250px;
+        border-radius: 1rem;
+    }
+
+    .criteria-card {
+        padding: 2rem;
+    }
+
+    .criteria-card__title {
+        font-size: 1.2rem;
+    }
+
+    .criteria-card__text {
+        font-size: 0.9rem;
+    }
+
+    .criteria-card__number {
+        font-size: 4rem;
+    }
+
+    .investment-criteria__expert-text {
+        font-size: 0.95rem;
+        padding: 1.5rem;
+    }
+
+    .investment-criteria__expert-text .highlight {
+        font-size: 1.1rem;
+    }
+}

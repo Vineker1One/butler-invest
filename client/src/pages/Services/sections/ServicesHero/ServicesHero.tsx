@@ -1,7 +1,7 @@
 import "./ServicesHero.css";
 
-import serviceImg from "@/assets/images/services/service-main2.webp";
-import stepsImg from "@/assets/images/services/steps2.webp";
+import serviceImg from "@/assets/images/services/servicesHero/service-main2.webp";
+import stepsImg from "@/assets/images/services/servicesHero/steps2.webp";
 
 const steps = [
     {
