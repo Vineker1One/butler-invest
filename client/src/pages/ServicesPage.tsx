@@ -1,6 +1,7 @@
 import { ServicesHero } from "./Services/sections/ServicesHero/ServicesHero";
 import { InvestmentCriteria } from "./Services/sections/InvestmentCriteria/InvestmentCriteria";
 import { RenovationTypes } from "./Services/sections/RenovationTypes/RenovationTypes";
+import { Homestaging } from "./Services/sections/Homestaging/Homestaging";
 
 export const ServicesPage = () => {
   return (
@@ -8,6 +9,7 @@ export const ServicesPage = () => {
       <ServicesHero />
       <InvestmentCriteria />
       <RenovationTypes />
+      <Homestaging />
     </>
   );
 };
