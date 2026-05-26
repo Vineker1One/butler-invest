@@ -4,6 +4,7 @@ import { RenovationTypes } from "./Services/sections/RenovationTypes/RenovationT
 import { Homestaging } from "./Services/sections/Homestaging/Homestaging";
 import { PropertyManagement } from "./Services/sections/PropertyManagement/PropertyManagement";
 import { PropertySale } from "./Services/sections/PropertySale/PropertySale";
+import { TradeIn } from "./Services/sections/TradeIn/TradeIn";
 
 export const ServicesPage = () => {
   return (
@@ -14,6 +15,7 @@ export const ServicesPage = () => {
       <Homestaging />
       <PropertyManagement />
       <PropertySale />
+      <TradeIn />
     </>
   );
 };

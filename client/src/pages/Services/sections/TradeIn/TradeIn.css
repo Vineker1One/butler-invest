@@ -1,0 +1,130 @@
+.trade-in {
+  background: #f3efe6;
+  padding: 5rem 2rem;
+}
+
+.trade-in__container {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #F8F6EF;
+  border-radius: 2rem;
+  padding: 3rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== ЗАГОЛОВОК ===== */
+.trade-in__title {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: #000;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== ИЗОБРАЖЕНИЕ ===== */
+.trade-in__image-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.trade-in__image {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== КНОПКА ===== */
+.trade-in__button {
+  display: block;
+  margin: 0 auto 2.5rem;
+  
+  width: 14rem;
+  height: 3.2rem;
+  
+  border-radius: 0.3125rem;
+  border: 1px solid #000;
+  
+  font-family: "Gilroy", sans-serif;
+  background: #f3efe6;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #000;
+  
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.trade-in__button:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+  transform: translateY(-2px);
+}
+
+/* ===== КОНТЕНТ ===== */
+.trade-in__content {
+  background: #F3EFE6;
+  border-radius: 1rem;
+  padding: 2.5rem;
+}
+
+.trade-in__text {
+  font-size: 1.2rem;
+  line-height: 1.3;
+  color: #000;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  text-indent: 1.5rem; 
+}
+
+.trade-in__text:last-child {
+  margin-bottom: 0;
+}
+
+/* Выделение бренда */
+.highlight-brand-trade {
+  font-family: "Novelist", serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #000;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 768px) {
+  .trade-in {
+    padding: 3rem 1.5rem;
+  }
+  
+  .trade-in__container {
+    padding: 2rem 1.5rem;
+  }
+  
+  .trade-in__image {
+    height: 240px;
+  }
+  
+  .trade-in__content {
+    padding: 1.5rem;
+  }
+  
+  .trade-in__text {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  
+  .highlight-brand {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .trade-in__title {
+    font-size: 1.5rem;
+  }
+  
+  .trade-in__button {
+    width: 100%;
+  }
+}
