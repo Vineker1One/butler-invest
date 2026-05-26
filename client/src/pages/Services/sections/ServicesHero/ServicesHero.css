@@ -174,7 +174,7 @@
     position: absolute;
     left: 5.75rem; /* 1rem (padding timeline) + 4rem (цифра) + 0.75rem (половина gap) */
     top: 1rem;
-    bottom: 1rem;
+    bottom: 4rem;
     width: 1px;
     background: #000;
 }
@@ -246,6 +246,10 @@
   .services-steps__image {
     min-height: 380px; /* Подстраиваем высоту */
   }
+
+  .services-steps__timeline::before {
+    bottom: 7rem;
+  }
 }
 
 @media (max-width: 900px) {
@@ -280,6 +284,12 @@
     }
 }
 
+@media (max-width: 768px) {
+    .services-steps__timeline::before {
+    bottom: 10rem;
+  }
+}
+
 @media (max-width: 600px) {
     .services-card__image {
         height: 220px;
@@ -297,5 +307,6 @@
 
     .services-steps__timeline::before {
         left: 1.7rem;
+        bottom: 5rem;
     }
 }
