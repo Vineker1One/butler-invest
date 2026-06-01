@@ -20,8 +20,8 @@
 
 /* Заголовок карточки */
 .investPlan-card__title {
-  font-size: 2.4rem; /* 🔑 Крупнее */
-  font-weight: 300;
+  font-size: 1.5rem; /* 🔑 Крупнее */
+  font-weight: 800;
   color: #000;
   text-align: center;
   margin-bottom: 2.5rem;
@@ -29,7 +29,7 @@
 
 /* Изображение: широкий прямоугольник */
 .investPlan-card__image-wrapper {
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   border-radius: 1.5rem;
   overflow: hidden;
   width: 100%;
@@ -49,12 +49,13 @@
 
 /* Описание */
 .investPlan-card__description {
-  font-size: 1.2rem; /* 🔑 Чуть крупнее для больших карт */
-  line-height: 1.7;
-  color: #333;
+  font-size: 1.5rem; /* 🔑 Чуть крупнее для больших карт */
+  line-height: 1.5;
+  color: #000;
   text-align: justify;
   margin-bottom: 2.5rem;
   font-weight: 300;
+  text-indent: 1.5rem; /* 🔑 Красивый отступ первой строки */
 }
 
 /* Кнопка "Подробнее" */
@@ -75,49 +76,61 @@
 }
 
 .investPlan-card__button:hover {
-  background: #333;
+  background: #000;
   color: #fff;
-  border-color: #333;
+  border-color: #000;
 }
 
-/* Блок с плюсами и минусами */
-.investPlan-card__details {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /*  Плюсы и минусы в две колонки на больших экранах */
-  gap: 3rem;
-}
-
+/* Заголовки Плюсы/Минусы */
 .investPlan-card__details-title {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #000;
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.5rem 0;
 }
 
+/* Список */
 .investPlan-card__list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 2rem 0;
 }
 
-.investPlan-card__list li {
+.investPlan-card__list-item {
   position: relative;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #333;
-  padding-left: 1.5rem;
-  margin-bottom: 0.8rem;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.35rem;
+  color: #000;
   font-weight: 300;
 }
 
-.investPlan-card__list li::before {
+/* Точка-маркер */
+.investPlan-card__list-item::before {
   content: "•";
   position: absolute;
-  left: 0.5rem;
+  left: 0rem;
   color: #000;
   font-weight: bold;
   font-size: 1.4rem;
-  line-height: 1;
+  line-height: 1.2;
+}
+
+/* Жирная часть пункта */
+.investPlan-card__list-bold {
+  font-weight: 700;
+  color: #000;
+}
+
+/* Обычный текст после тире */
+.investPlan-card__list-text {
+  font-weight: 300;
+  color: #000;
+}
+
+/* Последний элемент без отступа снизу */
+.investPlan-card__list-item:last-child {
+  margin-bottom: 0;
 }
 
 /* ===== АДАПТИВНОСТЬ ===== */
