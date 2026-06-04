@@ -157,6 +157,9 @@
   line-height: 1.5;
 }
 
+.investPlan-card__full-text span {
+  font-family: "Novelist", sans-serif;
+}
 
 
 /* Последний элемент без отступа снизу */
