@@ -103,6 +103,8 @@
   font-size: 1.35rem;
   color: #000;
   font-weight: 300;
+  text-align: justify;
+  line-height: 1.5;
 }
 
 /* Точка-маркер */
@@ -127,6 +129,35 @@
   font-weight: 300;
   color: #000;
 }
+
+.investPlan-card__text-block {
+    font-weight: 300;
+  color: #000;
+    font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+
+
+.investPlan-card__text-block b {
+  font-weight: 800;
+}
+
+.investPlan-card__list-text b {
+  font-weight: 800;
+}
+
+.investPlan-card__list-item b {
+  font-weight: 800;
+}
+
+.investPlan-card__full-text {
+  text-indent: 1.5rem;
+  font-size: 1.35rem;
+  line-height: 1.5;
+}
+
+
 
 /* Последний элемент без отступа снизу */
 .investPlan-card__list-item:last-child {
