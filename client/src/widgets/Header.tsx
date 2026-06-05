@@ -26,6 +26,10 @@ const NAV_ITEMS = [
         label: "Проблемы и решения",
         path: "/problems",
     },
+    {
+        label: "Портфолио",
+        path: "/portfolio",
+    },
 ];
 
 export const Header = () => {

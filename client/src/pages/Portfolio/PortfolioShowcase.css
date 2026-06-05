@@ -1,0 +1,443 @@
+.portfolio-showcase {
+  background: #F8F6EF;
+  padding: 5rem 2rem;
+}
+
+.portfolio-showcase__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== ОБЩИЕ СТИЛИ СЕКЦИЙ ===== */
+.portfolio-section {
+  margin-bottom: 5rem;
+}
+
+.portfolio-section:last-child {
+  margin-bottom: 0;
+}
+
+.portfolio-section__title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #000;
+  margin-bottom: 3rem;
+}
+
+/* ===== ОТ ПРОЕКТА ДО РЕАЛИЗАЦИИ ===== */
+.project-realization__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.project-realization__pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.project-realization__item {
+  position: relative;
+}
+
+.project-realization__label {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.project-realization__label--project {
+  background: rgba(153, 161, 128, 0.9);
+}
+
+.project-realization__label--real {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.project-realization__image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 1rem;
+  display: block;
+}
+
+.project-realization__caption {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #000;
+  margin: 1rem 0 0 0;
+  font-weight: 400;
+}
+
+/* ===== ЛУЧШИЕ ИДЕИ ===== */
+.ideas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.ideas-grid__item {
+  background: #fff;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.ideas-grid__image-wrapper {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
+.ideas-grid__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.ideas-grid__item:hover .ideas-grid__image {
+  transform: scale(1.05);
+}
+
+.ideas-grid__item,
+.homestaging-grid__item {
+  cursor: pointer;
+}
+
+.ideas-grid__caption {
+  padding: 1.2rem;
+  text-align: center;
+  font-size: 1.05rem;
+  color: #000;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ===== ВЫГОДНЫЙ ХОУМСТЕЙДЖИНГ ===== */
+.homestaging-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.homestaging-grid__item {
+  background: #fff;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.homestaging-grid__image-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.homestaging-grid__image {
+  width: 100%;
+  
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.homestaging-grid__item:hover .homestaging-grid__image {
+  transform: scale(1.05);
+}
+
+.homestaging-grid__caption {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #000;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ===== LIGHTBOX (МОДАЛЬНОЕ ОКНО) ===== */
+.portfolio-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  animation: fadeIn 0.3s ease;
+}
+
+.homestaging-grid--single-column {
+  grid-template-columns: 1fr !important;
+  max-width: 700px; /* Ограничим ширину для красоты */
+  margin: 0 auto;
+}
+
+/* .homestaging-grid--single-column .homestaging-grid__image-wrapper {
+  
+} */
+
+/* Адаптив для хоумстейджинга */
+@media (max-width: 768px) {
+  .homestaging-grid--single-column .homestaging-grid__image-wrapper {
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .homestaging-grid--single-column .homestaging-grid__image-wrapper {
+    height: 300px;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.portfolio-lightbox__content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: default;
+}
+
+.portfolio-lightbox__image {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.portfolio-lightbox__title {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  font-weight: 300;
+  padding: 0 2rem;
+}
+
+.portfolio-lightbox__close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.portfolio-lightbox__close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(180deg);
+}
+
+.portfolio-lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3.5rem;
+  height: 3.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.portfolio-lightbox__nav:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.portfolio-lightbox__nav--prev {
+  left: 2rem;
+}
+
+.portfolio-lightbox__nav--next {
+  right: 2rem;
+}
+
+.portfolio-lightbox__counter {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 400;
+}
+
+/* ===== ЭФФЕКТЫ ПРИ НАВЕДЕНИИ ===== */
+.portfolio-image {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-image:hover {
+  transform: scale(1.02);
+}
+
+.ideas-grid__image-wrapper,
+.homestaging-grid__image-wrapper {
+  position: relative;
+}
+
+.ideas-grid__overlay,
+.homestaging-grid__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* ← КЛИКИ ПРОХОДЯТ СКВОЗЬ ОВЕРЛЕЙ */
+}
+
+.ideas-grid__item:hover .ideas-grid__overlay,
+.homestaging-grid__item:hover .homestaging-grid__overlay {
+  opacity: 1;
+}
+
+.ideas-grid__zoom-icon,
+.homestaging-grid__zoom-icon {
+  font-size: 2.5rem;
+  color: #fff;
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+.ideas-grid__item:hover .ideas-grid__zoom-icon,
+.homestaging-grid__item:hover .homestaging-grid__zoom-icon {
+  transform: scale(1);
+}
+
+/* ===== АДАПТИВНОСТЬ LIGHTBOX ===== */
+@media (max-width: 768px) {
+  .portfolio-lightbox__nav {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.8rem;
+  }
+  
+  .portfolio-lightbox__nav--prev {
+    left: 1rem;
+  }
+  
+  .portfolio-lightbox__nav--next {
+    right: 1rem;
+  }
+  
+  .portfolio-lightbox__close {
+    top: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .portfolio-lightbox__title {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-lightbox__counter {
+    bottom: 1rem;
+    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
+  }
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 900px) {
+  .project-realization__pair {
+    grid-template-columns: 1fr;
+  }
+  
+  .ideas-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .homestaging-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-showcase {
+    padding: 3rem 1rem;
+  }
+  
+  .portfolio-section__title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .project-realization__pair {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+  
+  .project-realization__image {
+    height: 300px;
+  }
+  
+  .ideas-grid__image-wrapper,
+  .homestaging-grid__image-wrapper {
+    height: 250px;
+  }
+  
+  .homestaging-grid {
+    grid-template-columns: 1fr;
+  }
+}
