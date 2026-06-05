@@ -30,6 +30,10 @@ const NAV_ITEMS = [
         label: "Портфолио",
         path: "/portfolio",
     },
+    {
+        label: "Калькулятор",
+        path: "/calculator",
+    },
 ];
 
 export const Header = () => {
