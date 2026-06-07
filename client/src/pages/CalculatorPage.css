@@ -1,40 +1,37 @@
-/* .calculator-page {
-  min-height: 100vh;
-  background-image: url('@/assets/images/calculator/calculator-bg.webp');
-  background-size: cover;
+/* Фиксированный фон — не зависит от скролла */
+.calculator-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('@/assets/images/calculator/calculator-bg1920.webp');
   background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed; 
-  
-  padding: 3rem 2rem;
-  position: relative;
+  z-index: 0;
 }
 
-
-.calculator-page::before {
+.calculator-bg::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(243, 239, 230, 0.85); 
-  z-index: 0;
 }
 
-
-.calculator-page > * {
+.calculatorFull {
   position: relative;
   z-index: 1;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (max-width: 768px) {
-  .calculator-page {
-    padding: 2rem 1rem;
-    background-attachment: scroll; 
-  }
-  
-  .calculator-page::before {
-    background: rgba(243, 239, 230, 0.9); 
-  }
-} */
+/* Убираем старый ::before у .calculatorFull */
+.calculatorFull::before {
+  display: none;
+}

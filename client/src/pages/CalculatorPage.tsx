@@ -3,8 +3,11 @@ import './CalculatorPage.css'
 
 export const CalculatorPage = () => {
   return (
-    <main className="calculator-page">
-      <CalculatorFull />
-    </main>
+    <>
+      <div className="calculator-bg" /> {/* Фиксированный фон */}
+      <main className="calculatorFull">
+        <CalculatorFull />
+      </main>
+    </>
   );
 };

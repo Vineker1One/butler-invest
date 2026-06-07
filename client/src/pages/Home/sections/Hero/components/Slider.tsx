@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Slider.css";
 
-import hero1 from "@/assets/images/hero/hero-1.webp";
+import hero1 from "@/assets/images/hero/hero-1-1920.webp";
 import hero2 from "@/assets/images/hero/hero-2.webp";
 import hero3 from "@/assets/images/hero/hero-3.webp";
 
