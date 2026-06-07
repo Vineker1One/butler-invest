@@ -34,6 +34,10 @@ const NAV_ITEMS = [
         label: "Калькулятор",
         path: "/calculator",
     },
+    { 
+        label: "Контакты", 
+        path: "/contacts" 
+    },
 ];
 
 export const Header = () => {

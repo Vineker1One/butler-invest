@@ -6,6 +6,7 @@ import { InvestmentPage } from '../pages/InvestmentPage'
 import { ProblemsPage } from '../pages/ProblemsPage'
 import { PortfolioPage } from '../pages/PortfolioPage'
 import { CalculatorPage } from '../pages/CalculatorPage'
+import { ContactsPage } from '../pages/ContactsPage'
 
 export const AppRouter = () => {
   return (
@@ -18,6 +19,7 @@ export const AppRouter = () => {
           <Route path="/problems" element={<ProblemsPage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
           <Route path="/calculator" element={<CalculatorPage />} />
+          <Route path="/contacts" element={<ContactsPage />} />
         </Routes>
       </MainLayout>
     </BrowserRouter>
