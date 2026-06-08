@@ -10,17 +10,17 @@ import { ContactForm } from "./Home/sections/ContactForm/ContactForm";
 import { ContactsSection } from "./Home/sections/ContactSections/ContactsSection";
 
 export const HomePage = () => {
-  return (
-    <div className="home-page">
-      <Hero />
-      <About />
-      <Capabilities />
-      <Investments />
-      <Compare />
-      <Projects />
-      <Calculator />
-      <ContactForm />
-      <ContactsSection />
-    </div>
-  );
+    return (
+        <>
+            <Hero />
+            <About />
+            <Capabilities />
+            <Investments />
+            <Compare />
+            <Projects />
+            <Calculator />
+            <ContactForm />
+            <ContactsSection />
+        </>
+    );
 };

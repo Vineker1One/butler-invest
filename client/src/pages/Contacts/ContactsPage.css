@@ -1,0 +1,809 @@
+/* src/pages/Home/sections/ContactForm/ContactForm.css */
+.contactPage-form {
+  position: relative;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  
+  /* ✅ Отключаем выделение текста и стандартный курсор */
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: default;
+}
+
+/* ... (фон и контейнер без изменений) ... */
+
+.contactPage-form__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* .contactPage-form__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+} */
+
+.contactPage-form__container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 520px;
+  overflow: visible;
+}
+
+.contactPage-form__card {
+  background: rgba(245, 243, 238, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  overflow: visible;
+}
+
+.contactPage-form__title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #1a1a1a;
+}
+
+.contactPage-form__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contactPage-form__field {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ✅ Стили для полей с ошибками */
+.contactPage-form__field.error .contact-form__input,
+.contactPage-form__field.error .contact-form__phone,
+.contactPage-form__field.error .contact-form__select-header {
+  border-bottom-color: #e74c3c;
+}
+
+.contactPage-form__field.error .contact-form__input {
+  border-color: #e74c3c;
+}
+
+.contactPage-form__field.error .contact-form__select-header {
+  border-color: #e74c3c;
+  background: #fdf2f2;
+}
+
+.contactPage-form__consent.error {
+  color: #e74c3c;
+}
+
+.contactPage-form__consent.error input[type="checkbox"] {
+  accent-color: #e74c3c;
+}
+
+/* Сообщение об ошибке */
+.contactPage-form__error-message {
+  font-size: 0.8rem;
+  color: #e74c3c;
+  margin-top: 0.25rem;
+  animation: shake 0.4s ease;
+}
+
+.contactPage-form__error-message--consent {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.contactPage-form__label {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+  display: block;
+  line-height: 1.2;
+  
+  /* ✅ Разрешаем выделение только для label (чтобы курсор был нормальным) */
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: default;
+}
+
+.contactPage-form__input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  background: transparent;
+  font-size: 1rem;
+  color: #1a1a1a;
+  transition: border-color 0.3s;
+  outline: none;
+  font-family: inherit;
+  
+  /* ✅ Разрешаем ввод текста и показываем текстовый курсор */
+  user-select: text;
+  -webkit-user-select: text;
+  cursor: text;
+}
+
+.contact-form__input:focus {
+  border-bottom-color: #8a9a6d;
+}
+
+.contactPage-form__input::placeholder {
+  color: #999;
+}
+
+/* ========== КАСТОМНЫЙ СЕЛЕКТ ========== */
+.contactPage-form__select-wrapper {
+  position: relative;
+  z-index: 100;
+}
+
+.contactPage-form__select-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.9rem 1rem;
+  background: #e8e6de;
+  border: 2px solid #d4d0c5;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: #666;
+  font-size: 1rem;
+  
+  /* ✅ Запрещаем выделение */
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.contactPage-form__select-header:hover {
+  background: #e0ddd5;
+  border-color: #8a9a6d;
+}
+
+.contactPage-form__select-header svg {
+  color: #1a1a1a;
+  flex-shrink: 0;
+}
+
+.contactPage-form__select-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  right: 0;
+  background: #f5f3ee;
+  border: 2px solid #d4d0c5;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  animation: dropdownSlide 0.2s ease;
+  
+  /* ✅ Запрещаем выделение */
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@keyframes dropdownSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contactPage-form__select-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.9rem 1rem;
+  background: #f5f3ee;
+  border: 2px solid #d4d0c5;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  
+  /* ✅ Запрещаем выделение */
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.contactPage-form__select-option:hover {
+  background: #e8e6de;
+  border-color: #8a9a6d;
+  transform: translateX(4px);
+}
+
+.contactPage-form__select-option.active {
+  background: #8a9a6d;
+  border-color: #8a9a6d;
+  color: #fff;
+}
+
+.contactPage-form__select-option.active svg {
+  color: #fff;
+}
+
+.contactPage-form__select-option svg {
+  color: #1a1a1a;
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+
+.contactPage-form__select-display {
+  margin-top: 0.5rem;
+}
+
+.contactPage-form__select-display-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.9rem 1rem;
+  background: #8a9a6d;
+  border: 2px solid #8a9a6d;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  
+  /* ✅ Запрещаем выделение */
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.contactPage-form__select-display-btn:hover {
+  background: #7a8a5d;
+  border-color: #7a8a5d;
+}
+
+.contactPage-form__select-display-btn svg {
+  color: #fff;
+}
+
+/* ========== ТЕЛЕФОН ========== */
+.contactPage-form__phone {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 2px solid #ddd;
+  transition: border-color 0.3s;
+  padding-bottom: 0;
+}
+
+.contactPage-form__phone:focus-within {
+  border-bottom-color: #8a9a6d;
+}
+
+.contactPage-form__flag {
+  font-size: 1.2rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-bottom: 2px;
+  
+  /* ✅ Запрещаем выделение флага */
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: default;
+}
+
+.contactPage-form__input--phone {
+  border: none;
+  flex: 1;
+  padding: 0.9rem 0;
+}
+
+.contactPage-form__input--phone:focus {
+  border-bottom: none;
+}
+
+/* ========== КНОПКА ========== */
+.contactPage-form__button {
+  width: 100%;
+  padding: 1rem;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 0.5rem;
+}
+
+.contactPage-form__button:hover {
+  background: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.contactPage-form__button:active {
+  transform: translateY(0);
+}
+
+/* ========== ЧЕКБОКС ========== */
+.contactPage-form__consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  color: #666;
+  cursor: pointer;
+  line-height: 1.4;
+  margin-top: 0.5rem;
+  
+  /* ✅ Разрешаем выделение для текста согласия */
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.contactPage-form__consent input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  accent-color: #8a9a6d;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.contactPage-form__consent a {
+  color: #8a9a6d;
+  text-decoration: underline;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+  .contactPage-form {
+    padding: 2rem 1rem;
+    align-items: flex-start;
+  }
+
+  .contactPage-form__card {
+    padding: 2rem 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .contactPage-form__title {
+    font-size: 1.25rem;
+  }
+
+  .contactPage-form__select-option {
+    font-size: 0.9rem;
+    padding: 0.8rem 0.9rem;
+  }
+}
+
+/* .contactsPage-section {
+  padding: 5rem 2rem;
+} */
+
+.contactsPage-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contactsPage-card {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  background: rgba(245, 243, 238, 0.95);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  gap: 2rem;
+}
+
+/* Левая часть */
+.contactsPage-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 3rem;
+}
+
+.contactsPage-title {
+  font-size: 3.4rem;
+  font-weight: 300;
+  color: #000;
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+/* Телефоны */
+.contactsPage-phones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.phone-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  padding: 0.5rem 0;
+}
+
+.phone-item span {
+  font-family: "Gilroy", sans-serif;
+  font-size: 1.7rem;
+  letter-spacing: 0.0875rem;
+}
+
+.phone-item:hover {
+  color: #8a9a6d;
+  transform: translateX(4px);
+}
+
+/* Соцсети */
+.contactsPage-socials {
+  display: flex;
+  gap: 4rem;
+  border-radius: 0.91725rem;
+  background: #99A180;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  color: #fff;
+  transition: all 0.3s;
+  border-radius: 0.5rem;
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(138, 154, 109, 0.3);
+}
+
+/* Адрес */
+.contactsPage-address {
+  font-size: 1.5rem;
+  color: #000;
+  line-height: 1.6;
+}
+
+.contactsPage-address p {
+  margin: 0;
+}
+
+/* Карта */
+.contactsPage-map-wrapper {
+  border-radius: 1rem;
+  overflow: hidden;
+  height: 100%;
+  min-height: 450px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.contactsPage-map-wrapper > * {
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+
+/* Планшеты (768px - 1024px) */
+@media (max-width: 1024px) {
+  .contactsPage-card {
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+  
+  .contactsPage-info {
+    padding: 1rem 2rem;
+  }
+  
+  .contactsPage-title {
+    font-size: 2.8rem;
+  }
+  
+  .phone-item span {
+    font-size: 1.5rem;
+  }
+  
+  .contactsPage-map-wrapper {
+    min-height: 400px;
+  }
+}
+
+/* Планшеты портретные и большие мобильные (481px - 768px) */
+@media (max-width: 768px) {
+  .contactsPage-section {
+    padding: 3rem 1rem;
+  }
+  
+  .contactsPage-card {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+  }
+  
+  .contactsPage-info {
+    padding: 0;
+    gap: 1.5rem;
+  }
+  
+  .contactsPage-title {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+  
+  .contactsPage-phones {
+    gap: 0.3rem;
+  }
+  
+  .phone-item {
+    justify-content: center;
+  }
+  
+  .phone-item span {
+    font-size: 1.3rem;
+    letter-spacing: 0.05rem;
+  }
+  
+  .contactsPage-socials {
+    gap: 2rem;
+    padding: 0.8rem 0;
+  }
+  
+  .social-link {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .contactsPage-address {
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+  
+  .contactsPage-map-wrapper {
+    min-height: 350px;
+    max-height: 50vh;
+    order: -1; /* Карта сверху на мобильных */
+    border-radius: 0.75rem;
+  }
+}
+
+/* Маленькие мобильные (до 480px) */
+@media (max-width: 480px) {
+  .contactsPage-section {
+    padding: 2rem 0.75rem;
+  }
+  
+  .contactsPage-card {
+    padding: 1.5rem 1rem;
+    border-radius: 1rem;
+    gap: 1.5rem;
+  }
+  
+  .contactsPage-title {
+    font-size: 1.8rem;
+  }
+  
+  .phone-item {
+  }
+  
+  .phone-item span {
+    font-size: 1.1rem;
+    letter-spacing: 0.03rem;
+  }
+  
+  .contactsPage-socials {
+    gap: 1.5rem;
+    padding: 0.7rem 0;
+    border-radius: 0.75rem;
+  }
+  
+  .social-link {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .contactsPage-address {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+  
+  .contactsPage-map-wrapper {
+    min-height: 280px;
+    max-height: 45vh;
+    border-radius: 0.5rem;
+  }
+}
+
+/* Очень маленькие экраны (до 360px) */
+@media (max-width: 360px) {
+  .contactsPage-title {
+    font-size: 1.6rem;
+  }
+  
+  .phone-item span {
+    font-size: 1rem;
+  }
+  
+  .contactsPage-address {
+    font-size: 0.9rem;
+  }
+  
+  .contactsPage-map-wrapper {
+    min-height: 250px;
+  }
+}
+
+/* Landscape ориентация на мобильных */
+@media (max-width: 768px) and (orientation: landscape) {
+  .contactsPage-map-wrapper {
+    max-height: 60vh;
+    min-height: 250px;
+  }
+  
+  .contactsPage-info {
+    max-height: 40vh;
+    overflow-y: auto;
+  }
+}
+
+.contacts-page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== ФОН ===== */
+.contacts-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.contacts-bg__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right; /* Фокус на правой части (где лицо) */
+}
+
+.contacts-bg__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3); /* Лёгкое затемнение */
+}
+
+.contacts-page__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ===== КНОПКИ ===== */
+.contacts-page__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+ 
+  margin: 0 auto;
+}
+
+.contacts-page__button {
+  display: block;
+  width: 100%;
+  padding: 1rem 4rem;
+  background: rgba(199, 164, 125, 0.85); /* Бежево-коричневый */
+  color: #F3EFE6;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-family: "Gilroy", sans-serif;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.contacts-page__button:hover {
+  background: rgba(193, 181, 165, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 768px) {
+  .contacts-page {
+    padding: 2rem 1rem;
+  }
+  
+  .contacts-bg__image {
+    object-position: center center;
+  }
+  
+  .contacts-page__content {
+    gap: 1.5rem;
+  }
+  
+  .contacts-page__buttons {
+    max-width: 250px;
+  }
+  
+  .contacts-page__button {
+    padding: 0.9rem 3rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contacts-page {
+    padding: 1.5rem 0.75rem;
+  }
+  
+  .contacts-page__buttons {
+    max-width: 220px;
+  }
+  
+  .contacts-page__button {
+    padding: 0.8rem 3rem;
+    font-size: 1rem;
+  }
+}

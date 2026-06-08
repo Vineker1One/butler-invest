@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   padding: 4rem 2rem;
-  overflow: hidden;
+  overflow: visible;
   
   /* ✅ Отключаем выделение текста и стандартный курсор */
   user-select: none;
@@ -37,6 +37,7 @@
   z-index: 1;
   width: 100%;
   max-width: 520px;
+  overflow: visible;
 }
 
 .contact-form__card {
@@ -45,6 +46,7 @@
   border-radius: 1.5rem;
   padding: 2.5rem 2rem;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  overflow: visible;
 }
 
 .contact-form__title {
@@ -152,6 +154,7 @@
 /* ========== КАСТОМНЫЙ СЕЛЕКТ ========== */
 .contact-form__select-wrapper {
   position: relative;
+  z-index: 100;
 }
 
 .contact-form__select-header {
