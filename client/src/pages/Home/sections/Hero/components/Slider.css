@@ -3,12 +3,12 @@
   flex: 1;
   min-height: 0;
   overflow: hidden;
+  background: #000;
 }
 
 .slider__slide {
   position: absolute;
   inset: 0;
-
   opacity: 0;
   transition: opacity 1.2s ease;
 }
@@ -17,83 +17,60 @@
   opacity: 1;
 }
 
-/* Размытый фон, чтобы не было пустых полос */
 .slider__image-bg {
-  position: absolute;
-  inset: -2rem;
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  filter: blur(1.5rem) brightness(0.75);
-  transform: scale(1.05);
+  display: none;
 }
 
-/* Основная картинка — не режется */
 .slider__image {
   position: absolute;
   inset: 0;
-
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
 }
 
 .slider__image.active {
   opacity: 1;
 }
 
-/* Затемнение */
+.slider__image--1 {
+  background-position: center;
+}
+
+.slider__image--2 {
+  background-position: center center;
+}
+
+.slider__image--3 {
+  background-position: center;
+}
+
 .slider__overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
-
- 
 }
 
-/* Текст */
 .slider__content {
   position: absolute;
   left: clamp(1rem, 3vw, 2.5rem);
-
   z-index: 2;
-
   max-width: clamp(18rem, 40vw, 50rem);
-
   padding: 1rem 1.5rem;
-
   background: transparent;
 }
 
 .slider__content::before {
   content: "";
   position: absolute;
-  inset: -1rem; /* 👈 расширяем за пределы текста */
-
+  inset: -1rem;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-
   background: rgba(255, 255, 255, 0.04);
-
   border-radius: 1.5rem;
-
-  mask-image: radial-gradient(
-    ellipse at center,
-    rgba(0,0,0,1) 50%,
-    rgba(0,0,0,0) 100%
-  );
-  -webkit-mask-image: radial-gradient(
-    ellipse at center,
-    rgba(0,0,0,1) 50%,
-    rgba(0,0,0,0) 100%
-  );
-
-
+  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
   transition: opacity 0.6s ease;
-
   z-index: -1;
 }
 
@@ -112,7 +89,6 @@
   top: 40%;
   transform: translateY(-50%);
   color: white;
-
 }
 
 .slider__content--bottom-black {
@@ -121,17 +97,15 @@
   left: 6rem;
 }
 
-/* Соцсети */
+/* ===== СОЦСЕТИ ===== */
 .slider__socials {
   position: absolute;
   right: 2rem;
   top: 20%;
   transform: translateY(-50%);
-
   display: flex;
   flex-direction: column;
   gap: 2rem;
-
   z-index: 2;
 }
 
@@ -145,32 +119,43 @@
   transform: scale(1.1);
 }
 
-/* Кнопка */
+/* ===== КНОПКА НАЗАД (СЛЕВА) ===== */
+.slider__prev {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.slider__prev img {
+  width: 3rem;
+  height: auto;
+  display: block;
+}
+
+
+/* ===== КНОПКА ВПЕРЁД (СПРАВА) ===== */
 .slider__next {
   position: absolute;
   right: 2rem;
   top: 50%;
   transform: translateY(-50%);
-
   background: none;
   border: none;
   padding: 0;
-
   cursor: pointer;
   z-index: 2;
-  
 }
 
 .slider__next img {
-  width: 3rem;  /* подгони под макет */
+  width: 3rem;
   height: auto;
-
   display: block;
-}
-
-.slider__next:hover img {
-  transform: translateX(4px);
-  transition: 0.3s;
 }
 
 
@@ -179,21 +164,160 @@
     opacity: 0;
     transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-.slider__image--1 {
-  background-position: center top;
+/* ===== АДАПТИВНОСТЬ ===== */
+
+/* ===== АДАПТИВНОСТЬ ===== */
+
+/* Планшеты (768px - 1024px) */
+@media (max-width: 1024px) {
+  .slider__socials {
+    right: 1.5rem;
+  }
+  
+  .slider__socials img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .slider__prev {
+    left: 1.5rem;
+  }
+  
+  .slider__prev img,
+  .slider__next img {
+    width: 2.5rem;
+  }
 }
 
-.slider__image--2 {
-  background-position: center center;
+/* Мобильные (до 768px) */
+@media (max-width: 768px) {
+  .slider {
+    min-height: 500px;
+    height: 60vh;
+  }
+  
+  /* Текст меньше */
+  .slider__content {
+    left: 1rem;
+    right: 1rem;
+    max-width: 100%;
+    padding: 0.8rem 1rem;
+  }
+  
+  .slider__content p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
+  /* Соцсети остаются справа, но меньше */
+  .slider__socials {
+    right: 1rem;
+    top: 15%;
+    gap: 1rem;
+  }
+  
+  .slider__socials img {
+    width: 2rem;
+    height: 2rem;
+  }
+  
+  /* Кнопки остаются по бокам, но меньше */
+  .slider__prev {
+    left: 1rem;
+    top: 50%;
+  }
+  
+  .slider__prev img,
+  .slider__next img {
+    width: 2rem;
+  }
+  
+  .slider__next {
+    right: 1rem;
+    top: 50%;
+  }
+  
+  /* ===== СПЕЦИАЛЬНОЕ ПОЗИЦИОНИРОВАНИЕ ДЛЯ СЛАЙДОВ ===== */
+  
+  /* Слайд 1 — центр */
+  .slider__image--1 {
+    background-position: left;
+  }
+  
+  /* Слайд 2 — смещаем вправо, чтобы человек был виден */
+
+  
+  /* Слайд 3 — центр */
+  .slider__image--3 {
+    background-position: center center;
+  }
 }
 
-.slider__image--3 {
-  background-position: center 30%;
+/* Маленькие мобильные (до 480px) */
+@media (max-width: 480px) {
+  .slider {
+    min-height: 400px;
+    height: 50vh;
+  }
+  
+  .slider__content p {
+    font-size: 0.9rem;
+  }
+  
+  /* Ещё меньше иконки и кнопки */
+  .slider__socials {
+    right: 0.8rem;
+    top: 12%;
+    gap: 0.8rem;
+  }
+  
+  .slider__socials img {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+  
+  .slider__prev {
+    left: 0.8rem;
+  }
+  
+  .slider__prev img,
+  .slider__next img {
+    width: 1.6rem;
+  }
+  
+  .slider__next {
+    right: 0.8rem;
+  }
+  
+  /* Для второго слайда ещё больше смещаем */
+  .slider__image--2 {
+    background-position: 75% center;
+  }
+}
+
+/* Landscape ориентация */
+@media (max-width: 768px) and (orientation: landscape) {
+  .slider {
+    height: 80vh;
+  }
+  
+  .slider__socials {
+    top: 10%;
+  }
+  
+  .slider__prev,
+  .slider__next {
+    top: 50%;
+  }
+  
+  /* Для второго слайда в landscape */
+  .slider__image--2 {
+    background-position: 65% center;
+  }
 }

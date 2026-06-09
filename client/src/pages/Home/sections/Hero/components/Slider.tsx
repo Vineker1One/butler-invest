@@ -1,90 +1,120 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Slider.css";
 
-import hero1 from "@/assets/images/hero/hero-1-1920.webp";
-import hero2 from "@/assets/images/hero/hero-2.webp";
-import hero3 from "@/assets/images/hero/hero-3.webp";
+import sliderImage1 from "@/assets/images/hero/hero-1-1920.webp";
+import sliderImage2 from "@/assets/images/hero/hero-2-1920.webp";
+import sliderImage3 from "@/assets/images/hero/hero-3-1920.webp";
+import sliderImage1Mobile from "@/assets/images/hero/hero-1-768.webp";
+import sliderImage2Mobile from "@/assets/images/hero/hero-2-768.webp";
+import sliderImage3Mobile from "@/assets/images/hero/hero-3-768.webp";
 
 import ig from "@/assets/icons/instagram.svg";
 import vk from "@/assets/icons/vk.svg";
 import slider_next from "@/assets/icons/hero-slider.svg";
 
+// ✅ Исправленный тип
 type Slide = {
-  img: string;
-  subtitle: string;
-  textStyle: string;
+  id: number;
+  image: string;
+  mobileImage: string;
+  text: string;
+  position: string;
 };
 
+// ✅ Локальный массив (убираем проп)
 const slides: Slide[] = [
   {
-    img: hero1,
-    subtitle: "",
-    textStyle: "",
+    id: 1,
+    image: sliderImage1,
+    mobileImage: sliderImage1Mobile,
+    text: "Текст первого слайда...",
+    position: "middle-white",
   },
   {
-    img: hero2,
-    subtitle: "«Инвестиции в недвижимость, даже в очень небольших масштабах, остаются проверенным и верным средством увеличения денежного потока и богатства человека» — Роберт Кийосаки",
-    textStyle: "middle-white",
+    id: 2,
+    image: sliderImage2,
+    mobileImage: sliderImage2Mobile,
+    text: "Текст второго слайда...",
+    position: "bottom-black",
   },
   {
-    img: hero3,
-    subtitle: "«Чистый разум и свежие идеи – вот самая благодатная почва для роста доходов, а вдохновение – лучшая мотивация для успешного бизнеса» - Дэвид Рокфеллер",
-    textStyle: "bottom-black",
+    id: 3,
+    image: sliderImage3,
+    mobileImage: sliderImage3Mobile,
+    text: "Текст третьего слайда...",
+    position: "middle-white",
   },
 ];
 
+// ✅ Убираем проп slides
 export const Slider = () => {
-  const [index, setIndex] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 600);
+    };
+    
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const nextSlide = () => {
-    setIndex((prev) => (prev + 1) % slides.length);
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
+
+  const prevSlide = () => {
+  setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+};
 
   return (
     <div className="slider">
-  {slides.map((slide, i) => (
-    <div
-      key={i}
-      className={`slider__slide ${i === index ? "active" : ""}`}
-    >
-      <div
-        className="slider__image-bg"
-        style={{
-          backgroundImage: `url(${slide.img})`,
-        }}
-      />
+      {slides.map((slide, index) => {
+        const currentImage = isMobile ? slide.mobileImage : slide.image;
+        const isActive = index === currentSlide;
 
-      <div
-        className={`slider__image slider__image--${i + 1}`}
-        style={{
-          backgroundImage: `url(${slide.img})`,
-        }}
-      />
+        return (
+          <div key={slide.id} className={`slider__slide ${isActive ? "active" : ""}`}>
+            {!isMobile && (
+              <div
+                className="slider__image-bg"
+                style={{ backgroundImage: `url(${slide.image})` }}
+              />
+            )}
+
+            <div
+              className={`slider__image slider__image--${slide.id} ${isActive ? "active" : ""}`}
+              style={{ backgroundImage: `url(${currentImage})` }}
+            />
+
+            <div className="slider__overlay" />
+
+            <div className={`slider__content slider__content--${slide.position} ${isActive ? "active" : ""}`}>
+              <p>{slide.text}</p>
+            </div>
+          </div>
+        );
+      })}
+
+      <button className="slider__prev" onClick={prevSlide}>
+      <img src={slider_next} alt="Previous" />
+    </button>
+
+      <div className="slider__socials">
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <img src={ig} alt="Instagram" />
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <img src={vk} alt="VK" />
+        </a>
+      </div>
+
+      <button className="slider__next" onClick={nextSlide}>
+        <img src={slider_next} alt="Next" />
+      </button>
     </div>
-  ))}
-
-  <div className="slider__overlay" />
-
-<div
-  key={index}
-  className={`slider__content slider__content--${slides[index].textStyle}`}
->
-  <p>{slides[index].subtitle}</p>
-</div>
-
-  <div className="slider__socials">
-    <a href="#" aria-label="Instagram">
-      <img src={ig} alt="" />
-    </a>
-
-    <a href="#" aria-label="VK">
-      <img src={vk} alt="" />
-    </a>
-  </div>
-
-  <button className="slider__next" onClick={nextSlide} type="button">
-    <img src={slider_next} alt="Next" />
-  </button>
-</div>
   );
 };

@@ -12,13 +12,11 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-
     text-align: center;
 }
 
 .header__logo {
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
-  
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
 }
 
 .header__subtitle {
@@ -26,34 +24,26 @@
 }
 
 .header__logo-text {
-  font-family: "Novelist";
-  font-weight: 400;
-
-  font-size: clamp(2.5rem, 4vw, 4.7rem);
-
-  letter-spacing: 0;
-  line-height: 1;
-
-  text-transform: uppercase;
-  -webkit-text-stroke: 0.3px #222;
+    font-family: "Novelist";
+    font-weight: 400;
+    font-size: clamp(2.5rem, 4vw, 4.7rem);
+    letter-spacing: 0;
+    line-height: 1;
+    text-transform: uppercase;
+    -webkit-text-stroke: 0.3px #222;
 }
-
 
 .header__menu {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.3rem;
-
     backdrop-filter: blur(12px);
     background: rgba(255, 255, 255, 0.08);
-  border: none;
-  outline: none;
-   
+    border: none;
+    outline: none;
     border-radius: 0.625rem;
-
     padding: 1rem;
-
     cursor: pointer;
     transition: 0.3s;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.57);
@@ -64,26 +54,23 @@
 }
 
 .header__subtitle {
-  font-size: var(--fs-xl);
-  font-weight: 300;
-  color: black;
+    font-size: var(--fs-xl);
+    font-weight: 300;
+    color: black;
 }
 
 .header_menu_text {
     font-size: var(--fs-lg);
     font-weight: 600;
     font-family: "Gilroy", sans-serif;
-
     background: linear-gradient(
         182deg,
         #151610 17.91%,
         #755929 65.89%,
         #FFF9BD 84.21%
     );
-
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
     background-clip: text;
     color: transparent;
 }
@@ -100,15 +87,12 @@
     padding: 1.5rem;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
     z-index: 95;
-    
-    /* Скрытие по умолчанию */
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Состояние видимости */
 .header__nav--visible {
     opacity: 1;
     visibility: visible;
@@ -154,10 +138,175 @@
     to { opacity: 1; }
 }
 
-/* Адаптивность */
-@media (max-width: 768px) {
+/* ===== АДАПТИВНОСТЬ ===== */
+
+/* Планшеты (до 1024px) */
+@media (max-width: 1024px) {
+    .header {
+        padding: 1.2rem 2rem;
+    }
+    
+    .header__logo-text {
+        font-size: clamp(2rem, 3.5vw, 3.5rem);
+    }
+    
     .header__nav {
-        width: calc(100% - 2rem);
+        right: 2rem;
+        width: 280px;
+    }
+}
+
+/* Мобильные устройства (до 768px) */
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem 1.5rem;
+        justify-content: flex-end; /* Кнопка справа */
+    }
+    
+    /* Логотип ПО ЦЕНТРУ (как на десктопе) */
+    .header__center {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+    
+    .header__logo-text {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+    }
+    
+    .header__subtitle {
+        font-size: 0.85rem;
+        margin-top: 0.2rem;
+    }
+    
+    /* Кнопка меню справа */
+    .header__menu {
+        padding: 0.7rem;
+        border-radius: 0.5rem;
+        z-index: 100; /* Поверх меню */
+    }
+    
+    .header__menu img {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .header_menu_text {
+        font-size: 0.8rem;
+    }
+    
+    /* Выпадающее меню (компактное, под кнопкой) */
+    .header__nav {
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        right: 1.5rem;
+        left: auto;
+        width: 260px;
+        max-width: calc(100% - 3rem);
+        border-radius: 0.75rem;
+        padding: 1.2rem;
+        z-index: 95;
+        transform: translateY(-10px);
+    }
+    
+    .header__nav--visible {
+        transform: translateY(0);
+    }
+    
+    .header__nav-list {
+        gap: 0.8rem;
+    }
+    
+    .header__nav-link {
+        font-size: 1.05rem;
+        padding: 0.6rem 0;
+        text-align: left;
+    }
+    
+    .header__nav-link:hover {
+        padding-left: 8px;
+    }
+}
+
+/* Маленькие мобильные (до 480px) */
+@media (max-width: 480px) {
+    .header {
+        padding: 0.8rem 1rem;
+    }
+    
+    .header__logo-text {
+        font-size: 1.4rem;
+    }
+    
+    .header__subtitle {
+        font-size: 0.6rem;
+    }
+    
+    .header__menu {
+        padding: 0.6rem;
+    }
+    
+    .header__menu img {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .header_menu_text {
+       font-size: 0.6rem /* Скрываем текст "Меню" на маленьких экранах */
+    }
+    
+    .header__nav {
         right: 1rem;
+        width: 240px;
+        max-width: calc(100% - 2rem);
+        padding: 1rem;
+    }
+    
+    .header__nav-list {
+        gap: 0.6rem;
+    }
+    
+    .header__nav-link {
+        font-size: 0.95rem;
+        padding: 0.5rem 0;
+    }
+}
+
+/* Очень маленькие экраны (до 360px) */
+@media (max-width: 360px) {
+    .header {
+        padding: 0.6rem 0.8rem;
+    }
+    
+    .header__logo-text {
+        font-size: 1.2rem;
+    }
+    
+
+    
+    .header__nav {
+        width: 220px;
+        padding: 0.8rem;
+    }
+    
+    .header__nav-link {
+        font-size: 0.9rem;
+    }
+}
+
+/* Landscape ориентация на мобильных */
+@media (max-width: 768px) and (orientation: landscape) {
+    .header {
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .header__logo-text {
+        font-size: 1.6rem;
+    }
+    
+    .header__nav {
+        max-height: 70vh;
+        overflow-y: auto;
     }
 }
