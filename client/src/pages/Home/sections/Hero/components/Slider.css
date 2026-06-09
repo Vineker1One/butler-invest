@@ -86,15 +86,18 @@
 }
 
 .slider__content--middle-white {
-  top: 40%;
+  top: 30%;
   transform: translateY(-50%);
   color: white;
+  text-align: center;
 }
 
-.slider__content--bottom-black {
+
+.slider__content--bottom-white {
   bottom: 3rem;
-  color: #000;
+  color: white;
   left: 6rem;
+  text-align: center;
 }
 
 /* ===== СОЦСЕТИ ===== */
@@ -247,7 +250,7 @@
   
   /* Слайд 1 — центр */
   .slider__image--1 {
-    background-position: left;
+    background-position: 35% center;
   }
   
   /* Слайд 2 — смещаем вправо, чтобы человек был виден */
@@ -295,10 +298,7 @@
     right: 0.8rem;
   }
   
-  /* Для второго слайда ещё больше смещаем */
-  .slider__image--2 {
-    background-position: 75% center;
-  }
+
 }
 
 /* Landscape ориентация */

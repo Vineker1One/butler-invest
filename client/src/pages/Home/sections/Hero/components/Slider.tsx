@@ -27,21 +27,21 @@ const slides: Slide[] = [
     id: 1,
     image: sliderImage1,
     mobileImage: sliderImage1Mobile,
-    text: "Текст первого слайда...",
+    text: "",
     position: "middle-white",
   },
   {
     id: 2,
     image: sliderImage2,
     mobileImage: sliderImage2Mobile,
-    text: "Текст второго слайда...",
-    position: "bottom-black",
+    text: "«Инвестиции в недвижимость, даже в очень небольших масштабах, остаются проверенным и верным средством увеличения денежного потока и богатства человека» — Роберт Кийосаки",
+    position: "bottom-white",
   },
   {
     id: 3,
     image: sliderImage3,
     mobileImage: sliderImage3Mobile,
-    text: "Текст третьего слайда...",
+    text: "«Чистый разум и свежие идеи – вот самая благодатная почва для роста доходов, а вдохновение – лучшая мотивация для успешного бизнеса» - Дэвид Рокфеллер",
     position: "middle-white",
   },
 ];
@@ -92,9 +92,11 @@ export const Slider = () => {
 
             <div className="slider__overlay" />
 
-            <div className={`slider__content slider__content--${slide.position} ${isActive ? "active" : ""}`}>
-              <p>{slide.text}</p>
-            </div>
+            {slide.text && (
+              <div className={`slider__content slider__content--${slide.position} ${isActive ? "active" : ""}`}>
+                <p>{slide.text}</p>
+              </div>
+            )}
           </div>
         );
       })}
