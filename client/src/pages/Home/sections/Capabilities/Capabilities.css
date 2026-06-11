@@ -6,11 +6,10 @@
 .capabilities__container {
   width: min(100%, clamp(50rem, 80vw, 90rem));
   margin: 0 auto;
-  
 }
 
 .capabilities__title {
-  grid-column: 1 / 2; /* 👈 левая колонка */
+  grid-column: 1 / 2;
   max-width: 32rem;
   text-align: center;
 }
@@ -36,6 +35,7 @@
   grid-template-columns: 1fr 1fr;
   justify-items: center;
 }
+
 .capability {
   position: relative;
   grid-column: 1 / -1;
@@ -46,14 +46,12 @@
   z-index: 0;
   width: min(100%, 90rem);
   margin: 0 auto;
-
 }
 
 .capability--normal {
   grid-template-areas: "text image";
 }
 
-/* 2 и 4 */
 .capability--reverse {
   grid-template-areas: "image text";
 }
@@ -66,12 +64,10 @@
 .capability__text {
   grid-area: text;
   width: min(100%, 32rem);
-
   background: transparent;
   border-radius: 0.75rem;
   padding: clamp(1.5rem, 3vw, 2.25rem);
   text-align: center;
-
   position: relative;
   z-index: -1;
 }
@@ -79,15 +75,13 @@
 .capability__text::before {
   content: "";
   position: absolute;
-
   top: 50%;
   transform: translateY(-50%);
-width: 100vw;
+  width: 100vw;
   height: 100%;
   background: #F8F6EF;
   border-radius: 1rem;
-
-  z-index: 1; /* было 0 */
+  z-index: 1;
 }
 
 .capability--normal .capability__text::before {
@@ -95,7 +89,6 @@ width: 100vw;
   right: auto;
 }
 
-/* 2 и 4 — фон уходит влево */
 .capability--reverse .capability__text::before {
   right: 0;
   left: auto;
@@ -122,7 +115,6 @@ width: 100vw;
   grid-area: image;
   position: relative;
   z-index: 1;
-  width: min(100%, 32rem);
   height: clamp(18rem, 28vw, 26rem);
   overflow: visible;
 }
@@ -135,7 +127,6 @@ width: 100vw;
   object-position: center;
 }
 
-/* 1 и 3: текст прижат к фото, фото прижато к тексту */
 .capability--normal .capability__text {
   justify-self: end;
 }
@@ -144,7 +135,6 @@ width: 100vw;
   justify-self: start;
 }
 
-/* 2 и 4: фото прижато к тексту, текст прижат к фото */
 .capability--reverse .capability__image-wrapper {
   justify-self: end;
 }
@@ -152,7 +142,6 @@ width: 100vw;
 .capability--reverse .capability__text {
   justify-self: start;
 }
-
 
 .capability--normal .capability__image {
   border-radius: 4rem 0 0 4rem;
@@ -162,67 +151,33 @@ width: 100vw;
   border-radius: 0 4rem 4rem 0;
 }
 
-/* .capability__number {
-  position: absolute;
-  top: -2.5rem;
-  z-index: 3;
-
-  width: clamp(5rem, 7vw, 7rem);
-  height: clamp(5rem, 7vw, 7rem);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-  background: #a0a88a;
-} */
-
-/* 1 и 3 — номер справа сверху */
-/* .capability--normal .capability__number {
-  right: -2.5rem;
-}
-
-.capability--reverse .capability__number {
-  left: -2.5rem;
-} */
-
 .capability__number {
   position: absolute;
   z-index: 3;
-
   width: clamp(5rem, 7vw, 7rem);
   height: clamp(5rem, 7vw, 7rem);
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: transparent;
 }
 
 .capability__number::before {
   content: "";
   position: absolute;
-
   width: 65%;
   height: 65%;
-
   border-radius: 50%;
   background: #fff;
-
   z-index: 1;
 }
 
-/* зелёный круг — верхний */
 .capability__number::after {
   content: "";
   position: absolute;
   inset: 0;
-
   border-radius: 50%;
   background: #a0a88a;
-
   z-index: 2;
 }
 
@@ -280,7 +235,6 @@ width: 100vw;
   transition: all 0.8s ease;
 }
 
-/* направления + вертикаль */
 .capability--normal {
   transform: translateX(-60px) translateY(40px);
 }
@@ -289,8 +243,308 @@ width: 100vw;
   transform: translateX(60px) translateY(40px);
 }
 
-/* активное состояние */
 .capability.visible {
   opacity: 1;
   transform: translateX(0) translateY(0);
 }
+
+/* ===== ПЛАНШЕТЫ (до 1024px) ===== */
+@media (max-width: 1024px) {
+  .capabilities {
+    padding: clamp(1.5rem, 3vw, 2.5rem) 2rem;
+  }
+
+  .capabilities__container {
+    width: 95%;
+  }
+
+  .capabilities__title p {
+    font-size: clamp(1.3rem, 2.2vw, 2rem);
+  }
+
+  .capabilities__title h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .capability {
+    column-gap: clamp(1.5rem, 3vw, 3rem);
+  }
+
+  .capability__text {
+    padding: clamp(1.2rem, 2.5vw, 2rem);
+  }
+
+  .capability__text h3 {
+    font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+    margin-bottom: 1.2rem;
+  }
+
+  .capability__text p {
+    font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+  }
+
+
+  .capability__number {
+    width: clamp(4.5rem, 6vw, 6rem);
+    height: clamp(4.5rem, 6vw, 6rem);
+  }
+
+  .capability__number span {
+    font-size: clamp(3.5rem, 6vw, 5rem);
+  }
+
+  .capability__number--1 {
+    top: -2rem;
+    right: -2rem;
+  }
+
+  .capability__number--2 {
+    top: -1.2rem;
+    left: -2.5rem;
+  }
+
+  .capability__number--3 {
+    top: -0.8rem;
+    right: -2.8rem;
+  }
+
+  .capability__number--4 {
+    top: -2.5rem;
+    left: -1.8rem;
+  }
+
+  .capability--normal .capability__image {
+    border-radius: 3rem 0 0 3rem;
+  }
+
+  .capability--reverse .capability__image {
+    border-radius: 0 3rem 3rem 0;
+  }
+}
+
+/* ===== МОБИЛЬНЫЕ (до 768px) ===== */
+@media (max-width: 768px) {
+  .capabilities {
+    padding: clamp(1.5rem, 3vw, 2rem) 1.2rem;
+  }
+
+  .capabilities__container {
+    width: 100%;
+  }
+
+  .capabilities__title {
+    max-width: 100%;
+  }
+
+  .capabilities__title p {
+    font-size: 1.2rem;
+  }
+
+  .capabilities__title h2 {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  .capability {
+    column-gap: 1rem;
+    width: 100%;
+  }
+
+  .capability__text {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .capability__text h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .capability__text p {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+
+  .capability__image-wrapper {
+    width: 100%;
+    height: clamp(14rem, 35vw, 18rem);
+  }
+
+  .capability__number {
+    width: clamp(3.5rem, 8vw, 4.5rem);
+    height: clamp(3.5rem, 8vw, 4.5rem);
+  }
+
+  .capability__number span {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+  }
+
+  .capability__number--1 {
+    top: -1.5rem;
+    right: -1.2rem;
+  }
+
+  .capability__number--1::before {
+    left: -0.4rem;
+    bottom: -0.4rem;
+  }
+
+  .capability__number--2 {
+    top: -1rem;
+    left: -1.2rem;
+  }
+
+  .capability__number--2::before {
+    right: -0.4rem;
+    top: -0.4rem;
+  }
+
+  .capability__number--3 {
+    top: -0.6rem;
+    right: -1.2rem;
+  }
+
+  .capability__number--3::before {
+    left: -0.45rem;
+    top: -0.35rem;
+  }
+
+  .capability__number--4 {
+    top: -2rem;
+    left: -1.2rem;
+  }
+
+  .capability__number--4::before {
+    right: -0.45rem;
+    bottom: -0.4rem;
+  }
+
+  .capability--normal .capability__image {
+    border-radius: 2rem 0 0 2rem;
+  }
+
+  .capability--reverse .capability__image {
+    border-radius: 0 2rem 2rem 0;
+  }
+}
+
+/* ===== МАЛЕНЬКИЕ МОБИЛЬНЫЕ (до 480px) ===== */
+@media (max-width: 480px) {
+  .capabilities {
+    padding: 1.5rem 0.8rem;
+  }
+
+  .capabilities__title p {
+    font-size: 1rem;
+  }
+
+  .capabilities__title h2 {
+    font-size: 1.8rem;
+  }
+
+  .capability {
+    column-gap: 0.8rem;
+  }
+
+  .capability__text {
+    padding: 0.8rem;
+  }
+
+  .capability__text h3 {
+    font-size: 0.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .capability__text p {
+    font-size: 0.5rem;
+  }
+
+  .capability__image-wrapper {
+    height: clamp(10rem, 40vw, 16rem);
+  }
+
+  .capability__number {
+    width: clamp(3rem, 10vw, 3.5rem);
+    height: clamp(3rem, 10vw, 3.5rem);
+  }
+
+  .capability__number span {
+    font-size: clamp(2rem, 7vw, 2.5rem);
+  }
+
+  .capability__number--1 {
+    top: -1.2rem;
+    right: -0.5rem;
+  }
+
+  .capability__number--2 {
+    top: -0.8rem;
+    left: -0.5rem;
+  }
+
+  .capability__number--3 {
+    top: -0.5rem;
+    right: -0.5rem;
+  }
+
+  .capability__number--4 {
+    top: -1.5rem;
+    left: -0.5rem;
+  }
+
+  .capability--normal .capability__image {
+    border-radius: 1.5rem 0 0 1.5rem;
+  }
+
+  .capability--reverse .capability__image {
+    border-radius: 0 1.5rem 1.5rem 0;
+  }
+}
+
+/* ===== ОЧЕНЬ МАЛЕНЬКИЕ (до 360px) ===== */
+@media (max-width: 360px) {
+  .capabilities {
+    padding: 1.2rem 0.6rem;
+  }
+
+  .capabilities__title h2 {
+    font-size: 1.5rem;
+  }
+
+  .capability__text h3 {
+    font-size: 0.4rem;
+  }
+
+  .capability__text p {
+    font-size: 0.4rem;
+  }
+
+  .capability__image-wrapper {
+    height: 10rem;
+  }
+
+  .capability__number {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .capability__number span {
+    font-size: 1.8rem;
+  }
+}
+
+/* ===== LANDSCAPE ОРИЕНТАЦИЯ ===== */
+@media (max-width: 768px) and (orientation: landscape) {
+  .capabilities {
+    padding: 1.5rem 1.5rem;
+  }
+
+
+  .capability__number {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .capability__number span {
+    font-size: 2rem;
+  }
+} 
