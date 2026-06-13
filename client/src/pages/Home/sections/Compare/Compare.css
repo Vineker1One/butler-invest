@@ -38,7 +38,6 @@
     background: #f8f6ef;
     box-shadow: 2.241px 5.229px 10.681px 0 rgba(46, 0, 0, 0.25);
     padding: 1.75rem 1.25rem;
-
     display: flex;
     flex-direction: column;
 }
@@ -61,7 +60,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .compare-card__header::after {
@@ -69,23 +67,10 @@
     position: absolute;
     left: 0;
     bottom: 0;
-
     width: 100%;
     height: 1px;
     background: rgba(55, 39, 26, 0.39);
 }
-
-/* .compare-card h3::after {
-    content: "";
-    display: block;
-
-    width: 100%;
-    height: 1px;
-
-    background: rgba(0, 0, 0, 0.2);
-
-    margin: 1rem auto 0;
-} */
 
 /* LIST */
 .compare-card ul {
@@ -122,4 +107,214 @@
     left: 0;
     color: #d85959;
     font-weight: 700;
+}
+
+/* ===== ПЛАНШЕТЫ (до 1024px) — 2 колонки ===== */
+@media (max-width: 1024px) {
+    .compare {
+        padding: clamp(1.5rem, 3vw, 2.5rem) 2rem;
+    }
+
+    .compare__container {
+        width: 95%;
+    }
+
+    .compare__header {
+        margin-bottom: 2rem;
+    }
+
+    .compare__header p {
+        font-size: clamp(1.2rem, 2vw, 1.6rem);
+    }
+
+    .compare__header h2 {
+        font-size: clamp(2.5rem, 4.5vw, 4rem);
+    }
+
+    /* 2 колонки вместо 4 */
+    .compare__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .compare-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .compare-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .compare-card__header {
+        min-height: 6rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .compare-card li {
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
+        padding-left: 1.3rem;
+    }
+}
+
+/* ===== МОБИЛЬНЫЕ (до 768px) — 2 колонки ===== */
+@media (max-width: 768px) {
+    .compare {
+        padding: clamp(1.5rem, 3vw, 2rem) 1.2rem;
+    }
+
+    .compare__container {
+        width: 100%;
+    }
+
+    .compare__header {
+        margin-bottom: 1.5rem;
+    }
+
+    .compare__header p {
+        font-size: 1.1rem;
+    }
+
+    .compare__header h2 {
+        font-size: clamp(2rem, 6vw, 3rem);
+    }
+
+    /* 2 колонки */
+    .compare__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+
+    .compare-card {
+        padding: 1.2rem 0.8rem;
+        border-radius: 0.75rem;
+    }
+
+    .compare-card h3 {
+        font-size: 1rem;
+        text-underline-offset: 0.15rem;
+    }
+
+    .compare-card__header {
+        min-height: 5rem;
+        padding-bottom: 0.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .compare-card li {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+        padding-left: 1.2rem;
+        line-height: 1.25;
+    }
+
+    .compare-card li.plus::before,
+    .compare-card li.minus::before {
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== МАЛЕНЬКИЕ МОБИЛЬНЫЕ (до 480px) ===== */
+@media (max-width: 480px) {
+    .compare {
+        padding: 1.5rem 0.8rem;
+    }
+
+    .compare__header p {
+        font-size: 0.95rem;
+    }
+
+    .compare__header h2 {
+        font-size: 1.8rem;
+    }
+
+    .compare__grid {
+        gap: 0.6rem;
+    }
+
+    .compare-card {
+        padding: 1rem 0.7rem;
+        border-radius: 0.6rem;
+    }
+
+    .compare-card h3 {
+        font-size: 0.9rem;
+    }
+
+    .compare-card__header {
+        min-height: 4rem;
+        padding-bottom: 0.6rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .compare-card li {
+        font-size: 0.75rem;
+        margin-bottom: 0.4rem;
+        padding-left: 1rem;
+    }
+
+    .compare-card li.plus::before,
+    .compare-card li.minus::before {
+        font-size: 0.8rem;
+    }
+}
+
+/* ===== ОЧЕНЬ МАЛЕНЬКИЕ (до 360px) ===== */
+@media (max-width: 360px) {
+    .compare {
+        padding: 1.2rem 0.6rem;
+    }
+
+    .compare__header h2 {
+        font-size: 1.5rem;
+    }
+
+    .compare__grid {
+        gap: 0.5rem;
+    }
+
+    .compare-card {
+        padding: 0.8rem 0.6rem;
+    }
+
+    .compare-card h3 {
+        font-size: 0.8rem;
+    }
+
+    .compare-card__header {
+        min-height: 3.5rem;
+    }
+
+    .compare-card li {
+        font-size: 0.7rem;
+        padding-left: 0.9rem;
+    }
+}
+
+/* ===== LANDSCAPE ОРИЕНТАЦИЯ ===== */
+@media (max-width: 768px) and (orientation: landscape) {
+    .compare {
+        padding: 1.5rem 1.5rem;
+    }
+
+    .compare__grid {
+        grid-template-columns: repeat(4, 1fr); /* Возвращаем 4 колонки в landscape */
+        gap: 0.5rem;
+    }
+
+    .compare-card {
+        padding: 1rem 0.8rem;
+    }
+
+    .compare-card h3 {
+        font-size: 0.9rem;
+    }
+
+    .compare-card__header {
+        min-height: 4rem;
+    }
+
+    .compare-card li {
+        font-size: 0.75rem;
+    }
 }
