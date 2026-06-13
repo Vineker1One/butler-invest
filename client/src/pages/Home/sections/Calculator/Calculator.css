@@ -17,11 +17,13 @@
 
 .calculator__card h2 {
     margin-bottom: 2rem;
+    font-size: 1.8rem;
+    font-weight: 400;
 }
 
 .calculator__field {
     margin-bottom: 1.5rem;
-        user-select: none;
+    user-select: none;
     -webkit-user-select: none;
     cursor: default;
 }
@@ -31,7 +33,7 @@
     margin-bottom: 0.5rem;
     font-weight: 300;
     font-size: 1.5rem;
-        user-select: none;
+    user-select: none;
     -webkit-user-select: none;
     cursor: default;
 }
@@ -43,27 +45,26 @@
     border: 0.78px solid #E7DFD2;
     background: #F7F4EB;
     text-align: center;
-        font-size: 1.4rem;
+    font-size: 1.4rem;
     font-family: "Gilroy", sans-serif;
     outline: none;
     -moz-appearance: textfield;
 }
 
 .calculator__field input:focus {
-  outline: none;
-  box-shadow: none;
+    outline: none;
+    box-shadow: none;
 }
 
 .calculator__field input::-webkit-outer-spin-button,
 .calculator__field input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .calculator__result {
     margin-top: 2rem;
 }
-
 
 .calculator__result b {
     display: block;
@@ -72,24 +73,25 @@
 }
 
 .calculator__switch {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .calculator__switch button {
-  flex: 1;
-  padding: 0.6rem;
-  border-radius: 999px;
-  border: none;
-  background: #e5e0d6;
-  cursor: pointer;
-  font-family: 'Gilroy', sans-serif;
+    flex: 1;
+    padding: 0.6rem;
+    border-radius: 999px;
+    border: none;
+    background: #e5e0d6;
+    cursor: pointer;
+    font-family: 'Gilroy', sans-serif;
+    font-size: 1rem;
 }
 
 .calculator__switch .active {
-  background: #a0a88a;
-  color: white;
+    background: #a0a88a;
+    color: white;
 }
 
 .calculator__details {
@@ -112,5 +114,142 @@
 
 .calculator__details b {
     font-weight: 500;
-    color: #2d7f4a; /* зелёный акцент для доходов */
+    color: #2d7f4a;
+}
+
+/* ===== ПЛАНШЕТЫ (до 1024px) ===== */
+@media (max-width: 1024px) {
+    .calculator {
+        padding: clamp(1.5rem, 3vw, 2.5rem) 2rem;
+    }
+
+    .calculator__card {
+        padding: 2rem;
+    }
+
+    .calculator__card h2 {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .calculator__field label {
+        font-size: 1.3rem;
+    }
+
+    .calculator__field input {
+        font-size: 1.2rem;
+        padding: 0.7rem;
+    }
+
+    .calculator__result b {
+        font-size: 1.3rem;
+    }
+
+    .calculator__switch button {
+        font-size: 0.95rem;
+        padding: 0.55rem;
+    }
+
+    .calculator__details p {
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== МОБИЛЬНЫЕ (до 768px) ===== */
+@media (max-width: 768px) {
+    .calculator {
+        padding: clamp(1.5rem, 3vw, 2rem) 1.2rem;
+    }
+
+    .calculator__card {
+        padding: 1.5rem;
+        border-radius: 0.8rem;
+    }
+
+    .calculator__card h2 {
+        font-size: 1.4rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .calculator__field {
+        margin-bottom: 1.2rem;
+    }
+
+    .calculator__field label {
+        font-size: 1.1rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .calculator__field input {
+        font-size: 1.1rem;
+        padding: 0.65rem;
+        border-radius: 1.5rem;
+    }
+
+    .calculator__result {
+        margin-top: 1.5rem;
+    }
+
+    .calculator__result b {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .calculator__switch {
+        gap: 0.4rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .calculator__switch button {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    .calculator__details {
+        margin-top: 0.8rem;
+        padding-top: 0.8rem;
+    }
+
+    .calculator__details p {
+        font-size: 0.85rem;
+        margin: 0.4rem 0;
+    }
+}
+
+/* ===== МАЛЕНЬКИЕ МОБИЛЬНЫЕ (до 480px) ===== */
+@media (max-width: 480px) {
+    .calculator {
+        padding: 1.5rem 0.8rem;
+    }
+
+    .calculator__card {
+        padding: 1.2rem;
+    }
+
+    .calculator__card h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .calculator__field label {
+        font-size: 1rem;
+    }
+
+    .calculator__field input {
+        font-size: 1rem;
+        padding: 0.6rem;
+    }
+
+    .calculator__result b {
+        font-size: 1.1rem;
+    }
+
+    .calculator__switch button {
+        font-size: 0.85rem;
+        padding: 0.45rem;
+    }
+
+    .calculator__details p {
+        font-size: 0.8rem;
+    }
 }

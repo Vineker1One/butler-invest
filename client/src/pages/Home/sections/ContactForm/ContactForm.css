@@ -390,7 +390,7 @@
 @media (max-width: 600px) {
   .contact-form {
     padding: 2rem 1rem;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .contact-form__card {
