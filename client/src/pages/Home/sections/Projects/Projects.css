@@ -19,7 +19,6 @@
 
 .projects__grid {
     display: grid;
-    /* 3 ряда для создания смещения */
     grid-template-columns: 1fr 1.2fr;
     grid-template-rows: 500px 200px 280px;
     user-select: none;
@@ -33,7 +32,7 @@
 /* 1-я фотка (Слева большая) - занимает 1 и 2 ряд */
 .projects__item--1 {
     grid-column: 1;
-    grid-row: 1 / span 2; /* Занимает два ряда */
+    grid-row: 1 / span 2;
 }
 
 /* 2-я фотка (Справа сверху) - начинается с 1 ряда */
@@ -66,7 +65,6 @@
     border-radius: 1rem;
     overflow: hidden;
     cursor: pointer;
-    /* Добавляем тень для красоты, если нужно */
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
@@ -74,11 +72,9 @@
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.8);
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     z-index: 999;
 }
 
@@ -86,22 +82,18 @@
     max-width: 90%;
     max-height: 90%;
     border-radius: 1rem;
+    animation: zoomIn 0.3s ease;
 }
 
 .projects__close {
     position: absolute;
     top: 2rem;
     right: 2rem;
-
     background: none;
     border: none;
     color: white;
     font-size: 2rem;
     cursor: pointer;
-}
-
-.projects__modal img {
-    animation: zoomIn 0.3s ease;
 }
 
 @keyframes zoomIn {
@@ -112,5 +104,140 @@
     to {
         transform: scale(1);
         opacity: 1;
+    }
+}
+
+/* ===== ПЛАНШЕТЫ (до 1024px) ===== */
+@media (max-width: 1024px) {
+    .projects {
+        padding: clamp(1.5rem, 3vw, 2.5rem) 2rem;
+    }
+
+    .projects__container {
+        width: 95%;
+    }
+
+    .projects__title {
+        font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+        margin-bottom: 2.5rem;
+    }
+
+    .projects__grid {
+        grid-template-rows: 400px 160px 220px;
+        gap: 1rem;
+        max-width: 900px;
+    }
+
+    .projects__item img {
+        border-radius: 0.8rem;
+    }
+
+    .projects__item {
+        border-radius: 0.8rem;
+    }
+}
+
+/* ===== МОБИЛЬНЫЕ (до 768px) ===== */
+@media (max-width: 768px) {
+    .projects {
+        padding: clamp(1.5rem, 3vw, 2rem) 1.2rem;
+    }
+
+    .projects__container {
+        width: 100%;
+    }
+
+    .projects__title {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+        margin-bottom: 2rem;
+    }
+
+    .projects__grid {
+        grid-template-rows: 300px 120px 180px;
+        gap: 0.8rem;
+        max-width: 100%;
+    }
+
+    .projects__item img {
+        border-radius: 0.6rem;
+    }
+
+    .projects__item {
+        border-radius: 0.6rem;
+    }
+
+    .projects__modal img {
+        border-radius: 0.8rem;
+    }
+
+    .projects__close {
+        top: 1.5rem;
+        right: 1.5rem;
+        font-size: 1.5rem;
+    }
+}
+
+/* ===== МАЛЕНЬКИЕ МОБИЛЬНЫЕ (до 480px) ===== */
+@media (max-width: 480px) {
+    .projects {
+        padding: 1.5rem 0.8rem;
+    }
+
+    .projects__title {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .projects__grid {
+        grid-template-rows: 220px 90px 130px;
+        gap: 0.6rem;
+    }
+
+    .projects__item img {
+        border-radius: 0.5rem;
+    }
+
+    .projects__item {
+        border-radius: 0.5rem;
+    }
+
+    .projects__close {
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.3rem;
+    }
+}
+
+/* ===== ОЧЕНЬ МАЛЕНЬКИЕ (до 360px) ===== */
+@media (max-width: 360px) {
+    .projects {
+        padding: 1.2rem 0.6rem;
+    }
+
+    .projects__title {
+        font-size: 1.1rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .projects__grid {
+        grid-template-rows: 180px 70px 110px;
+        gap: 0.5rem;
+    }
+
+    .projects__item img,
+    .projects__item {
+        border-radius: 0.4rem;
+    }
+}
+
+/* ===== LANDSCAPE ОРИЕНТАЦИЯ ===== */
+@media (max-width: 768px) and (orientation: landscape) {
+    .projects {
+        padding: 1.5rem 1.5rem;
+    }
+
+    .projects__grid {
+        grid-template-rows: 250px 100px 150px;
+        gap: 0.8rem;
     }
 }
