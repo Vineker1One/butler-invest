@@ -451,7 +451,7 @@
   gap: 0.5rem;
 }
 
-.phone-item {
+.phonePage-item {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -462,13 +462,13 @@
   padding: 0.5rem 0;
 }
 
-.phone-item span {
+.phonePage-item span {
   font-family: "Gilroy", sans-serif;
   font-size: 1.7rem;
   letter-spacing: 0.0875rem;
 }
 
-.phone-item:hover {
+.phonePage-item:hover {
   color: #8a9a6d;
   transform: translateX(4px);
 }
@@ -484,7 +484,7 @@
   padding: 1rem 0;
 }
 
-.social-link {
+.socialPage-link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -495,7 +495,7 @@
   border-radius: 0.5rem;
 }
 
-.social-link:hover {
+.socialPage-link:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(138, 154, 109, 0.3);
 }
@@ -544,7 +544,7 @@
     font-size: 2.8rem;
   }
   
-  .phone-item span {
+  .phonePage-item span {
     font-size: 1.5rem;
   }
   
@@ -579,11 +579,11 @@
     gap: 0.3rem;
   }
   
-  .phone-item {
+  .phonePage-item {
     justify-content: center;
   }
   
-  .phone-item span {
+  .phonePage-item span {
     font-size: 1.3rem;
     letter-spacing: 0.05rem;
   }
@@ -593,7 +593,7 @@
     padding: 0.8rem 0;
   }
   
-  .social-link {
+  .socialPage-link {
     width: 44px;
     height: 44px;
   }
@@ -628,10 +628,10 @@
     font-size: 1.8rem;
   }
   
-  .phone-item {
+  .phonePage-item {
   }
   
-  .phone-item span {
+  .phonePage-item span {
     font-size: 1.1rem;
     letter-spacing: 0.03rem;
   }
@@ -642,7 +642,7 @@
     border-radius: 0.75rem;
   }
   
-  .social-link {
+  .socialPage-link {
     width: 40px;
     height: 40px;
   }
@@ -665,7 +665,7 @@
     font-size: 1.6rem;
   }
   
-  .phone-item span {
+  .phonePage-item span {
     font-size: 1rem;
   }
   

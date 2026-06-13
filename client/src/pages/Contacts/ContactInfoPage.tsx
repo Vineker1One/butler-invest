@@ -33,25 +33,25 @@ export const ContactInfoPage = () => {
             <h2 className="contactsPage-title">Контакты</h2>
 
             <div className="contactsPage-phones">
-              <a href="tel:+79034075500" className="phone-item">
+              <a href="tel:+79034075500" className="phonePage-item">
                 <span>+7 (903) 407-55-00</span>
               </a>
-              <a href="tel:+79612900908" className="phone-item">
+              <a href="tel:+79612900908" className="phonePage-item">
                 <span>+7 (961) 290-09-08</span>
               </a>
-              <a href="tel:+79613287075" className="phone-item">
+              <a href="tel:+79613287075" className="phonePage-item">
                 <span>+7 (961) 328-70-75</span>
               </a>
             </div>
 
             <div className="contactsPage-socials">
-              <a href="https://t.me/autosalesrnd" className="social-link" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+              <a href="https://t.me/autosalesrnd" className="socialPage-link" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
                 {TG}
               </a>
-              <a href="https://vk.com/vlad_nedayvoz" className="social-link" target="_blank" rel="noopener noreferrer" aria-label="VKontakte">
+              <a href="https://vk.com/vlad_nedayvoz" className="socialPage-link" target="_blank" rel="noopener noreferrer" aria-label="VKontakte">
                 {VK}
               </a>
-              <a href="https://www.youtube.com/@autosalesrnd/shorts" className="social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <a href="https://www.youtube.com/@autosalesrnd/shorts" className="socialPage-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                 {YT}
               </a>
             </div>
