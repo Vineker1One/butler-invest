@@ -38,27 +38,27 @@
     background: rgba(255, 255, 255, 0.5);
     border-radius: 1rem;
     overflow: hidden;
-     width: 100%; /* 👈 ключ */
+    width: 100%;
     max-width: 32rem;
     transition: 0.3s ease;
 }
 
 .investment-card:nth-child(1) {
-  justify-self: end;
+    justify-self: end;
 }
 
 .investment-card:nth-child(2) {
-  justify-self: start;
+    justify-self: start;
 }
 
 .investment-card:hover {
-  transform: translateY(-6px);
+    transform: translateY(-6px);
 }
 
 /* IMAGE */
 .investment-card__image-wrapper {
     position: relative;
-    height: clamp(12rem, 18vw, 18rem);
+    /* height: clamp(12rem, 18vw, 18rem); */
 }
 
 .investment-card__image-wrapper img {
@@ -70,21 +70,17 @@
 
 /* BADGE */
 .investment-card__badge {
-  position: absolute;
-  bottom: -1.6rem; /* чуть ниже, чтобы компенсировать размер */
-  left: 50%;
-  transform: translateX(-50%);
-
-  background: #99A180;
-  color: #F3EBE6;
-
-  padding: 1rem 2.5rem; /* 👈 увеличили */
-  border-radius: 0.75rem;
-
-  font-size: 1.1rem; /* 👈 больше текст */
-  font-weight: 500;
-
-  white-space: nowrap; /* чтобы не ломался */
+    position: absolute;
+    bottom: -1.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #99A180;
+    color: #F3EBE6;
+    padding: 1rem 2.5rem;
+    border-radius: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    white-space: nowrap;
 }
 
 /* CONTENT */
@@ -102,7 +98,6 @@
     position: relative;
     padding-left: 1.5rem;
     margin-bottom: 0.75rem;
-
     font-size: clamp(1rem, 1.2vw, 1.2rem);
     line-height: 1.5;
 }
@@ -113,9 +108,212 @@
     position: absolute;
     left: 0;
     top: 0.5rem;
-
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 50%;
     background: #99A180;
+}
+
+/* ===== ПЛАНШЕТЫ (до 1024px) ===== */
+@media (max-width: 1024px) {
+    .investments {
+        padding: clamp(1.5rem, 3vw, 2.5rem) 2rem;
+    }
+
+    .investments__container {
+        width: 95%;
+    }
+
+    .investments__header p {
+        font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    }
+
+    .investments__header h2 {
+        font-size: clamp(2.5rem, 4.5vw, 4rem);
+    }
+
+    .investments__grid {
+        gap: clamp(0.8rem, 1.5vw, 1.5rem);
+    }
+
+    .investment-card {
+        max-width: 28rem;
+    }
+
+    /* .investment-card__image-wrapper {
+        height: clamp(10rem, 16vw, 15rem);
+    } */
+
+    .investment-card__badge {
+        bottom: -1.4rem;
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+        border-radius: 0.6rem;
+    }
+
+    .investment-card__content {
+        padding: 2.2rem 1.3rem 1.3rem;
+    }
+
+    .investment-card__content li {
+        font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+        margin-bottom: 0.6rem;
+    }
+
+    .investment-card__content li::before {
+        top: 0.45rem;
+        width: 0.45rem;
+        height: 0.45rem;
+    }
+}
+
+/* ===== МОБИЛЬНЫЕ (до 768px) ===== */
+@media (max-width: 768px) {
+    .investments {
+        padding: clamp(1.5rem, 3vw, 2rem) 1.2rem;
+    }
+
+    .investments__container {
+        width: 100%;
+    }
+
+    .investments__header {
+        margin-bottom: 1.5rem;
+    }
+
+    .investments__header p {
+        font-size: 1.1rem;
+    }
+
+    .investments__header h2 {
+        font-size: clamp(2rem, 6vw, 3rem);
+    }
+
+    .investments__grid {
+        gap: 1.5rem;
+    }
+
+    .investment-card {
+        max-width: 100%;
+    }
+
+    .investment-card__image-wrapper {
+        height: clamp(10rem, 25vw, 13rem);
+    }
+
+    .investment-card__badge {
+        bottom: -1.2rem;
+        padding: 0.7rem 1.5rem;
+        font-size: 0.6rem;
+        border-radius: 0.5rem;
+    }
+
+    .investment-card__content {
+        padding: 2rem 1.2rem 1.2rem;
+    }
+
+    .investment-card__content li {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        padding-left: 1.3rem;
+    }
+
+    .investment-card__content li::before {
+        top: 0.4rem;
+        width: 0.4rem;
+        height: 0.4rem;
+    }
+}
+
+/* ===== МАЛЕНЬКИЕ МОБИЛЬНЫЕ (до 480px) ===== */
+@media (max-width: 480px) {
+    .investments {
+        padding: 1.5rem 0.8rem;
+    }
+
+    .investments__header p {
+        font-size: 0.95rem;
+    }
+
+    .investments__header h2 {
+        font-size: 1.8rem;
+    }
+
+    .investments__grid {
+        gap: 1.2rem;
+    }
+
+    .investment-card__image-wrapper {
+        height: clamp(9rem, 30vw, 11rem);
+    }
+
+    .investment-card__badge {
+        bottom: -1rem;
+        padding: 0.6rem 1.2rem;
+        font-size: 0.5rem;
+    }
+
+    .investment-card__content {
+        padding: 1.8rem 1rem 1rem;
+    }
+
+    .investment-card__content li {
+        font-size: 0.7rem;
+        margin-bottom: 0.4rem;
+        padding-left: 1.2rem;
+    }
+
+    .investment-card__content li::before {
+        top: 0.35rem;
+        width: 0.35rem;
+        height: 0.35rem;
+    }
+}
+
+/* ===== ОЧЕНЬ МАЛЕНЬКИЕ (до 360px) ===== */
+@media (max-width: 360px) {
+    .investments {
+        padding: 1.2rem 0.6rem;
+    }
+
+    .investments__header h2 {
+        font-size: 1.5rem;
+    }
+
+    .investments__grid {
+        gap: 1rem;
+    }
+
+    .investment-card__image-wrapper {
+        height: 8rem;
+    }
+
+    .investment-card__badge {
+        padding: 0.5rem 1rem;
+        font-size: 0.4rem;
+    }
+
+    .investment-card__content {
+        padding: 1.5rem 0.8rem 0.8rem;
+    }
+
+    .investment-card__content li {
+        font-size: 0.5rem;
+    }
+}
+
+/* ===== LANDSCAPE ОРИЕНТАЦИЯ ===== */
+@media (max-width: 768px) and (orientation: landscape) {
+    .investments {
+        padding: 1.5rem 1.5rem;
+    }
+
+    .investment-card__image-wrapper {
+        height: 10rem;
+    }
+
+    .investment-card__badge {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
 }
