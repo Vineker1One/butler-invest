@@ -41,18 +41,15 @@
 .investment-criteria__button {
     display: block;
     margin: 0 auto 3rem;
-
     width: 14rem;
     height: 3.2rem;
-
     border-radius: 0.3125rem;
     border: 1px solid #000;
     font-family: "Gilroy", sans-serif;
     background: #f3efe6;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 300;
     color: #000;
-    font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -87,7 +84,7 @@
     border-radius: 1.5rem;
     padding: 2.5rem;
     color: #fff;
-    overflow: hidden; /* 🔑 Обрезаем всё, что выходит за рамки */
+    overflow: hidden;
     min-height: 280px;
     display: flex;
     flex-direction: column;
@@ -108,17 +105,17 @@
 }
 
 .criteria-card__text {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem; /* Отступ между абзацами */
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
 .criteria-card__paragraph {
-  font-size: 0.92rem;
-  line-height: 1.6;
-  color: #F3EFE6;
-  margin: 0;
-  text-indent: 1rem; /* Красная строка для каждого абзаца */
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #F3EFE6;
+    margin: 0;
+    text-indent: 1rem;
 }
 
 .criteria-card__number {
@@ -126,12 +123,12 @@
     bottom: -4rem;
     right: 1rem;
     font-family: "Great Vibes", serif;
-    font-size: 9rem; /* 🔑 Очень большой размер */
+    font-size: 9rem;
     font-weight: 400;
     color: #f8f6ef;
     line-height: 1;
-    white-space: nowrap; /* Не переносится */
-    pointer-events: none; /* Чтобы не мешала кликам */
+    white-space: nowrap;
+    pointer-events: none;
     z-index: 1;
 }
 
@@ -171,54 +168,309 @@
     color: #000;
 }
 
-/* ===== АДАПТИВНОСТЬ ===== */
-@media (max-width: 900px) {
-    .investment-criteria__cards {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+/* ===== ПЛАНШЕТЫ (до 1024px) ===== */
+@media (max-width: 1024px) {
+    .investment-criteria {
+        padding: 4rem 1.5rem;
     }
 
-    .criteria-card {
-        min-height: 240px;
+    .investment-criteria__container {
+        padding: 2.5rem;
+        border-radius: 1.5rem;
     }
 
-    .investment-criteria__expert-text {
-        padding: 2rem;
-    }
-}
-
-@media (max-width: 600px) {
     .investment-criteria__title {
         font-size: 1.3rem;
+        margin-bottom: 2.5rem;
     }
 
     .investment-criteria__image {
-        height: 250px;
-        border-radius: 1rem;
+        border-radius: 1.2rem;
+    }
+
+    .investment-criteria__button {
+        width: 13rem;
+        height: 3rem;
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .investment-criteria__subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .investment-criteria__cards {
+        gap: 1.5rem;
+        margin-bottom: 2.5rem;
     }
 
     .criteria-card {
         padding: 2rem;
+        border-radius: 1.2rem;
+        min-height: 240px;
     }
 
     .criteria-card__title {
         font-size: 1.2rem;
     }
 
-    .criteria-card__text {
-        font-size: 0.9rem;
+    .criteria-card__paragraph {
+        font-size: 0.88rem;
     }
 
     .criteria-card__number {
-        font-size: 4rem;
+        font-size: 7rem;
+        bottom: -3rem;
+    }
+
+    .investment-criteria__question {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
     }
 
     .investment-criteria__expert-text {
-        font-size: 0.95rem;
+        padding: 2.5rem;
+        border-radius: 1.2rem;
+        font-size: 1.1rem;
+    }
+
+    .investment-criteria__expert-text .highlight {
+        font-size: 1.2rem;
+    }
+}
+
+/* ===== МОБИЛЬНЫЕ (до 768px) ===== */
+@media (max-width: 768px) {
+    .investment-criteria {
+        padding: 3rem 1.2rem;
+    }
+
+    .investment-criteria__container {
+        padding: 2rem 1.5rem;
+        border-radius: 1.2rem;
+    }
+
+    .investment-criteria__title {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .investment-criteria__image-wrapper {
+        margin-bottom: 1.5rem;
+    }
+
+    .investment-criteria__image {
+        border-radius: 1rem;
+    }
+
+    .investment-criteria__button {
+        width: 12rem;
+        height: 2.8rem;
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .investment-criteria__subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .investment-criteria__cards {
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .criteria-card {
         padding: 1.5rem;
+        border-radius: 1rem;
+        min-height: 200px;
+    }
+
+    .criteria-card__title {
+        font-size: 1.1rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .criteria-card__text {
+        gap: 0.6rem;
+    }
+
+    .criteria-card__paragraph {
+        font-size: 0.82rem;
+        line-height: 1.5;
+        text-indent: 0.8rem;
+    }
+
+    .criteria-card__number {
+        font-size: 5rem;
+        bottom: -2rem;
+        right: 0.5rem;
+    }
+
+    .investment-criteria__question {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .investment-criteria__expert-text {
+        padding: 2rem 1.5rem;
+        border-radius: 1rem;
+        font-size: 1rem;
+        line-height: 1.6;
+        text-indent: 1.5rem;
+    }
+
+    .investment-criteria__expert-text p {
+        margin-bottom: 1rem;
     }
 
     .investment-criteria__expert-text .highlight {
         font-size: 1.1rem;
+    }
+}
+
+/* ===== МАЛЕНЬКИЕ МОБИЛЬНЫЕ (до 480px) ===== */
+@media (max-width: 480px) {
+    .investment-criteria {
+        padding: 2rem 0.8rem;
+    }
+
+    .investment-criteria__container {
+        padding: 1.5rem 1rem;
+        border-radius: 1rem;
+    }
+
+    .investment-criteria__title {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .investment-criteria__image-wrapper {
+        margin-bottom: 1.2rem;
+    }
+
+    .investment-criteria__image {
+        border-radius: 0.8rem;
+    }
+
+    .investment-criteria__button {
+        width: 11rem;
+        height: 2.6rem;
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .investment-criteria__subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .investment-criteria__cards {
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .criteria-card {
+        padding: 1.2rem;
+        border-radius: 0.8rem;
+        min-height: 180px;
+    }
+
+    .criteria-card__title {
+        font-size: 0.6rem;
+    }
+
+    .criteria-card__text {
+        gap: 0.5rem;
+    }
+
+    .criteria-card__paragraph {
+        font-size: 0.55rem;
+        line-height: 1.45;
+        text-indent: 0.7rem;
+    }
+
+    .criteria-card__number {
+        font-size: 4rem;
+        bottom: -1.5rem;
+    }
+
+    .investment-criteria__question {
+        font-size: 0.95rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .investment-criteria__expert-text {
+        padding: 1.5rem 1rem;
+        border-radius: 0.8rem;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        text-indent: 1.2rem;
+    }
+
+    .investment-criteria__expert-text p {
+        margin-bottom: 0.8rem;
+    }
+
+    .investment-criteria__expert-text .highlight {
+        font-size: 1rem;
+    }
+}
+
+/* ===== ОЧЕНЬ МАЛЕНЬКИЕ (до 360px) ===== */
+@media (max-width: 360px) {
+    .investment-criteria {
+        padding: 1.5rem 0.6rem;
+    }
+
+    .investment-criteria__container {
+        padding: 1.2rem 0.8rem;
+    }
+
+    .investment-criteria__title {
+        font-size: 0.9rem;
+    }
+
+    .investment-criteria__button {
+        width: 10rem;
+        height: 2.4rem;
+        font-size: 0.9rem;
+    }
+
+    .investment-criteria__subtitle {
+        font-size: 0.9rem;
+    }
+
+    .criteria-card {
+        padding: 1rem;
+        min-height: 160px;
+    }
+
+    .criteria-card__title {
+        font-size: 0.65rem;
+    }
+
+    .criteria-card__paragraph {
+        font-size: 0.5rem;
+    }
+
+    .criteria-card__number {
+        font-size: 3.5rem;
+        bottom: -1.2rem;
+    }
+
+    .investment-criteria__question {
+        font-size: 0.9rem;
+    }
+
+    .investment-criteria__expert-text {
+        padding: 1.2rem 0.8rem;
+        font-size: 0.85rem;
+        text-indent: 1rem;
+    }
+
+    .investment-criteria__expert-text .highlight {
+        font-size: 0.95rem;
     }
 }
