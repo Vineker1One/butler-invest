@@ -1,9 +1,16 @@
 import "./RenovationTypes.css";
 
-import basicImg from "@/assets/images/services/renovation/basic-main.webp";
-import smallImg1 from "@/assets/images/services/renovation/small-1.webp";
-import smallImg2 from "@/assets/images/services/renovation/small-2.webp";
+import basicImg from "@/assets/images/services/renovation/basicImg.webp";
+import basicSmallImg1 from "@/assets/images/services/renovation/basicSmallImg1.webp";
+import basicSmallImg2 from "@/assets/images/services/renovation/basicSmallImg2.webp";
+import trendyImg from "@/assets/images/services/renovation/trendyImg.webp";
+import trendySmallImg1 from "@/assets/images/services/renovation/trendySmallImg1.webp";
+import trendySmallImg2 from "@/assets/images/services/renovation/trendySmallImg2.webp";
+import designImg from "@/assets/images/services/renovation/designImg.webp";
+import designSmallImg1 from "@/assets/images/services/renovation/designSmallImg1.webp";
+import designSmallImg2 from "@/assets/images/services/renovation/designSmallImg2.webp";
 import renovationImg from "@/assets/images/services/renovation/renovation-main.webp";
+
 
 const renovationTypes = [
     {
@@ -22,7 +29,7 @@ const renovationTypes = [
             "ковролин в жилых комнатах",
         ],
         mainImage: basicImg,
-        smallImages: [smallImg1, smallImg2],
+        smallImages: [basicSmallImg1, basicSmallImg2],
     },
     {
         id: "trendy",
@@ -37,8 +44,8 @@ const renovationTypes = [
             "ламинат 32 класс",
             "двери МДФ",
         ],
-        mainImage: basicImg,
-        smallImages: [smallImg1, smallImg2],
+        mainImage: trendyImg,
+        smallImages: [trendySmallImg1, trendySmallImg2],
     },
     {
         id: "design",
@@ -56,8 +63,8 @@ const renovationTypes = [
             "бра и светильники",
             "натяжное полотно с теневым профилем",
         ],
-        mainImage: basicImg,
-        smallImages: [smallImg1, smallImg2],
+        mainImage: designImg,
+        smallImages: [designSmallImg1, designSmallImg2],
     },
 ];
 

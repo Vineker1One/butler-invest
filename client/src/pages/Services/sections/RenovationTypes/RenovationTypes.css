@@ -6,10 +6,10 @@
 .renovation-types__container {
   max-width: 1100px;
   margin: 0 auto;
-      background: #F8F6EF;
-    border-radius: 2rem;
-    padding: 3rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  background: #F8F6EF;
+  border-radius: 2rem;
+  padding: 3rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 /* ===== ВЕРХНИЙ БЛОК ===== */
@@ -43,19 +43,17 @@
 .renovation-types__button {
   display: block;
   margin: 0 auto 2rem;
-  
   width: 14rem;
   height: 3.2rem;
-    border-radius: 0.3125rem;
-    border: 1px solid #000;
-    font-family: "Gilroy", sans-serif;
-    background: #f3efe6;
-    font-size: 1rem;
-    font-weight: 300;
-    color: #000;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  border-radius: 0.3125rem;
+  border: 1px solid #000;
+  font-family: "Gilroy", sans-serif;
+  background: #f3efe6;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .renovation-types__button:hover {
@@ -72,7 +70,6 @@
   margin: 0;
 }
 
-
 .highlight-brand {
   font-family: "Great Vibes", serif;
   font-size: 1.4rem;
@@ -81,8 +78,6 @@
   display: inline-block;
   margin: 0 0.1rem;
 }
-
-
 
 /* ===== КАРТОЧКИ ===== */
 .renovation-types__cards {
@@ -93,13 +88,11 @@
 
 .renovation-card {
   display: grid;
-  /* 🔑 Плавные колонки без жёстких px. Левая и правая подстраиваются под контент */
   grid-template-columns: 1.2fr 1.5fr 1fr;
   gap: 0;
   background: #F3EFE6;
   overflow: hidden;
   min-height: 520px;
-
 }
 
 .renovation-card > * {
@@ -133,14 +126,11 @@
   font-weight: 300;
   color: #000;
   display: block;
-  
   position: relative;
-  left: 78%;  /* Сдвиг вправо, чтобы залезть на фото */
-  z-index: 5; /* Поверх изображения */
-  
-  white-space: nowrap; /* Запрещаем перенос строки */
+  left: 78%;
+  z-index: 5;
+  white-space: nowrap;
 }
-
 
 .renovation-card__description {
   font-size: 0.95rem;
@@ -149,7 +139,6 @@
   margin: 0;
 }
 
-/* Что входит */
 .renovation-card__features-title {
   font-size: 0.95rem;
   font-weight: 700;
@@ -200,18 +189,17 @@
 .renovation-card__right {
   display: flex;
   flex-direction: column;
-  align-items: center; /* 🔑 Центрирует всё по горизонтали */
+  align-items: center;
   justify-content: center;
   padding: 2.5rem 2rem;
   gap: 1.5rem;
 }
 
-/* 🔑 Фиксированная ширина для идеального центрирования */
 .renovation-card__images-small {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 190px; /* Делаем фото компактнее */
+  width: 190px;
 }
 
 .renovation-card__image-small {
@@ -220,33 +208,27 @@
   object-fit: cover;
 }
 
-/*  1-е фото: обрезаем левый край (сдвигаем "окно" вправо) */
 .renovation-card__image-small:first-child {
-  object-position: 65% center; 
-  /* 0% = видно левый край, 100% = видно правый. 65% слегка обрежет левую часть */
+  object-position: 65% center;
 }
 
-/* 🔹 2-е фото: центр по горизонтали, фокус на верхнюю часть */
 .renovation-card__image-small:nth-child(2) {
   object-position: center 20%;
 }
 
 .renovation-card__button {
   width: 100%;
-    margin: 0 auto 2rem;
-  
+  margin: 0 auto 2rem;
   height: 3.2rem;
-  
-    border-radius: 0.3125rem;
-    border: 1px solid #000;
-    font-family: "Gilroy", sans-serif;
-    background: #f3efe6;
-    font-size: 1rem;
-    font-weight: 300;
-    color: #000;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  border-radius: 0.3125rem;
+  border: 1px solid #000;
+  font-family: "Gilroy", sans-serif;
+  background: #f3efe6;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .renovation-card__button:hover {
@@ -255,102 +237,145 @@
   border-color: #333;
 }
 
-@media (max-width: 1200px) {
-  .renovation-card__title-main {
-    left: 12%; /* Уменьшаем наложение */
-    font-size: 3rem;
-  }
-  
-  .renovation-card__center {
-    min-height: 420px;
-  }
-  
-  .renovation-card__images-small {
-    width: 170px; /* Чуть компактнее */
-  }
-  
-  .renovation-card__button {
-    width: 170px;
-  }
-}
-
-/* ===== 1024px И МЕНЬШЕ ===== */
 @media (max-width: 1024px) {
   .renovation-card {
-    grid-template-columns: 1fr 1.2fr; /* Текст + Фото */
-    min-height: auto;
-  }
-  
-  .renovation-card__title-main {
-    left: 8%; /* Ещё меньше наложения */
-    font-size: 2.5rem;
+    grid-template-columns: 0.9fr 1.2fr 0.7fr;
+    min-height: 420px;
   }
 
-  .renovation-card__center {
-    min-height: 360px;
+  /* Левая часть наезжает на фото */
+  .renovation-card__left {
+    padding: 1.5rem;
+    gap: 1rem;
+    margin-right: -3rem; /* 👈 Наезжает на фото */
+    z-index: 2;
+    position: relative;
   }
-  
-  .renovation-card__right {
-    grid-column: 1 / -1;
-    flex-direction: row;
-    justify-content: center;
-    padding: 1.5rem 2rem;
-    gap: 2rem;
+
+  .renovation-card__title-main {
+    font-size: 2.4rem;
+    left: 50%;
   }
-  
+
   .renovation-card__images-small {
-    flex-direction: row;
-    width: auto;
-    max-width: 300px;
-  }
-  
-  .renovation-card__image-small {
-    width: 140px;
-    aspect-ratio: 16 / 9;
-  }
-  
-  .renovation-card__button {
-    width: auto;
-    white-space: nowrap;
+    width: 120px;
   }
 }
 
-/* ===== 768px И МЕНЬШЕ ===== */
 @media (max-width: 768px) {
-  .renovation-card {
-    grid-template-columns: 1fr;
+  .renovation-types {
+    padding: 3rem 1rem;
   }
 
-  .highlight-brand {
-    font-size: 1.2rem;
+  .renovation-types__container {
+    padding: 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .renovation-card {
+    min-height: 400px;
   }
 
   .renovation-card__left {
-    padding: 2rem;
-    text-align: center;
-    align-items: center;
+    padding: 1.5rem 1rem 1.5rem 1.5rem;
+    gap: 1rem;
+    margin-right: -2.5rem; /* 👈 Меньше наезжает */
   }
-  
+
   .renovation-card__title-main {
-    left: 0; /* Полностью убираем наложение на мобильных */
     font-size: 2.2rem;
+    left: 40%;
   }
-  
-  .renovation-card__center {
-    min-height: 280px;
-    order: 2;
+
+  .renovation-card__description {
+    font-size: 0.9rem;
   }
-  
+
+  .renovation-card__feature-item {
+    font-size: 0.85rem;
+  }
+
   .renovation-card__right {
-    grid-column: 1;
-    flex-direction: column;
-    padding: 1.5rem 2rem 2.5rem;
-    gap: 1.5rem;
+    padding: 1.5rem;
   }
-  
+
   .renovation-card__images-small {
-    flex-direction: row;
-    width: 100%;
-    max-width: 280px;
+    gap: 0.75rem;
+    width: 110px;
+  }
+
+  .renovation-card__button {
+    height: 3rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .renovation-card {
+    min-height: 360px;
+  }
+
+  .renovation-card__left {
+    margin-right: -2rem; /* 👈 Ещё меньше */
+    padding: 1.2rem 0.8rem 1.2rem 1rem;
+  }
+
+  .renovation-card__title-main {
+    font-size: 1.9rem;
+    left: 35%;
+  }
+
+  .renovation-card__description {
+    font-size: 0.82rem;
+  }
+
+  .renovation-card__feature-item {
+    font-size: 0.78rem;
+  }
+
+  .renovation-card__right {
+    padding: 1.2rem 0.8rem;
+  }
+
+  .renovation-card__images-small {
+    width: 95px;
+  }
+
+  .renovation-card__button {
+    height: 2.6rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .renovation-card {
+    min-height: 320px;
+  }
+
+  .renovation-card__left {
+    margin-right: -1.5rem; /* 👈 Минимальное наезжание */
+    padding: 1rem 0.6rem;
+  }
+
+  .renovation-card__title-main {
+    font-size: 1.6rem;
+    left: 30%;
+  }
+
+  .renovation-card__description {
+    font-size: 0.75rem;
+  }
+
+  .renovation-card__feature-item {
+    font-size: 0.7rem;
+  }
+
+  .renovation-card__images-small {
+    width: 85px;
+  }
+
+  .renovation-card__button {
+    height: 2.4rem;
+    font-size: 0.85rem;
   }
 }
