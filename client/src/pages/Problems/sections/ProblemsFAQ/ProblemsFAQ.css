@@ -1,7 +1,7 @@
 .problems-faq {
   background: #F3EFE6;
   padding: 5rem 2rem;
-  min-height: 100vh;
+  /* Убираем min-height: 100vh, чтобы секция не растягивалась */
 }
 
 .problems-faq__container {
@@ -28,21 +28,47 @@
 }
 
 .problems-faq__content p {
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.6rem 0; /* 👈 Уменьшен отступ между вопросами (было 1rem) */
 }
 
 .problems-faq__content p:last-child {
   margin-bottom: 0;
 }
 
-/* Адаптивность */
+/* ===== АДАПТАЦИЯ ===== */
+
+@media (max-width: 1024px) {
+  .problems-faq {
+    padding: 4rem 1.5rem;
+  }
+
+  .problems-faq__container {
+    padding: 3rem 2.5rem;
+    border-radius: 1.5rem;
+  }
+
+  .problems-faq__title {
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .problems-faq__content {
+    font-size: 1.3rem;
+  }
+
+  .problems-faq__content p {
+    margin-bottom: 0.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .problems-faq {
-    padding: 3rem 1.5rem;
+    padding: 3rem 1.2rem;
   }
   
   .problems-faq__container {
     padding: 2.5rem 1.5rem;
+    border-radius: 1.2rem;
   }
   
   .problems-faq__title {
@@ -51,17 +77,59 @@
   }
   
   .problems-faq__content {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  .problems-faq__content p {
+    margin-bottom: 0.5rem;
   }
 }
 
 @media (max-width: 480px) {
+  .problems-faq {
+    padding: 2rem 0.8rem;
+  }
+
   .problems-faq__container {
     padding: 2rem 1.2rem;
+    border-radius: 1rem;
   }
   
+  .problems-faq__title {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .problems-faq__content {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .problems-faq__content p {
+    margin-bottom: 0.4rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .problems-faq {
+    padding: 1.5rem 0.6rem;
+  }
+
+  .problems-faq__container {
+    padding: 1.5rem 1rem;
+  }
+
+  .problems-faq__title {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+
   .problems-faq__content {
     font-size: 0.95rem;
+  }
+
+  .problems-faq__content p {
+    margin-bottom: 0.35rem;
   }
 }
