@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./PortfolioShowcase.css";
 
 // Импорт изображений WebP
@@ -77,27 +77,22 @@ const homestagingData = [
   {
     id: 1,
     image: homestaging1,
-    title: "До хоумстейджинга",
+
   },
   {
     id: 2,
     image: homestaging2,
-    title: "",
+
   },
   {
     id: 3,
     image: homestaging3,
-    title: "Финальный результат",
-  },
-    {
-    id: 4,
-    image: homestaging4,
-
+    title: "",
   },
   {
     id: 5,
     image: homestaging5,
-    title: "Финальный результат",
+   
   },
 ];
 
@@ -114,47 +109,84 @@ const allPhotos = [
 export const PortfolioShowcase = () => {
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState<number>(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+   const [slideDirection, setSlideDirection] = useState<'left' | 'right' | null>(null);
+
+  const minSwipeDistance = 50; // Минимальная дистанция свайпа
 
   // Открыть фото
   const openPhoto = (photoSrc: string) => {
     const index = allPhotos.findIndex((photo) => photo.src === photoSrc);
     setCurrentPhotoIndex(index);
     setSelectedPhoto(photoSrc);
-    document.body.style.overflow = "hidden"; // Блокируем скролл
+    document.body.style.overflow = "hidden";
   };
 
   // Закрыть фото
   const closePhoto = () => {
     setSelectedPhoto(null);
-    document.body.style.overflow = "auto"; // Возвращаем скролл
+    document.body.style.overflow = "auto";
   };
 
   // Следующее фото
-  const nextPhoto = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    const nextIndex = (currentPhotoIndex + 1) % allPhotos.length;
-    setCurrentPhotoIndex(nextIndex);
-    setSelectedPhoto(allPhotos[nextIndex].src);
+  const nextPhoto = (e?: React.MouseEvent | React.TouchEvent) => {
+    if (e) e.stopPropagation();
+    setSlideDirection('left'); // 👈 Слайд влево
+    setTimeout(() => {
+      const nextIndex = (currentPhotoIndex + 1) % allPhotos.length;
+      setCurrentPhotoIndex(nextIndex);
+      setSelectedPhoto(allPhotos[nextIndex].src);
+      setSlideDirection(null); // 👈 Сбрасываем после смены
+    }, 300); // Длительность анимации
   };
 
   // Предыдущее фото
-  const prevPhoto = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    const prevIndex = (currentPhotoIndex - 1 + allPhotos.length) % allPhotos.length;
-    setCurrentPhotoIndex(prevIndex);
-    setSelectedPhoto(allPhotos[prevIndex].src);
+  const prevPhoto = (e?: React.MouseEvent | React.TouchEvent) => {
+    if (e) e.stopPropagation();
+    setSlideDirection('right'); // 👈 Слайд вправо
+    setTimeout(() => {
+      const prevIndex = (currentPhotoIndex - 1 + allPhotos.length) % allPhotos.length;
+      setCurrentPhotoIndex(prevIndex);
+      setSelectedPhoto(allPhotos[prevIndex].src);
+      setSlideDirection(null);
+    }, 300);
+  };
+
+  // ===== СВАЙПЫ =====
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      nextPhoto();
+    } else if (isRightSwipe) {
+      prevPhoto();
+    }
   };
 
   // Закрытие по ESC
-  useState(() => {
+  useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") closePhoto();
-      if (e.key === "ArrowRight") nextPhoto(e as any);
-      if (e.key === "ArrowLeft") prevPhoto(e as any);
+      if (e.key === "ArrowRight") nextPhoto();
+      if (e.key === "ArrowLeft") prevPhoto();
     };
     window.addEventListener("keydown", handleEsc);
     return () => window.removeEventListener("keydown", handleEsc);
-  });
+  }, [currentPhotoIndex]);
 
   return (
     <section className="portfolio-showcase">
@@ -204,23 +236,17 @@ export const PortfolioShowcase = () => {
             <div className="ideas-grid">
                 {bestIdeasData.map((item) => (
                 <div 
-                    key={item.id} 
-                    className="ideas-grid__item"
-                    onClick={() => openPhoto(item.image)}
+                  key={item.id} 
+                  className={`ideas-grid__item ${!item.title?.trim() ? 'ideas-grid__item--no-caption' : ''}`}
+                  onClick={() => openPhoto(item.image)}
                 >
-                    <div className="ideas-grid__image-wrapper">
-                    <img 
-                        src={item.image} 
-                        alt={item.title}
-                        className="ideas-grid__image"
-                    />
-                    <div className="ideas-grid__overlay">
-                        
-                    </div>
-                    </div>
-                    {item.title && (
+                  <div className="ideas-grid__image-wrapper">
+                    <img src={item.image} alt={item.title || "Фото"} className="ideas-grid__image" />
+                    <div className="ideas-grid__overlay"></div>
+                  </div>
+                  {item.title?.trim() && (
                     <p className="ideas-grid__caption">{item.title}</p>
-                    )}
+                  )}
                 </div>
                 ))}
             </div>
@@ -258,25 +284,47 @@ export const PortfolioShowcase = () => {
       </div>
 
       {/* ===== LIGHTBOX (МОДАЛЬНОЕ ОКНО) ===== */}
-      {selectedPhoto && (
-        <div className="portfolio-lightbox" onClick={closePhoto}>
-          <button className="portfolio-lightbox__close" onClick={closePhoto}>
-            ✕
-          </button>
+       {selectedPhoto && (
+        <div 
+          className="portfolio-lightbox" 
+          onClick={closePhoto}
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
+        <button className="portfolio-lightbox__close" onClick={closePhoto}>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path 
+              d="M18 6L6 18M6 6L18 18" 
+              stroke="white" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
           
           <button className="portfolio-lightbox__nav portfolio-lightbox__nav--prev" onClick={prevPhoto}>
-            ‹
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </button>
-          
+
           <button className="portfolio-lightbox__nav portfolio-lightbox__nav--next" onClick={nextPhoto}>
-            ›
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </button>
 
           <div className="portfolio-lightbox__content" onClick={(e) => e.stopPropagation()}>
             <img 
               src={selectedPhoto} 
               alt="Увеличенное фото"
-              className="portfolio-lightbox__image"
+              className={`portfolio-lightbox__image ${
+                slideDirection === 'left' ? 'slide-out-left' : 
+                slideDirection === 'right' ? 'slide-out-right' : 
+                'slide-in'
+              }`}
             />
             {allPhotos[currentPhotoIndex]?.title && (
               <p className="portfolio-lightbox__title">
