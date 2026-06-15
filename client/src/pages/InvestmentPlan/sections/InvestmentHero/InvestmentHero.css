@@ -1,5 +1,5 @@
 .investment-hero {
-  background: #F3EFE6; /* Общий фон страницы */
+  background: #F3EFE6;
   padding-bottom: 5rem;
 }
 
@@ -7,7 +7,7 @@
 .investment-hero__visual {
   position: relative;
   width: 100%;
-  height: 240px; /* Высота блока с цветами */
+  height: 240px;
   margin-bottom: 7rem;
 }
 
@@ -20,10 +20,9 @@
 
 .investment-hero__title-box {
   position: absolute;
-  bottom: -3rem; /* Сдвигаем вниз, чтобы перекрывал контент */
+  bottom: -3rem;
   left: 50%;
   transform: translateX(-50%);
-  
   background: #F8F6EF;
   padding: 1rem 3rem;
   border-radius: 0.5rem;
@@ -55,8 +54,8 @@
 }
 
 .highlight-brand-investment {
-  font-family: "Novelist", serif; /* Твой шрифт бренда */
-  font-size: 3.1rem; /* Чуть крупнее для акцента */
+  font-family: "Novelist", serif;
+  font-size: 3.1rem;
   font-weight: 400;
   display: inline-block;
   margin-left: 0.3rem;
@@ -75,10 +74,9 @@
   font-size: 1.5rem;
   line-height: 1.6;
   color: #000;
-  text-indent: 1rem; 
+  text-indent: 1rem;
   margin-bottom: 1.5rem;
   font-weight: 300;
-  
 }
 
 .investment-hero__list-wrapper {
@@ -88,10 +86,9 @@
 .investment-hero__list-title {
   font-size: 1.5rem;
   font-weight: 300;
-  text-indent: 1rem; 
+  text-indent: 1rem;
   color: #000;
   margin-bottom: 1rem;
-  
 }
 
 .investment-hero__list {
@@ -100,7 +97,6 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  
   gap: 0.6rem;
 }
 
@@ -123,31 +119,276 @@
   font-size: 1.5rem;
   line-height: 1.5;
   color: #000;
-  text-indent: 1rem; 
+  text-indent: 1rem;
   font-weight: 300;
 }
 
-/* ===== АДАПТИВНОСТЬ ===== */
+/* ===== АДАПТАЦИЯ ===== */
+
+@media (max-width: 1024px) {
+  .investment-hero {
+    padding-bottom: 4rem;
+  }
+
+  .investment-hero__visual {
+    height: 200px;
+    margin-bottom: 6rem;
+  }
+
+  .investment-hero__title-box {
+    bottom: -2.5rem;
+    padding: 0.9rem 2.5rem;
+  }
+
+  .investment-hero__title {
+    font-size: 1.8rem;
+  }
+
+  .investment-hero__container {
+    padding: 0 1.5rem;
+  }
+
+  .investment-hero__subtitle {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .highlight-brand-investment {
+    font-size: 2.7rem;
+  }
+
+  .investment-hero__card {
+    padding: 1.3rem 3.5rem;
+  }
+
+  .investment-hero__intro,
+  .investment-hero__list-title,
+  .investment-hero__list li,
+  .investment-hero__outro {
+    font-size: 1.3rem;
+  }
+
+  .investment-hero__intro {
+    margin-bottom: 1.3rem;
+  }
+
+  .investment-hero__list-wrapper {
+    margin-bottom: 1.8rem;
+  }
+
+  .investment-hero__list-title {
+    margin-bottom: 0.9rem;
+  }
+
+  .investment-hero__list {
+    gap: 0.5rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .investment-hero {
+    padding-bottom: 3rem;
+  }
+
+  .investment-hero__visual {
+    height: 180px;
+    margin-bottom: 5rem;
+  }
+
   .investment-hero__title-box {
     bottom: -2rem;
-    width: 90%;
-    padding: 0.8rem;
+    padding: 0.8rem 2rem;
+    border-radius: 0.4rem;
   }
-  
+
   .investment-hero__title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
-  
+
+  .investment-hero__container {
+    padding: 0 1.2rem;
+  }
+
   .investment-hero__subtitle {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
   }
-  
-  .highlight-brand {
-    font-size: 2.5rem;
+
+  .highlight-brand-investment {
+    font-size: 2.3rem;
   }
-  
+
   .investment-hero__card {
-    padding: 2rem 1.5rem;
+    padding: 1.2rem 2rem;
+    border-radius: 0.4rem;
+  }
+
+  .investment-hero__intro,
+  .investment-hero__list-title,
+  .investment-hero__list li,
+  .investment-hero__outro {
+    font-size: 1.15rem;
+  }
+
+  .investment-hero__intro {
+    margin-bottom: 1.2rem;
+    text-indent: 0.8rem;
+  }
+
+  .investment-hero__list-wrapper {
+    margin-bottom: 1.5rem;
+  }
+
+  .investment-hero__list-title {
+    margin-bottom: 0.8rem;
+    text-indent: 0.8rem;
+  }
+
+  .investment-hero__list {
+    gap: 0.5rem;
+  }
+
+  .investment-hero__list li {
+    padding-left: 1.3rem;
+  }
+
+  .investment-hero__list li::before {
+    left: 0.4rem;
+  }
+
+  .investment-hero__outro {
+    text-indent: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .investment-hero {
+    padding-bottom: 2rem;
+  }
+
+  .investment-hero__visual {
+    height: 150px;
+    margin-bottom: 4rem;
+  }
+
+  .investment-hero__title-box {
+    bottom: -1.5rem;
+    padding: 0.7rem 1.5rem;
+  }
+
+  .investment-hero__title {
+    font-size: 1.4rem;
+  }
+
+  .investment-hero__container {
+    padding: 0 1rem;
+  }
+
+  .investment-hero__subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .highlight-brand-investment {
+    font-size: 1.9rem;
+  }
+
+  .investment-hero__card {
+    padding: 1rem 1.5rem;
+  }
+
+  .investment-hero__intro,
+  .investment-hero__list-title,
+  .investment-hero__list li,
+  .investment-hero__outro {
+    font-size: 1rem;
+  }
+
+  .investment-hero__intro {
+    margin-bottom: 1rem;
+    text-indent: 0.7rem;
+  }
+
+  .investment-hero__list-wrapper {
+    margin-bottom: 1.2rem;
+  }
+
+  .investment-hero__list-title {
+    margin-bottom: 0.7rem;
+    text-indent: 0.7rem;
+  }
+
+  .investment-hero__list {
+    gap: 0.4rem;
+  }
+
+  .investment-hero__list li {
+    padding-left: 1.2rem;
+  }
+
+  .investment-hero__list li::before {
+    left: 0.35rem;
+  }
+
+  .investment-hero__outro {
+    text-indent: 0.7rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .investment-hero__visual {
+    height: 130px;
+    margin-bottom: 3.5rem;
+  }
+
+  .investment-hero__title-box {
+    bottom: -1.2rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .investment-hero__title {
+    font-size: 1.2rem;
+  }
+
+  .investment-hero__subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .highlight-brand-investment {
+    font-size: 1.6rem;
+  }
+
+  .investment-hero__card {
+    padding: 0.9rem 1.2rem;
+  }
+
+  .investment-hero__intro,
+  .investment-hero__list-title,
+  .investment-hero__list li,
+  .investment-hero__outro {
+    font-size: 0.95rem;
+  }
+
+  .investment-hero__intro {
+    margin-bottom: 0.9rem;
+    text-indent: 0.6rem;
+  }
+
+  .investment-hero__list-title {
+    margin-bottom: 0.6rem;
+    text-indent: 0.6rem;
+  }
+
+  .investment-hero__list {
+    gap: 0.35rem;
+  }
+
+  .investment-hero__list li {
+    padding-left: 1.1rem;
+  }
+
+  .investment-hero__outro {
+    text-indent: 0.6rem;
   }
 }
