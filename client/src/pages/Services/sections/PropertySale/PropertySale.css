@@ -39,19 +39,15 @@
 .property-sale__button {
     display: block;
     margin: 0 auto 2.5rem;
-
     width: 14rem;
     height: 3.2rem;
-
     border-radius: 0.3125rem;
     border: 1px solid #000;
-
     font-family: "Gilroy", sans-serif;
     background: #f3efe6;
     font-size: 1.2rem;
     font-weight: 300;
     color: #000;
-
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -70,7 +66,7 @@
     font-weight: 300;
     color: #000;
     text-align: justify;
-    text-align-last: left; /* Последний ряд по левому краю */
+    text-align-last: left;
     margin: 0 auto 2rem;
     max-width: 800px;
     hyphens: auto;
@@ -80,7 +76,7 @@
 /* ===== ПРЕИМУЩЕСТВА ===== */
 .property-sale__advantages {
     margin-top: 1rem;
-    max-width: 750px; /* 🔑 Ограничиваем ширину блока */
+    max-width: 750px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -92,7 +88,7 @@
     color: #000;
     text-align: left;
     display: block;
-    padding-left: 1.5rem; /* 🔑 Выравниваем заголовок точно по линии списка */
+    padding-left: 1.5rem;
 }
 
 .property-sale__list {
@@ -110,23 +106,21 @@
     font-size: 1.3rem;
     line-height: 1.5;
     color: #000;
-    padding-left: 1.5rem; /* Отступ под точку */
+    padding-left: 1.5rem;
     position: relative;
     text-align: left;
-    list-style: none; /* Дублируем для надёжности */
+    list-style: none;
 }
 
-/* 🔹 Точка-маркер */
 .property-sale__item::before {
-    /* 👈 Прямой селектор по классу */
     content: "•";
     position: absolute;
-    left: 0.45rem; /* Точка встанет ровно на старте текста */
-    top: 0.4rem; /* Подгоняем по вертикали под строку */
+    left: 0.45rem;
+    top: 0.4rem;
     color: #000;
     font-weight: 300;
     line-height: 1;
-    display: inline-block; /* Гарантия отображения в React/Vite */
+    display: inline-block;
 }
 
 .property-sale__item:last-child {
@@ -170,9 +164,9 @@
 .property-sale__steps-card::before {
     content: "";
     position: absolute;
-    left: 6.75rem; /* 1rem (padding timeline) + 4rem (цифра) + 0.75rem (половина gap) */
-    top: 3.2rem; /* ← точно по центру верхней точки */
-    bottom: 8.5rem;
+    left: 6.75rem; 
+    top: 3.2rem; 
+    bottom: 3rem;
     width: 1px;
     background: #000;
 }
@@ -203,24 +197,16 @@
     position: relative;
     z-index: 2;
     font-family: "Great Vibes", serif;
-
-    /* Увеличили размер */
     font-size: 2.6rem;
-
     font-weight: 400;
     color: #99a180;
     background: rgba(243, 239, 230, 0.8);
-
-    /* Убрали отступ сверху и добавили сдвиг вверх */
     padding: 0 0.5rem;
     margin-top: -0.2rem;
-
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     min-width: 4rem;
-
-    /* Компактная высота строки */
     line-height: 1;
 }
 
@@ -245,7 +231,6 @@
     margin: 0;
 }
 
-/* Вложенный список (для шага 06) */
 .sale-step__sublist {
     list-style: none;
     padding: 0.5rem 0 0 0;
@@ -269,7 +254,6 @@
     font-weight: bold;
 }
 
-/* Подзаголовок */
 .property-sale__subtitle {
     font-size: 1.2rem;
     font-weight: 800;
@@ -277,7 +261,6 @@
     margin: 2.5rem 0 1.5rem;
 }
 
-/* Зелёная плашка */
 .property-sale__green-box {
     background: #99a180;
     color: #fff;
@@ -293,8 +276,6 @@
     font-weight: 800;
 }
 
-/* ===== НИЖНИЙ ТЕКСТ С ПОДГОТОВКОЙ ===== */
-/* ===== НИЖНИЙ ТЕКСТ С ПОДГОТОВКОЙ ===== */
 .property-sale__preparation {
     text-align: center;
     margin-top: 2rem;
@@ -304,7 +285,7 @@
     font-size: 1.2rem;
     font-weight: 300;
     color: #000;
-    margin-bottom: 1.5rem; /* Отступ до списка */
+    margin-bottom: 1.5rem;
 }
 
 .property-sale__preparation-list {
@@ -320,7 +301,6 @@
     font-weight: 300;
 }
 
-/* 🔑 Точка ставится только перед 2-м и 3-м элементом */
 .property-sale__preparation-item + .property-sale__preparation-item::before {
     content: "";
     display: inline-block;
@@ -329,16 +309,14 @@
     background: #99a180;
     border-radius: 50%;
     margin: 0 1rem;
-    vertical-align: middle; /* Выравнивание по центру текста */
-    flex-shrink: 0; /* Чтобы точка не сжималась */
+    vertical-align: middle;
+    flex-shrink: 0;
 }
 
-/* ===== ДОПОЛНИТЕЛЬНЫЙ ДОХОД ===== */
 .property-sale__bonus-section {
     margin-top: 3rem;
 }
 
-/* Верхние картинки */
 .property-sale__bonus-images {
     display: grid;
     grid-template-columns: 1fr;
@@ -352,7 +330,6 @@
     border-radius: 1rem;
 }
 
-/* Заголовок */
 .property-sale__bonus-title {
     text-align: center;
     font-size: 1.2rem;
@@ -361,93 +338,172 @@
     margin-bottom: 2rem;
 }
 
-/* Нижний блок (Текст + Картинка) */
 .property-sale__bonus-content {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr; /* Текст чуть шире, фото уже */
-  align-items: start; /* 🔑 Автоматически растягивает оба блока по высоте самого высокого */
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: start;
 }
 
-/* Левый блок со списком */
 .property-sale__bonus-list {
-  background: #F3EFE6;
-  padding: 1.75rem 1.4rem;
-  border-radius: 1rem;
-  list-style: none;
-  margin: 0;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    background: #F3EFE6;
+    padding: 1.75rem 1.4rem;
+    border-radius: 1rem;
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-
 
 .property-sale__bonus-list li {
-  position: relative;
-  padding-left: 1.2rem;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #000;
-  text-align: left;
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #000;
+    text-align: left;
 }
 
 .property-sale__bonus-list li:last-child {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 .property-sale__bonus-list li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  font-weight: bold;
-  color: #000;
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    color: #000;
 }
 
 .property-sale__bonus-img-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border-radius: 1rem;
 }
 
 .property-sale__bonus-img-vertical {
-  width: auto;
-  max-width: 65%; /* 🔑 Уменьшает изображение в ~2 раза */
-  height: auto;   /* 🔑 Сохраняет оригинальные пропорции, обрезки НЕТ */
-  border-radius: 1rem;
-  display: block;
+    width: auto;
+    max-width: 65%;
+    height: auto;
+    border-radius: 1rem;
+    display: block;
 }
 
-
-/* ===== АДАПТИВНОСТЬ ===== */
+/* ===== АДАПТАЦИЯ ===== */
 
 @media (max-width: 1024px) {
+    .property-sale {
+        padding: 4rem 1.5rem;
+    }
+
+    .property-sale__container {
+        padding: 2.5rem;
+    }
+
+    .property-sale__title {
+        font-size: 1.6rem;
+    }
+
+    .property-sale__intro-text {
+        font-size: 1.1rem;
+        text-indent: 2rem;
+    }
+
+    .property-sale__list {
+        font-size: 1.15rem;
+    }
+
+    .property-sale__item {
+        font-size: 1.15rem;
+    }
+
+    /* Таймлайн пересчет */
+    .property-sale__steps-card {
+        padding: 2rem;
+    }
+
     .property-sale__steps-card::before {
-        bottom: 11rem; /* Подберите значение: 4rem, 5rem, 6rem... */
+        left: 6rem; /* Корректировка линии */
+        bottom: 2rem;
+    }
+
+    .sale-step::after {
+        left: 3.8rem; /* Корректировка точки */
+    }
+
+    .sale-step__number {
+        font-size: 2.2rem;
+        min-width: 3.5rem;
+    }
+
+    .property-sale__bonus-content {
+        grid-template-columns: 1.2fr 1fr; /* Оставляем 2 колонки */
     }
 }
 
 @media (max-width: 768px) {
     .property-sale {
-        padding: 3rem 1.5rem;
+        padding: 3rem 1.2rem;
     }
 
     .property-sale__container {
         padding: 2rem 1.5rem;
+        border-radius: 1.5rem;
+    }
+
+    .property-sale__title {
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
     }
 
     .property-sale__image {
-        height: 240px;
+        border-radius: 1rem;
+    }
+
+    .property-sale__button {
+        width: 12rem;
+        height: 2.8rem;
+        font-size: 1rem;
+        margin-bottom: 1.8rem;
     }
 
     .property-sale__intro-text {
-        text-align: left; /* На мобильных лучше читать слева */
+        font-size: 1rem;
+        line-height: 1.4;
+        text-indent: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .property-sale__advantages-title {
+        font-size: 1.1rem;
+        padding-left: 1.2rem;
+    }
+
+    .property-sale__list {
+        font-size: 1.05rem;
     }
 
     .property-sale__item {
-        font-size: 0.95rem;
+        font-size: 1.05rem;
+        padding-left: 1.2rem;
+    }
+    
+    .property-sale__item::before {
+        left: 0.3rem;
+    }
+
+    /* Таймлайн - адаптация для мобильных */
+    .property-sale__timeline-title {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .property-sale__timeline-title span {
+        font-size: 3.5rem;
     }
 
     .property-sale__steps-card {
@@ -456,58 +512,171 @@
     }
 
     .property-sale__steps-card::before {
-        left: 5rem; /* Сдвигаем линию левее на мобильных */
+        left: 4.5rem; /* Линия смещается левее */
+        top: 2.5rem;
+        
+    }
+
+    .sale-step {
+        gap: 1rem;
     }
 
     .sale-step::after {
-        left: 3.5rem;
+        left: 3rem; /* Точка смещается */
+        top: 0.5rem;
     }
 
     .sale-step__number {
-        width: 2.5rem;
-        font-size: 2.2rem;
+        font-size: 2rem;
+        min-width: 3rem;
+        padding: 0 0.3rem;
     }
 
-    .property-sale__green-box {
-        padding: 1.2rem;
+    .sale-step__content h4 {
         font-size: 0.95rem;
     }
 
-    .property-sale__bonus-images {
-        grid-template-columns: 1fr; /* Картинки друг под другом */
+    .sale-step__content p {
+        font-size: 0.9rem;
     }
 
-    .property-sale__bonus-content {
-        grid-template-columns: 1fr; /* Текст и картинка в колонку */
+    .property-sale__green-box {
+        padding: 1.2rem 2rem;
+        font-size: 1.2rem;
     }
 
-    .property-sale__bonus-img-wrapper {
-        min-height: 250px;
-        order: -1; /* Картинка сверху на мобильных (опционально) */
+    .property-sale__preparation-list {
+        font-size: 1rem;
+    }
+
+    /* Бонусы */
+    .property-sale__bonus-title {
+        font-size: 1.1rem;
         margin-bottom: 1.5rem;
     }
-}
-
-@media (max-width: 600px) {
-    .property-sale__preparation-list {
-        flex-direction: column;
-        gap: 0.5rem;
+    
+    .property-sale__bonus-content {
+        grid-template-columns: 1.2fr 1fr; /* Держим 2 колонки до 480px */
+        gap: 1rem;
     }
-
-    /* Убираем точки на мобильных, если слова переехали на новые строки */
-    .property-sale__preparation-item
-        + .property-sale__preparation-item::before {
-        display: none;
+    
+    .property-sale__bonus-list {
+        padding: 1.2rem;
+    }
+    
+    .property-sale__bonus-img-vertical {
+        max-width: 50%;
     }
 }
-
 
 @media (max-width: 480px) {
+    .property-sale {
+        padding: 2rem 0.8rem;
+    }
+
+    .property-sale__container {
+        padding: 1.5rem 1rem;
+    }
+
     .property-sale__title {
+        font-size: 1.2rem;
+    }
+
+    .property-sale__intro-text {
+        font-size: 0.9rem;
+        text-indent: 1rem;
+    }
+
+    .property-sale__item {
+        font-size: 0.95rem;
+    }
+
+    /* Таймлайн на узких экранах */
+    .property-sale__timeline-title span {
+        font-size: 3rem;
+    }
+
+    .property-sale__steps-card {
+        padding: 1.2rem;
+    }
+
+    .property-sale__steps-card::before {
+        left: 3.8rem;
+        
+    }
+
+    .sale-step::after {
+        left: 2.65rem;
+    }
+
+    .sale-step__number {
+        font-size: 1.7rem;
+        min-width: 2.5rem;
+    }
+    
+    .sale-step__sublist li {
+        font-size: 0.85rem;
+    }
+
+    .property-sale__green-box {
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    /* Бонусы - переключаем в 1 колонку для удобства */
+    .property-sale__bonus-content {
+        grid-template-columns: 1fr; 
+    }
+    
+    .property-sale__bonus-img-wrapper {
+        margin-top: 1rem;
+        height: auto;
+    }
+
+    .property-sale__button {
+        width: 11rem;
+        height: 2.6rem;
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .property-sale__bonus-img-vertical {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 360px) {
+    .property-sale__title {
+        font-size: 1.1rem;
+    }
+
+    .property-sale__item {
+        font-size: 0.9rem;
+    }
+
+    .property-sale__steps-card::before {
+        left: 3.7rem;
+    }
+
+    .sale-step::after {
+        left: 2.55rem;
+    }
+    
+    .sale-step__number {
         font-size: 1.5rem;
     }
 
     .property-sale__button {
-        width: 100%;
+        width: 10rem;
+        height: 2.4rem;
+        font-size: 0.9rem;
+        margin-bottom: 1.2rem;
+    }
+    .sale-step__content h4 {
+        font-size: 0.8rem;
+    }
+
+        .sale-step__content p {
+        font-size: 0.7rem;
     }
 }
