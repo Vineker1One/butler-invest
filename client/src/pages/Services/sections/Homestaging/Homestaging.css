@@ -401,108 +401,535 @@
   font-weight: 700;
 }
 
-/* Адаптив */
-@media (max-width: 900px) {
-  .homestaging__example-card {
-    padding: 2rem 1.5rem;
+/* ===== ПЛАНШЕТЫ (до 1024px) ===== */
+@media (max-width: 1024px) {
+  .homestaging {
+    padding: 4rem 1.5rem;
   }
-  
-  .homestaging__example-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .homestaging__example-image-wrapper {
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
 
-@media (max-width: 600px) {
-  .homestaging__example-title {
-    font-size: 1.15rem;
+  .homestaging__container {
+    padding: 1.5rem 3rem;
+    border-radius: 1.5rem;
   }
-  
-  .homestaging__conclusion {
-    font-size: 0.95rem;
-    text-align: left;
-  }
-}
 
-/* Адаптив для новых блоков */
-@media (max-width: 768px) {
-  .homestaging__text-block,
-  .homestaging__brief {
-    padding: 1.5rem;
+  .homestaging__title {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
   }
-  
-  .homestaging__brief-title {
+
+  .homestaging__image {
+    height: 280px;
+  }
+
+  .homestaging__button {
+    width: 13rem;
+    height: 3rem;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .homestaging__content {
+    padding: 2rem;
+    border-radius: 0.8rem;
+  }
+
+  .homestaging__text {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    text-indent: 1rem;
+  }
+
+  .homestaging__list li {
+    font-size: 1.1rem;
+    padding-left: 1.3rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .homestaging__list li::before {
     font-size: 1.1rem;
   }
-  
-  .homestaging__brief-list li {
-    padding-left: 1.2rem;
-    margin-bottom: 0.8rem;
-  }
-}
 
-@media (max-width: 480px) {
-  .homestaging__text-block,
-  .homestaging__brief {
-    padding: 1.2rem;
-    font-size: 0.95rem;
-  }
-}
-
-/* ===== АДАПТИВНОСТЬ ===== */
-@media (max-width: 768px) {
-  .homestaging {
-    padding: 3rem 1.5rem;
-  }
-  
-  .homestaging__container {
-    padding: 2rem 1.5rem;
-  }
-  
-  .homestaging__comparison {
-    grid-template-columns: 1fr;
-    gap: 0.8rem;
-  }
-  
-  .homestaging__image {
-    height: 250px;
-  }
-  
-  .homestaging__content {
-    padding: 1.5rem;
-  }
-  
-  .homestaging__text {
-    text-align: left;
+  .homestaging__concept {
+    margin-top: 3rem;
   }
 
-    .homestaging__box {
-    padding: 1.5rem;
-    border-radius: 1rem;
-    font-size: 0.95rem;
-  }
-  
   .homestaging__concept-title {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .homestaging__box {
+    padding: 1.5rem 2rem;
+    border-radius: 1.2rem;
     font-size: 1.2rem;
   }
+
+  .homestaging__comparison-title {
+    font-size: 1.4rem;
+  }
+
+  .homestaging__goals {
+    margin-top: 2.5rem;
+  }
+
+  .homestaging__text-block {
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .homestaging__brief-title {
+    font-size: 1.2rem;
+    margin: 2rem 0 1.2rem;
+  }
+
+  .homestaging__brief-content {
+    font-size: 1.2rem;
+  }
+
+  .homestaging__brief-subtitle {
+    font-size: 1.2rem;
+    margin-top: 1.2rem;
+  }
+
+  .homestaging__brief-list li {
+    padding-left: 1.3rem;
+  }
+
+  .homestaging__brief-list li::before {
+    font-size: 1.3rem;
+  }
+
+  .homestaging__example {
+    margin-top: 2.5rem;
+  }
+
+  .homestaging__example-card {
+    padding: 2.5rem 3rem;
+    border-radius: 1.2rem;
+  }
+
+  .homestaging__example-title {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+  }
+
+  .homestaging__example-grid {
+    gap: 2rem;
+  }
+
+  .homestaging__example-col h4 {
+    font-size: 1.1rem;
+  }
+
+  .homestaging__example-list li {
+    font-size: 0.9rem;
+    padding-left: 1.1rem;
+  }
+
+  .homestaging__example-list li::before {
+    width: 5px;
+    height: 5px;
+  }
+
+  .homestaging__example-list li span {
+    font-size: 0.85rem;
+  }
+
+  .homestaging__conclusion {
+    font-size: 1.2rem;
+    padding: 0 1.5rem;
+  }
 }
 
-@media (max-width: 480px) {
+/* ===== МОБИЛЬНЫЕ (до 768px) ===== */
+@media (max-width: 768px) {
+  .homestaging {
+    padding: 3rem 1.2rem;
+  }
+
+  .homestaging__container {
+    padding: 1.2rem 2rem;
+    border-radius: 1.2rem;
+  }
+
   .homestaging__title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
   }
-  
+
+  .homestaging__image {
+    height: 240px;
+  }
+
+  .homestaging__image-wrapper--secondary .homestaging__image {
+    border-radius: 1rem;
+  }
+
   .homestaging__button {
-    width: 100%;
+    width: 12rem;
+    height: 2.8rem;
+    font-size: 1rem;
+    margin-bottom: 1.8rem;
   }
-  
+
+  .homestaging__content {
+    padding: 1.5rem;
+    border-radius: 0.7rem;
+  }
+
+  .homestaging__text {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-indent: 0.9rem;
+  }
+
+  .homestaging__list {
+    margin-top: 1.2rem;
+  }
+
   .homestaging__list li {
+    font-size: 1rem;
     padding-left: 1.2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .homestaging__list li::before {
+    font-size: 1rem;
+    left: 0.4rem;
+  }
+
+  .homestaging__concept {
+    margin-top: 2.5rem;
+  }
+
+  .homestaging__concept-title {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .homestaging__box {
+    padding: 1.2rem 1.5rem;
+    border-radius: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .homestaging__box p {
+    margin-bottom: 0.8rem;
+  }
+
+  .homestaging__comparison-title {
+    font-size: 1.3rem;
+    margin-top: 1.2rem;
+  }
+
+  .homestaging__goals {
+    margin-top: 2rem;
+  }
+
+  .homestaging__text-block {
+    padding: 1rem 1.2rem;
+    border-radius: 0.8rem;
+    font-size: 1.1rem;
+  }
+
+  .homestaging__text-block p {
+    margin-bottom: 1rem;
+    text-indent: 1.2rem;
+  }
+
+  .homestaging__brief {
+    padding: 1rem 1.2rem;
+    border-radius: 0.8rem;
+  }
+
+  .homestaging__brief-title {
+    font-size: 1.1rem;
+    margin: 1.8rem 0 1rem;
+  }
+
+  .homestaging__brief-content {
+    font-size: 1.1rem;
+  }
+
+  .homestaging__brief-content > p {
+    text-indent: 1.2rem;
+  }
+
+  .homestaging__brief-subtitle {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+  }
+
+  .homestaging__brief-list li {
+    padding-left: 1.2rem;
+    line-height: 1.5;
+  }
+
+  .homestaging__brief-list li::before {
+    font-size: 1.2rem;
+    left: 0.4rem;
+  }
+
+  .homestaging__example {
+    margin-top: 2rem;
+  }
+
+  .homestaging__example-card {
+    padding: 2rem 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .homestaging__example-title {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .homestaging__example-grid {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 1.5rem;
+  }
+
+  .homestaging__example-col h4 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .homestaging__example-list li {
+    font-size: 0.85rem;
+    padding-left: 1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .homestaging__example-list li::before {
+    width: 5px;
+    height: 5px;
+    top: 0.5em;
+  }
+
+  .homestaging__example-list li span {
+    font-size: 0.8rem;
+  }
+
+  .homestaging__example-image-wrapper {
+    margin-top: 1.2rem;
+    border-radius: 0.8rem;
+  }
+
+  .homestaging__example-sublist li {
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+    padding-left: 1rem;
+  }
+
+  .homestaging__example-sublist li::before {
+    font-size: 0.9rem;
+    left: 0.15rem;
+  }
+
+  .homestaging__conclusion {
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+    text-indent: 0.8rem;
+  }
+}
+
+/* ===== МАЛЕНЬКИЕ МОБИЛЬНЫЕ (до 480px) ===== */
+@media (max-width: 480px) {
+  .homestaging {
+    padding: 2rem 0.8rem;
+  }
+
+  .homestaging__container {
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .homestaging__title {
+    font-size: 1.2rem;
+  }
+
+  .homestaging__image {
+    height: 200px;
+  }
+
+  .homestaging__button {
+    width: 11rem;
+    height: 2.6rem;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .homestaging__content {
+    padding: 1.2rem;
+  }
+
+  .homestaging__text {
+    font-size: 0.92rem;
+    text-indent: 0.8rem;
+  }
+
+  .homestaging__list li {
+    font-size: 0.92rem;
+    padding-left: 1.1rem;
+  }
+
+  .homestaging__list li::before {
+    font-size: 0.92rem;
+  }
+
+  .homestaging__concept-title {
+    font-size: 1.1rem;
+  }
+
+  .homestaging__box {
+    padding: 1rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  .homestaging__comparison-title {
+    font-size: 1.2rem;
+  }
+
+  .homestaging__text-block {
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+  }
+
+  .homestaging__text-block p {
+    text-indent: 1rem;
+  }
+
+  .homestaging__brief-title {
+    font-size: 1rem;
+    margin: 1.5rem 0 0.9rem;
+  }
+
+  .homestaging__brief-content {
+    font-size: 1rem;
+  }
+
+  .homestaging__brief-subtitle {
+    font-size: 1rem;
+  }
+
+  .homestaging__brief-list li {
+    padding-left: 1.1rem;
+  }
+
+  .homestaging__brief-list li::before {
+    font-size: 1.1rem;
+  }
+
+  .homestaging__example-card {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .homestaging__example-title {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .homestaging__example-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .homestaging__example-col h4 {
+    font-size: 0.95rem;
+  }
+
+  .homestaging__example-list li {
+    font-size: 0.8rem;
+  }
+
+  .homestaging__example-list li span {
+    font-size: 0.75rem;
+  }
+
+  .homestaging__example-sublist li {
+    font-size: 0.8rem;
+  }
+
+  .homestaging__conclusion {
+    font-size: 1rem;
+    padding: 0 0.8rem;
+    text-indent: 0.7rem;
+  }
+}
+
+/* ===== ОЧЕНЬ МАЛЕНЬКИЕ (до 360px) ===== */
+@media (max-width: 360px) {
+  .homestaging {
+    padding: 1.5rem 0.6rem;
+  }
+
+  .homestaging__container {
+    padding: 0.8rem 1.2rem;
+  }
+
+  .homestaging__title {
+    font-size: 1.1rem;
+  }
+
+  .homestaging__image {
+    height: 180px;
+  }
+
+  .homestaging__button {
+    width: 10rem;
+    height: 2.4rem;
+    font-size: 0.9rem;
+  }
+
+  .homestaging__content {
+    padding: 1rem;
+  }
+
+  .homestaging__text {
+    font-size: 0.88rem;
+  }
+
+  .homestaging__list li {
+    font-size: 0.88rem;
+  }
+
+  .homestaging__box {
+    padding: 0.9rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .homestaging__text-block {
+    padding: 0.8rem 0.9rem;
+    font-size: 0.95rem;
+  }
+
+  .homestaging__brief-title {
+    font-size: 0.95rem;
+  }
+
+  .homestaging__brief-content {
+    font-size: 0.95rem;
+  }
+
+  .homestaging__example-card {
+    padding: 1.2rem 1rem;
+  }
+
+  .homestaging__example-title {
+    font-size: 1rem;
+  }
+
+  .homestaging__example-list li {
+    font-size: 0.75rem;
+  }
+
+  .homestaging__example-list li span {
+    font-size: 0.72rem;
+  }
+
+  .homestaging__conclusion {
+    font-size: 0.95rem;
+    padding: 0 0.6rem;
   }
 }
