@@ -1,5 +1,5 @@
 .investment-conclusions {
-  background: #F3EFE6; /* Светлый фон секции */
+  background: #F3EFE6;
   padding: 5rem 2rem;
 }
 
@@ -42,7 +42,7 @@
   color: #000;
   flex-shrink: 0;
   line-height: 1;
-  margin-top: -0.3rem; /* Небольшая коррекция по вертикали */
+  margin-top: -0.3rem;
 }
 
 .conclusion-item__content {
@@ -97,7 +97,6 @@
   line-height: 1.2;
 }
 
-/* Бренд (уже должен быть в глобальных стилях) */
 .highlight-brand_conclusion {
   font-family: "Novelist", serif;
   font-size: 1.6rem;
@@ -106,45 +105,178 @@
   margin: 0 0.1rem;
 }
 
-/* Адаптивность */
-@media (max-width: 768px) {
+/* ===== АДАПТАЦИЯ ===== */
+
+@media (max-width: 1024px) {
   .investment-conclusions {
-    padding: 3rem 1.5rem;
+    padding: 4rem 1.5rem;
   }
-  
+
   .investment-conclusions__container {
-    padding: 2.5rem 1.5rem;
+    padding: 3rem 2.5rem;
+    border-radius: 1.5rem;
   }
-  
+
   .investment-conclusions__title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-bottom: 2.5rem;
   }
-  
+
   .conclusion-item {
-    gap: 1.2rem;
+    gap: 1.5rem; /* Уменьшаем отступ между номером и текстом */
   }
-  
+
   .conclusion-item__number {
-    font-size: 2.8rem;
+    font-size: 3rem;
+    margin-top: -0.2rem;
   }
-  
+
   .conclusion-item__content p {
     font-size: 1rem;
   }
-  
-  .highlight-brand {
+
+  .conclusion-item__subtitle {
+    font-size: 1rem;
+  }
+
+  .conclusion-item__list li {
+    font-size: 1rem;
+    padding-left: 1.3rem;
+  }
+
+  .conclusion-item__list li::before {
+    font-size: 1.1rem;
+  }
+
+  .highlight-brand_conclusion {
     font-size: 1.4rem;
   }
 }
 
-@media (max-width: 480px) {
-  .conclusion-item {
-    flex-direction: column;
-    gap: 0.5rem;
+@media (max-width: 768px) {
+  .investment-conclusions {
+    padding: 3rem 1.2rem;
   }
-  
+
+  .investment-conclusions__container {
+    padding: 2.5rem 1.5rem;
+    border-radius: 1.2rem;
+  }
+
+  .investment-conclusions__title {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+
+  .conclusion-item {
+    gap: 1rem; /* Ещё ближе */
+  }
+
   .conclusion-item__number {
-    margin-top: 0;
+    font-size: 2.5rem;
+    margin-top: -0.1rem;
+  }
+
+  .conclusion-item__content {
+    padding-top: 0.3rem;
+  }
+
+  .conclusion-item__content p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .conclusion-item__subtitle {
+    font-size: 0.95rem;
+    margin-top: 1rem !important;
+  }
+
+  .conclusion-item__list {
+    margin-bottom: 1rem;
+  }
+
+  .conclusion-item__list li {
+    font-size: 0.95rem;
+    padding-left: 1.2rem;
+  }
+
+  .conclusion-item__list li::before {
+    font-size: 1rem;
+    left: 0.4rem;
+  }
+
+  .highlight-brand_conclusion {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .investment-conclusions {
+    padding: 2rem 0.8rem;
+  }
+
+  .investment-conclusions__container {
+    padding: 2rem 1rem;
+    border-radius: 1rem;
+  }
+
+  .investment-conclusions__title {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .conclusion-item {
+    gap: 0.7rem; /* Компактно */
+  }
+
+  .conclusion-item__number {
+    font-size: 2rem;
+  }
+
+  .conclusion-item__content p {
+    font-size: 0.9rem;
+  }
+
+  .conclusion-item__subtitle {
+    font-size: 0.9rem;
+  }
+
+  .conclusion-item__list li {
+    font-size: 0.9rem;
+    padding-left: 1rem;
+  }
+
+  .conclusion-item__list li::before {
+    font-size: 0.95rem;
+  }
+
+  .highlight-brand_conclusion {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .investment-conclusions__container {
+    padding: 1.5rem 0.8rem;
+  }
+
+  .investment-conclusions__title {
+    font-size: 1.1rem;
+  }
+
+  .conclusion-item {
+    gap: 0.5rem; /* Минимальный отступ */
+  }
+
+  .conclusion-item__number {
+    font-size: 1.8rem;
+  }
+
+  .conclusion-item__content p {
+    font-size: 0.85rem;
+  }
+
+  .conclusion-item__list li {
+    font-size: 0.85rem;
   }
 }
