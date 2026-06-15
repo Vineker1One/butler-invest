@@ -4,30 +4,28 @@
 }
 
 .investPlan-cards__container {
-  max-width: 1100px; /* 🔑 Карты стали значительно шире */
+  max-width: 1100px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 4rem; /* 🔑 Больше отступа между крупными картами */
+  gap: 4rem;
 }
 
 .investPlan-card {
   background: #F8F6EF;
   border-radius: 2rem;
-  padding: 2rem 6rem; /* 🔑 Больше внутренних отступов */
+  padding: 2rem 6rem;
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
 }
 
-/* Заголовок карточки */
 .investPlan-card__title {
-  font-size: 1.5rem; /* 🔑 Крупнее */
+  font-size: 1.5rem;
   font-weight: 800;
   color: #000;
   text-align: center;
   margin-bottom: 2.5rem;
 }
 
-/* Изображение: широкий прямоугольник */
 .investPlan-card__image-wrapper {
   margin-bottom: 1.5rem;
   border-radius: 1.5rem;
@@ -39,26 +37,21 @@
   width: 100%;
   height: 12rem;
   object-fit: cover;
-  
-  /* 🔑 Управление фокусом: горизонталь вертикаль */
-  object-position: center 50%; /* 0% = верх, 50% = центр, 100% = низ */
-  
+  object-position: center 50%;
   display: block;
   border-radius: 1.5rem;
 }
 
-/* Описание */
 .investPlan-card__description {
-  font-size: 1.5rem; /* 🔑 Чуть крупнее для больших карт */
+  font-size: 1.5rem;
   line-height: 1.5;
   color: #000;
   text-align: justify;
   margin-bottom: 2.5rem;
   font-weight: 300;
-  text-indent: 1.5rem; /* 🔑 Красивый отступ первой строки */
+  text-indent: 1.5rem;
 }
 
-/* Кнопка "Подробнее" */
 .investPlan-card__button {
   display: block;
   margin: 0 auto 3rem;
@@ -81,7 +74,6 @@
   border-color: #000;
 }
 
-/* Заголовки Плюсы/Минусы */
 .investPlan-card__details-title {
   font-size: 1.5rem;
   font-weight: 700;
@@ -89,7 +81,6 @@
   margin: 0 0 0.5rem 0;
 }
 
-/* Список */
 .investPlan-card__list {
   list-style: none;
   padding: 0;
@@ -107,7 +98,6 @@
   line-height: 1.5;
 }
 
-/* Точка-маркер */
 .investPlan-card__list-item::before {
   content: "•";
   position: absolute;
@@ -118,26 +108,22 @@
   line-height: 1.2;
 }
 
-/* Жирная часть пункта */
 .investPlan-card__list-bold {
   font-weight: 700;
   color: #000;
 }
 
-/* Обычный текст после тире */
 .investPlan-card__list-text {
   font-weight: 300;
   color: #000;
 }
 
 .investPlan-card__text-block {
-    font-weight: 300;
+  font-weight: 300;
   color: #000;
-    font-size: 1.4rem;
+  font-size: 1.4rem;
   line-height: 1.2;
 }
-
-
 
 .investPlan-card__text-block b {
   font-weight: 800;
@@ -161,43 +147,272 @@
   font-family: "Novelist", sans-serif;
 }
 
-
-/* Последний элемент без отступа снизу */
 .investPlan-card__list-item:last-child {
   margin-bottom: 0;
 }
 
-/* ===== АДАПТИВНОСТЬ ===== */
-@media (max-width: 900px) {
-  .investPlan-card__details {
-    grid-template-columns: 1fr; /* На планшетах в одну колонку */
-    gap: 2rem;
+/* ===== АДАПТАЦИЯ ===== */
+
+@media (max-width: 1024px) {
+  .investPlan-cards-section {
+    padding: 3.5rem 1.5rem 5rem;
   }
-  
+
+  .investPlan-cards__container {
+    gap: 3rem;
+  }
+
+  .investPlan-card {
+    padding: 2rem 4rem;
+    border-radius: 1.5rem;
+  }
+
+  .investPlan-card__title {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+
   .investPlan-card__image {
-    height: 260px;
+    height: 11rem;
+  }
+
+  .investPlan-card__description {
+    font-size: 1.35rem;
+    margin-bottom: 2rem;
+    text-indent: 1.3rem;
+  }
+
+  .investPlan-card__button {
+    width: 14rem;
+    height: 3.2rem;
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .investPlan-card__details-title {
+    font-size: 1.4rem;
+  }
+
+  .investPlan-card__list {
+    margin-bottom: 1.8rem;
+  }
+
+  .investPlan-card__list-item {
+    font-size: 1.25rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .investPlan-card__list-item::before {
+    font-size: 1.3rem;
+  }
+
+  .investPlan-card__text-block {
+    font-size: 1.3rem;
+  }
+
+  .investPlan-card__full-text {
+    font-size: 1.25rem;
+    text-indent: 1.3rem;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .investPlan-cards-section {
+    padding: 3rem 1.2rem 4rem;
+  }
+
   .investPlan-cards__container {
     gap: 2.5rem;
   }
-  
+
   .investPlan-card {
-    padding: 2.5rem 1.5rem;
+    padding: 1.8rem 2.5rem;
+    border-radius: 1.2rem;
   }
-  
+
   .investPlan-card__title {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
+    margin-bottom: 1.8rem;
   }
-  
+
+  .investPlan-card__image-wrapper {
+    margin-bottom: 1.2rem;
+    border-radius: 1rem;
+  }
+
   .investPlan-card__image {
-    height: 200px;
+    height: 10rem;
+    border-radius: 1rem;
   }
-  
-  .investPlan-card__description,
-  .investPlan-card__list li {
+
+  .investPlan-card__description {
+    font-size: 1.2rem;
+    margin-bottom: 1.8rem;
+    text-indent: 1.2rem;
+  }
+
+  .investPlan-card__button {
+    width: 13rem;
+    height: 3rem;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .investPlan-card__details-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .investPlan-card__list {
+    margin-bottom: 1.5rem;
+  }
+
+  .investPlan-card__list-item {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    padding-left: 0.9rem;
+  }
+
+  .investPlan-card__list-item::before {
+    font-size: 1.15rem;
+  }
+
+  .investPlan-card__text-block {
+    font-size: 1.2rem;
+  }
+
+  .investPlan-card__full-text {
+    font-size: 1.1rem;
+    text-indent: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .investPlan-cards-section {
+    padding: 2rem 0.8rem 3rem;
+  }
+
+  .investPlan-cards__container {
+    gap: 2rem;
+  }
+
+  .investPlan-card {
+    padding: 1.5rem 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .investPlan-card__title {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .investPlan-card__image-wrapper {
+    margin-bottom: 1rem;
+    border-radius: 0.8rem;
+  }
+
+  .investPlan-card__image {
+    height: 9rem;
+    border-radius: 0.8rem;
+  }
+
+  .investPlan-card__description {
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+    text-indent: 1rem;
+  }
+
+  .investPlan-card__button {
+    width: 12rem;
+    height: 2.8rem;
     font-size: 1rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .investPlan-card__details-title {
+    font-size: 1.15rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .investPlan-card__list {
+    margin-bottom: 1.2rem;
+  }
+
+  .investPlan-card__list-item {
+    font-size: 1rem;
+    margin-bottom: 0.7rem;
+    padding-left: 0.85rem;
+  }
+
+  .investPlan-card__list-item::before {
+    font-size: 1.05rem;
+  }
+
+  .investPlan-card__text-block {
+    font-size: 1.05rem;
+  }
+
+  .investPlan-card__full-text {
+    font-size: 1rem;
+    text-indent: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .investPlan-cards-section {
+    padding: 1.5rem 0.6rem 2.5rem;
+  }
+
+  .investPlan-cards__container {
+    gap: 1.5rem;
+  }
+
+  .investPlan-card {
+    padding: 1.2rem 1.2rem;
+    border-radius: 0.8rem;
+  }
+
+  .investPlan-card__title {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .investPlan-card__image {
+    height: 8rem;
+  }
+
+  .investPlan-card__description {
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+    text-indent: 0.9rem;
+  }
+
+  .investPlan-card__button {
+    width: 11rem;
+    height: 2.6rem;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .investPlan-card__details-title {
+    font-size: 1.05rem;
+  }
+
+  .investPlan-card__list-item {
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .investPlan-card__list-item::before {
+    font-size: 1rem;
+  }
+
+  .investPlan-card__text-block {
+    font-size: 0.95rem;
+  }
+
+  .investPlan-card__full-text {
+    font-size: 0.95rem;
+    text-indent: 0.9rem;
   }
 }
