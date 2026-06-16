@@ -15,7 +15,6 @@ import ideaLiving8 from "@/assets/images/portfolio/idea-living-8.webp";
 import homestaging1 from "@/assets/images/portfolio/homestaging-1.webp";
 import homestaging2 from "@/assets/images/portfolio/homestaging-2.webp";
 import homestaging3 from "@/assets/images/portfolio/homestaging-3.webp";
-import homestaging4 from "@/assets/images/portfolio/homestaging-4.webp";
 import homestaging5 from "@/assets/images/portfolio/homestaging-5.webp";
 
 // ===== СЕКЦИЯ: ОТ ПРОЕКТА ДО РЕАЛИЗАЦИИ =====
