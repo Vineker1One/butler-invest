@@ -16,11 +16,10 @@ const renovationTypes = [
     {
         id: "basic",
         titleAccent: "Базовый",
-        accentFontSize: "5rem",
         titleMain: "ремонт",
         description: (
             <>
-            Базовый ремонт от <span className="highlight-brand">Дворецкий</span> — новый уровень предчистовой отделки, который открывает мир неограниченных возможностей перед клиентом.,
+            Базовый ремонт от <span className="highlightRenovation-brand">Дворецкий</span> — новый уровень предчистовой отделки, который открывает мир неограниченных возможностей перед клиентом.,
             </>
         ),
             features: [
@@ -34,7 +33,6 @@ const renovationTypes = [
     {
         id: "trendy",
         titleAccent: "Трендовый",
-        accentFontSize: "4.1rem",
         titleMain: "ремонт",
         description: 
             "Трендовый современный ремонт - это ремонт, выполненный согласно стандартам и регламентам. Доступен в светлом и темном исполнении.",
@@ -50,7 +48,6 @@ const renovationTypes = [
     {
         id: "design",
         titleAccent: "Дизайнерский",
-        accentFontSize: "3.6rem",
         titleMain: "ремонт",
         description:
             "Дизайнерский ремонт, выполненный из материалов премиальных брендов и согласно последним тенденциям в сфере ремонтно-отделочных работ жилых помещений.",
@@ -106,9 +103,6 @@ export const RenovationTypes = () => {
                                 <h3 className="renovation-card__title">
                                     <span
                                         className="renovation-card__title-accent"
-                                        style={{
-                                            fontSize: card.accentFontSize,
-                                        }}
                                     >
                                         {card.titleAccent}
                                     </span>

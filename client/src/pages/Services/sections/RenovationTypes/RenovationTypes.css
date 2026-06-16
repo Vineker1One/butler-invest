@@ -70,7 +70,7 @@
   margin: 0;
 }
 
-.highlight-brand {
+.highlightRenovation-brand {
   font-family: "Great Vibes", serif;
   font-size: 1.4rem;
   font-weight: 400;
@@ -106,6 +106,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 2rem;
+  z-index: 2;
 }
 
 .renovation-card__title {
@@ -119,6 +120,7 @@
   color: #000;
   display: block;
   margin-bottom: 0.3rem;
+  font-size: 5rem;
 }
 
 .renovation-card__title-main {
@@ -313,10 +315,16 @@
 @media (max-width: 480px) {
   .renovation-card {
     min-height: 360px;
+    grid-template-columns: 0.9fr 1.8fr 0.9fr;
   }
 
+  .renovation-card__features-list {
+  gap: 0;
+  background: rgba(243, 239, 230, 0.5);
+} 
+
   .renovation-card__left {
-    margin-right: -2rem; /* 👈 Ещё меньше */
+    margin-right: -4rem; /* 👈 Ещё меньше */
     padding: 1.2rem 0.8rem 1.2rem 1rem;
   }
 
@@ -325,36 +333,69 @@
     left: 35%;
   }
 
+    .renovation-card__feature-item::before {
+    font-size: 0.5rem;
+  }
+
   .renovation-card__description {
-    font-size: 0.82rem;
+    background: rgba(243, 239, 230, 0.5);
+    font-size: 0.6rem;
+  }
+  .renovation-card__features-title {
+    font-size: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .renovation-card__title-accent {
+    font-size: 3rem;
   }
 
   .renovation-card__feature-item {
-    font-size: 0.78rem;
+    font-size: 0.6rem;
+    padding-left: 0.5rem;
   }
 
   .renovation-card__right {
     padding: 1.2rem 0.8rem;
+    margin-top: 150%;
   }
 
   .renovation-card__images-small {
-    width: 95px;
+    width: 65px;
   }
 
   .renovation-card__button {
-    height: 2.6rem;
-    font-size: 0.9rem;
+    padding: 0.2rem;
+    font-size: 0.5rem;
   }
 }
 
 @media (max-width: 360px) {
+
+.renovation-card__features-list {
+  gap: 0;
+  background: rgba(243, 239, 230, 0.5);
+}  
+
+.renovation-card__features-title{
+  font-size: 0.55rem;
+  margin-bottom: 0.3rem;
+}
+.renovation-card__title-accent{
+  font-size: 2rem;
+}
   .renovation-card {
+    grid-template-columns: 0.9fr 1.8fr 0.9fr;
     min-height: 320px;
   }
 
+  .highlightRenovation-brand {
+    font-size: 0.6rem;
+  }
   .renovation-card__left {
-    margin-right: -1.5rem; /* 👈 Минимальное наезжание */
+    margin-right: -3.5rem; /* 👈 Минимальное наезжание */
     padding: 1rem 0.6rem;
+    
   }
 
   .renovation-card__title-main {
@@ -363,19 +404,25 @@
   }
 
   .renovation-card__description {
-    font-size: 0.75rem;
+    font-size: 0.5rem;
+    background: rgba(243, 239, 230, 0.5);
   }
 
   .renovation-card__feature-item {
-    font-size: 0.7rem;
+    font-size: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  .renovation-card__feature-item::before {
+    font-size: 0.5rem;
   }
 
   .renovation-card__images-small {
-    width: 85px;
+    width: 55px;
   }
 
   .renovation-card__button {
-    height: 2.4rem;
-    font-size: 0.85rem;
+    padding: 0.2rem;
+    font-size: 0.4rem;
   }
 }
