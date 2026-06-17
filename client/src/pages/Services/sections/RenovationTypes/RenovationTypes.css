@@ -15,7 +15,7 @@
 /* ===== ВЕРХНИЙ БЛОК ===== */
 .renovation-types__header {
   text-align: center;
-  margin-bottom: 4rem;
+ 
 }
 
 .renovation-types__title {
@@ -33,8 +33,6 @@
 
 .renovation-types__image {
   width: 100%;
-  max-width: 850px;
-  height: 280px;
   object-fit: cover;
   border-radius: 1.5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -68,6 +66,7 @@
   line-height: 1.6;
   color: #000;
   margin: 0;
+  margin-bottom: 2rem;
 }
 
 .highlightRenovation-brand {
@@ -239,6 +238,21 @@
   border-color: #333;
 }
 
+.renovation-types__content-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.6s ease, opacity 0.4s ease, margin 0.4s ease;
+  margin-top: 0;
+}
+
+.renovation-types__content-wrapper--open {
+  max-height: 4000px; /* 👈 Достаточно для всех карточек */
+  opacity: 1;
+  margin-top: 2rem;
+  transition: max-height 0.8s ease, opacity 0.5s ease 0.1s, margin 0.4s ease;
+}
+
 @media (max-width: 1024px) {
   .renovation-card {
     grid-template-columns: 0.9fr 1.2fr 0.7fr;
@@ -367,6 +381,13 @@
   .renovation-card__button {
     padding: 0.2rem;
     font-size: 0.5rem;
+  }
+
+  .renovation-types__button {
+            width: 11rem;
+        height: 2.6rem;
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
   }
 }
 

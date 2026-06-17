@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./RenovationTypes.css";
 
 import basicImg from "@/assets/images/services/renovation/basicImg.webp";
@@ -66,6 +67,7 @@ const renovationTypes = [
 ];
 
 export const RenovationTypes = () => {
+    const [isExpanded, setIsExpanded] = useState(false);
     return (
         <section className="renovation-types">
             <div className="renovation-types__container">
@@ -80,34 +82,37 @@ export const RenovationTypes = () => {
                             className="renovation-types__image"
                         />
                     </div>
-
-                    <button className="renovation-types__button">
-                        Подробнее
+                    <button
+                    className="renovation-types__button"
+                    onClick={() => setIsExpanded(!isExpanded)}
+                    >
+                    {isExpanded ? "Свернуть" : "Подробнее"}
                     </button>
 
-                    <p className="renovation-types__subtitle">
-                        Полный цикл работ:
-                        <br />
-                        от подготовки проекта до финишной отделки,
-                        <br />
-                        чтобы вы могли наслаждаться пространством.
-                    </p>
-                </div>
+                    <div
+                        className={`renovation-types__content-wrapper ${
+                            isExpanded ? "renovation-types__content-wrapper--open" : ""
+                        }`}
+                        >
+                        <p className="renovation-types__subtitle">
+                            Полный цикл работ:
+                            <br />
+                            от подготовки проекта до финишной отделки,
+                            <br />
+                            чтобы вы могли наслаждаться пространством.
+                        </p>
 
-                {/* Карточки ремонта */}
-                <div className="renovation-types__cards">
-                    {renovationTypes.map((card) => (
-                        <div key={card.id} className="renovation-card">
-                            {/* Левая часть — текст */}
-                            <div className="renovation-card__left">
+                        {/* Карточки ремонта — теперь внутри обёртки */}
+                        <div className="renovation-types__cards">
+                            {renovationTypes.map((card) => (
+                            <div key={card.id} className="renovation-card">
+                                <div className="renovation-card__left">
                                 <h3 className="renovation-card__title">
-                                    <span
-                                        className="renovation-card__title-accent"
-                                    >
-                                        {card.titleAccent}
+                                    <span className="renovation-card__title-accent">
+                                    {card.titleAccent}
                                     </span>
                                     <span className="renovation-card__title-main">
-                                        {card.titleMain}
+                                    {card.titleMain}
                                     </span>
                                 </h3>
 
@@ -117,50 +122,50 @@ export const RenovationTypes = () => {
 
                                 <div className="renovation-card__features">
                                     <p className="renovation-card__features-title">
-                                        Что входит:
+                                    Что входит:
                                     </p>
                                     <ul className="renovation-card__features-list">
-                                        {card.features.map((feature, index) => (
-                                            <li
-                                                key={index}
-                                                className="renovation-card__feature-item"
-                                            >
-                                                {feature}
-                                            </li>
-                                        ))}
+                                    {card.features.map((feature, index) => (
+                                        <li
+                                        key={index}
+                                        className="renovation-card__feature-item"
+                                        >
+                                        {feature}
+                                        </li>
+                                    ))}
                                     </ul>
                                 </div>
-                            </div>
+                                </div>
 
-                            {/* Центральная часть — большое фото */}
-                            <div className="renovation-card__center">
+                                <div className="renovation-card__center">
                                 <img
                                     src={card.mainImage}
                                     alt={card.titleAccent + " ремонт"}
                                     className="renovation-card__image-main"
                                 />
-                            </div>
+                                </div>
 
-                            {/* Правая часть — маленькие фото + кнопка */}
-                            <div className="renovation-card__right">
+                                <div className="renovation-card__right">
                                 <div className="renovation-card__images-small">
                                     <img
-                                        src={card.smallImages[0]}
-                                        alt=""
-                                        className="renovation-card__image-small"
+                                    src={card.smallImages[0]}
+                                    alt=""
+                                    className="renovation-card__image-small"
                                     />
                                     <img
-                                        src={card.smallImages[1]}
-                                        alt=""
-                                        className="renovation-card__image-small"
+                                    src={card.smallImages[1]}
+                                    alt=""
+                                    className="renovation-card__image-small"
                                     />
                                 </div>
                                 <button className="renovation-card__button">
                                     Оставить заявку
                                 </button>
+                                </div>
                             </div>
+                            ))}
                         </div>
-                    ))}
+                    </div>
                 </div>
             </div>
         </section>

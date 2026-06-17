@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./InvestmentCriteria.css";
 
 import investmentImg from "@/assets/images/services/investment/investment-main.webp";
@@ -25,6 +26,7 @@ const criteriaCards = [
 ];
 
 export const InvestmentCriteria = () => {
+    const [isExpanded, setIsExpanded] = useState(false);
     return (
         <section className="investment-criteria">
             <div className="investment-criteria__container">
@@ -44,62 +46,73 @@ export const InvestmentCriteria = () => {
                     />
                 </div>
 
-                {/* Кнопка */}
-                <button className="investment-criteria__button">
-                    Подробнее
-                </button>
+                    <button
+                    className="investment-criteria__button"
+                    onClick={() => setIsExpanded(!isExpanded)}
+                    >
+                    {isExpanded ? "Свернуть" : "Подробнее"}
+                    </button>
 
-                {/* Подзаголовок */}
-                <p className="investment-criteria__subtitle">
-                    Самое главное при выборе недвижимости для инвестиций:
-                </p>
+                    {/* 👇 Обёртка для анимации */}
+                    <div
+                    className={`investment-criteria__content-wrapper ${
+                        isExpanded ? "investment-criteria__content-wrapper--open" : ""
+                    }`}
+                    >
+                    <p className="investment-criteria__subtitle">
+                        Самое главное при выборе недвижимости для инвестиций:
+                    </p>
 
-                {/* Карточки с критериями */}
-                <div className="investment-criteria__cards">
-                    {criteriaCards.map((card) => (
+                    <div className="investment-criteria__cards">
+                        {criteriaCards.map((card) => (
                         <div key={card.number} className="criteria-card">
                             <div className="criteria-card__content">
-                                <h3 className="criteria-card__title">
-                                    {card.title}
-                                </h3>
-                                <div className="criteria-card__text">
-                                    {card.paragraphs.map((paragraph, index) => (
-                                        <p
-                                            key={index}
-                                            className="criteria-card__paragraph"
-                                        >
-                                            {paragraph}
-                                        </p>
-                                    ))}
-                                </div>
+                            <h3 className="criteria-card__title">{card.title}</h3>
+                            <div className="criteria-card__text">
+                                {card.paragraphs.map((paragraph, index) => (
+                                <p key={index} className="criteria-card__paragraph">
+                                    {paragraph}
+                                </p>
+                                ))}
                             </div>
-                            <span className="criteria-card__number">
-                                {card.number}
-                            </span>
+                            </div>
+                            <span className="criteria-card__number">{card.number}</span>
                         </div>
-                    ))}
-                </div>
+                        ))}
+                    </div>
 
-                {/* Вопрос */}
-                <p className="investment-criteria__question">
-                    Какие критерии лучше всего подходят для инвестиций?
-                </p>
+                    <p className="investment-criteria__question">
+                        Какие критерии лучше всего подходят для инвестиций?
+                    </p>
 
-                {/* Текстовый блок с экспертным мнением */}
-                <div className="investment-criteria__expert-text">
-                    <p>
+                    <div className="investment-criteria__expert-text">
+                        <p>
                         По мнению наших экспертов из компании{" "}
-                        <span className="highlight">«ДВОРЕЦКИЙ»</span> в России
-                        самые ликвидные квартиры — двухкомнатные (для
-                        инвестиций). «У комнатности есть определенная ликвидность. Например, студии достаточно часто перегреты, они не сильно ликвидные. Казалось бы, студии должны раскупаться быстрее, потому что цена ниже, но студии и трёшки — это не самые ликвидные объекты, потому что их целевая аудитория сужена. 
-                    </p>
-                    <p>
-                        Однушки следующие по привлекательности, а самые ликвидные — это двушки, потому что их может купить один мужчина или одна женщина, их может купить небольшая семья или семья с детьми. Это наиболее востребованный формат. И на этот формат чаще всего цены у застройщиков не перегреты». 
-                    </p>
-                    <p>
-                        Заработать неприлично много на перепродаже квартир в новостройках сегодня вряд ли получится. Времена, когда квартиры выкупали на стадии котлована и перепродавали с маржой в 200% после сдачи дома остались в нулевых. Сегодня такой доходности ждать не стоит, но забрать 20-30% с одной сделки от перепродажи качественного ликвидного объекта вполне реально.
-                    </p>
-                </div>
+                        <span className="highlight">«ДВОРЕЦКИЙ»</span> в России самые
+                        ликвидные квартиры — двухкомнатные (для инвестиций). «У
+                        комнатности есть определенная ликвидность. Например, студии
+                        достаточно часто перегреты, они не сильно ликвидные. Казалось бы,
+                        студии должны раскупаться быстрее, потому что цена ниже, но студии
+                        и трёшки — это не самые ликвидные объекты, потому что их целевая
+                        аудитория сужена.
+                        </p>
+                        <p>
+                        Однушки следующие по привлекательности, а самые ликвидные — это
+                        двушки, потому что их может купить один мужчина или одна женщина,
+                        их может купить небольшая семья или семья с детьми. Это наиболее
+                        востребованный формат. И на этот формат чаще всего цены у
+                        застройщиков не перегреты».
+                        </p>
+                        <p>
+                        Заработать неприлично много на перепродаже квартир в новостройках
+                        сегодня вряд ли получится. Времена, когда квартиры выкупали на
+                        стадии котлована и перепродавали с маржой в 200% после сдачи дома
+                        остались в нулевых. Сегодня такой доходности ждать не стоит, но
+                        забрать 20-30% с одной сделки от перепродажи качественного
+                        ликвидного объекта вполне реально.
+                        </p>
+                    </div>
+                    </div>
             </div>
         </section>
     );

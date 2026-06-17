@@ -192,6 +192,23 @@
     color: #666;
 }
 
+
+/* ===== ОБЁРТКА ЭТАПОВ (изначально скрыта) ===== */
+.services-steps-wrapper {
+  max-height: 0; /* 👈 Скрыто */
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.4s ease, margin 0.4s ease;
+  margin-top: 0;
+}
+
+/* ===== РАСКРЫТОЕ СОСТОЯНИЕ ===== */
+.services-steps-wrapper--open {
+  max-height: 2000px; /*  Достаточно большое значение */
+  opacity: 1;
+  margin-top: 2rem; /* 👈 Отступ сверху при раскрытии */
+  transition: max-height 0.6s ease, opacity 0.5s ease 0.1s, margin 0.4s ease;
+}
+
 /* ===== RIGHT IMAGE ===== */
 .services-steps__right {
     flex-shrink: 0;

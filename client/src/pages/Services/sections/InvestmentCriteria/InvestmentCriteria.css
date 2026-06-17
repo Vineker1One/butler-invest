@@ -52,6 +52,8 @@
     color: #000;
     cursor: pointer;
     transition: all 0.3s ease;
+      position: relative;
+  z-index: 10;
 }
 
 .investment-criteria__button:hover {
@@ -167,6 +169,22 @@
     font-weight: 400;
     color: #000;
 }
+
+.investment-criteria__content-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.4s ease, margin 0.4s ease;
+  margin-top: 0;
+}
+
+.investment-criteria__content-wrapper--open {
+  max-height: 5000px; /* Большое значение для длинного контента */
+  opacity: 1;
+  margin-top: 2.5rem;
+  transition: max-height 0.8s ease, opacity 0.5s ease 0.1s, margin 0.4s ease;
+}
+
 
 /* ===== ПЛАНШЕТЫ (до 1024px) ===== */
 @media (max-width: 1024px) {

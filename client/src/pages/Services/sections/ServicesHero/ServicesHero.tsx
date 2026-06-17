@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./ServicesHero.css";
 
 import serviceImg from "@/assets/images/services/servicesHero/service-main2.webp";
@@ -37,6 +38,7 @@ const steps = [
 ];
 
 export const ServicesHero = () => {
+    const [isExpanded, setIsExpanded] = useState(false);
     return (
         <section className="services-hero">
             <div className="services-hero__container">
@@ -60,35 +62,42 @@ export const ServicesHero = () => {
                         />
                     </div>
 
-                    <button className="services-card__button">Подробнее</button>
+                    <button 
+                        className="services-card__button"
+                        onClick={() => setIsExpanded(!isExpanded)} // 👈 Переключаем
+                    >
+                        {isExpanded ? "Свернуть" : "Подробнее"} {/* 👈 Меняем текст */}
+                    </button>
 
-                    <h3 className="services-steps__title">
+                    {/* 👇 Обёртка для анимации */}
+                    <div className={`services-steps-wrapper ${isExpanded ? "services-steps-wrapper--open" : ""}`}>
+                        <h3 className="services-steps__title">
                         <span>Этапы</span> работы
-                    </h3>
-                    <div className="services-steps">
+                        </h3>
+                        <div className="services-steps">
                         <div className="services-steps__left">
                             <div className="services-steps__timeline">
-                                {steps.map((step) => (
-                                    <div className="step" key={step.number}>
-                                        <div className="step__number">
-                                            {step.number}
-                                        </div>
-
-                                        <div className="step__content">
-                                            <h4>{step.title}</h4>
-                                            <p>{step.text}</p>
-                                        </div>
-                                    </div>
-                                ))}
+                            {steps.map((step) => (
+                                <div className="step" key={step.number}>
+                                <div className="step__number">
+                                    {step.number}
+                                </div>
+                                <div className="step__content">
+                                    <h4>{step.title}</h4>
+                                    <p>{step.text}</p>
+                                </div>
+                                </div>
+                            ))}
                             </div>
                         </div>
 
                         <div className="services-steps__right">
                             <img
-                                src={stepsImg}
-                                alt=""
-                                className="services-steps__image"
+                            src={stepsImg}
+                            alt=""
+                            className="services-steps__image"
                             />
+                        </div>
                         </div>
                     </div>
                 </div>
