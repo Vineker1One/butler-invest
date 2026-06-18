@@ -1,3 +1,5 @@
+
+import { useState } from "react";
 import "./InvestmentCard.css";
 
 // Импорт изображений (замени пути на свои)
@@ -157,120 +159,166 @@ const investmentCardsData: InvestmentCard[] = [
 },
 ];
 
+
 export const InvestmentCards = () => {
+  // Состояние: какие карточки раскрыты (по id)
+  const [expandedCards, setExpandedCards] = useState<Set<string | number>>(new Set());
+
+  // Переключить раскрытие карточки
+  const toggleCard = (id: string | number) => {
+    setExpandedCards((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(id)) {
+        newSet.delete(id);
+      } else {
+        newSet.add(id);
+      }
+      return newSet;
+    });
+  };
+
   return (
     <section className="investPlan-cards-section">
       <div className="investPlan-cards__container">
-        {investmentCardsData.map((card) => (
-          <div key={card.id} className="investPlan-card">
-            
-            {/* Заголовок */}
-            <h3 className="investPlan-card__title">{card.title}</h3>
+        {investmentCardsData.map((card) => {
+          const isExpanded = expandedCards.has(card.id);
 
-            {/* Фото */}
-            <div className="investPlan-card__image-wrapper">
-              <img 
-                src={card.image} 
-                alt={card.title} 
-                className="investPlan-card__image" 
-              />
-            </div>
+          return (
+            <div key={card.id} className="investPlan-card">
+              {/* Заголовок */}
+              <h3 className="investPlan-card__title">{card.title}</h3>
 
-            {/* Описание */}
-            <p className="investPlan-card__description">{card.description}</p>
-            {card.description2 && (
-              <p className="investPlan-card__description investPlan-card__description--secondary">
-                {card.description2}
-              </p>
-            )}  
-
-            {/* Кнопка */}
-            <button 
-              className="investPlan-card__button"
-              onClick={() => window.location.href = card.link} // Заглушка перехода
-            >
-              Подробнее
-            </button>
-
-            {/* Блок с плюсами и минусами */}
-            <div className="investPlan-card__details">
-              
-         
-            {/* Если есть fullText — рендерим его вместо плюсов/минусов */}
-            {card.fullText ? (
-              <div className="investPlan-card__full-text">
-                {card.fullText}
+              {/* Фото */}
+              <div className="investPlan-card__image-wrapper">
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="investPlan-card__image"
+                />
               </div>
-            ) : (
-              <>
-                {/* Блок с плюсами */}
-                <div className="investPlan-card__pros">
-                  <h4 className="investPlan-card__details-title">Плюсы:</h4>
-                  <ul className="investPlan-card__list">
-                    {card.pros.map((pro, index) => {
-                      if ('content' in pro) {
-                        return (
-                          <div key={index} className="investPlan-card__text-block">
-                            {pro.content}
-                          </div>
-                        );
-                      }
-                      return (
-                        <li key={index} className="investPlan-card__list-item">
-                          {'bold' in pro ? (
-                            <>
-                              <span className="investPlan-card__list-bold">{pro.bold}</span>
-                              <span className="investPlan-card__list-text">
-                                {!('noDash' in pro && pro.noDash) && " — "}
-                                {pro.text}
-                              </span>
-                            </>
-                          ) : (
-                            <span className="investPlan-card__list-text">{pro.text}</span>
-                          )}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
 
-                {/* Блок с минусами */}
-                <div className="investPlan-card__cons">
-                  <h4 className="investPlan-card__details-title">Минусы:</h4>
-                  <ul className="investPlan-card__list">
-                    {card.cons.map((con, index) => {
-                      if ('content' in con) {
-                        return (
-                          <div key={index} className="investPlan-card__text-block">
-                            {con.content}
-                          </div>
-                        );
-                      }
-                      return (
-                        <li key={index} className="investPlan-card__list-item">
-                          {'bold' in con ? (
-                            <>
-                              <span className="investPlan-card__list-bold">{con.bold}</span>
-                              <span className="investPlan-card__list-text">
-                                {!('noDash' in con && con.noDash) && " — "}
-                                {con.text}
-                              </span>
-                            </>
-                          ) : (
-                            <span className="investPlan-card__list-text">{con.text}</span>
-                          )}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              </>
-            )}
+              {/* Описание */}
+              <p className="investPlan-card__description">{card.description}</p>
+              {card.description2 && (
+                <p className="investPlan-card__description investPlan-card__description--secondary">
+                  {card.description2}
+                </p>
+              )}
 
+              {/* Кнопка — теперь раскрывает блок */}
+              <button
+                className="investPlan-card__button"
+                onClick={() => toggleCard(card.id)}
+              >
+                {isExpanded ? "Свернуть" : "Подробнее"}
+              </button>
+
+              {/* 👇 Обёртка для анимации */}
+              <div
+                className={`investPlan-card__details-wrapper ${
+                  isExpanded ? "investPlan-card__details-wrapper--open" : ""
+                }`}
+              >
+                {/* Блок с плюсами и минусами */}
+                <div className="investPlan-card__details">
+                  {card.fullText ? (
+                    <div className="investPlan-card__full-text">
+                      {card.fullText}
+                    </div>
+                  ) : (
+                    <>
+                      {/* Блок с плюсами */}
+                      <div className="investPlan-card__pros">
+                        <h4 className="investPlan-card__details-title">
+                          Плюсы:
+                        </h4>
+                        <ul className="investPlan-card__list">
+                          {card.pros.map((pro, index) => {
+                            if ("content" in pro) {
+                              return (
+                                <div
+                                  key={index}
+                                  className="investPlan-card__text-block"
+                                >
+                                  {pro.content}
+                                </div>
+                              );
+                            }
+                            return (
+                              <li
+                                key={index}
+                                className="investPlan-card__list-item"
+                              >
+                                {"bold" in pro ? (
+                                  <>
+                                    <span className="investPlan-card__list-bold">
+                                      {pro.bold}
+                                    </span>
+                                    <span className="investPlan-card__list-text">
+                                      {!("noDash" in pro && pro.noDash) && " — "}
+                                      {pro.text}
+                                    </span>
+                                  </>
+                                ) : (
+                                  <span className="investPlan-card__list-text">
+                                    {pro.text}
+                                  </span>
+                                )}
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </div>
+
+                      {/* Блок с минусами */}
+                      <div className="investPlan-card__cons">
+                        <h4 className="investPlan-card__details-title">
+                          Минусы:
+                        </h4>
+                        <ul className="investPlan-card__list">
+                          {card.cons.map((con, index) => {
+                            if ("content" in con) {
+                              return (
+                                <div
+                                  key={index}
+                                  className="investPlan-card__text-block"
+                                >
+                                  {con.content}
+                                </div>
+                              );
+                            }
+                            return (
+                              <li
+                                key={index}
+                                className="investPlan-card__list-item"
+                              >
+                                {"bold" in con ? (
+                                  <>
+                                    <span className="investPlan-card__list-bold">
+                                      {con.bold}
+                                    </span>
+                                    <span className="investPlan-card__list-text">
+                                      {!("noDash" in con && con.noDash) && " — "}
+                                      {con.text}
+                                    </span>
+                                  </>
+                                ) : (
+                                  <span className="investPlan-card__list-text">
+                                    {con.text}
+                                  </span>
+                                )}
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
             </div>
-
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
