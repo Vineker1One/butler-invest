@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./PropertyManagement.css";
 
 import managementImg from "@/assets/images/services/management/management-main.webp";
@@ -36,6 +37,7 @@ const steps = [
 ];
 
 export const PropertyManagement = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
   return (
     <section className="property-management">
       <div className="property-management__container">
@@ -54,27 +56,36 @@ export const PropertyManagement = () => {
           />
         </div>
 
-        {/* Кнопка */}
-        <button className="property-management__button">
-          Подробнее
+        <button
+          className="property-management__button"
+          onClick={() => setIsExpanded(!isExpanded)}
+        >
+          {isExpanded ? "Свернуть" : "Подробнее"}
         </button>
 
-        {/* Вопрос */}
-        <p className="property-management__question">
-          Как происходит передача объекта в доверительное управление?
-        </p>
+        {/* 👇 Обёртка для анимации */}
+        <div
+          className={`property-management__content-wrapper ${
+            isExpanded ? "property-management__content-wrapper--open" : ""
+          }`}
+        >
+          {/* Вопрос */}
+          <p className="property-management__question">
+            Как происходит передача объекта в доверительное управление?
+          </p>
 
-        {/* Шаги процесса */}
-        <div className="property-management__steps">
-          {steps.map((step) => (
-            <div key={step.number} className="management-step">
-              <div className="management-step__number">{step.number}.</div>
-              <div className="management-step__content">
-                <h3 className="management-step__title">{step.title}.</h3>
-                <p className="management-step__text">{step.text}</p>
+          {/* Шаги процесса */}
+          <div className="property-management__steps">
+            {steps.map((step) => (
+              <div key={step.number} className="management-step">
+                <div className="management-step__number">{step.number}.</div>
+                <div className="management-step__content">
+                  <h3 className="management-step__title">{step.title}.</h3>
+                  <p className="management-step__text">{step.text}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
       </div>

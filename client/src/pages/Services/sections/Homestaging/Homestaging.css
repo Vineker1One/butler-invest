@@ -401,6 +401,21 @@
   font-weight: 700;
 }
 
+.homestaging__content-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.6s ease, opacity 0.4s ease, margin 0.4s ease;
+  margin-top: 0;
+}
+
+.homestaging__content-wrapper--open {
+  max-height: 15000px; /* 👈 Большое значение для длинного контента */
+  opacity: 1;
+  margin-top: 2.5rem;
+  transition: max-height 1s ease, opacity 0.5s ease 0.1s, margin 0.4s ease;
+}
+
 /* ===== ПЛАНШЕТЫ (до 1024px) ===== */
 @media (max-width: 1024px) {
   .homestaging {

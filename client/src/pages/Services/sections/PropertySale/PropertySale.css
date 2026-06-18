@@ -394,6 +394,21 @@
     display: block;
 }
 
+.property-sale__content-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.6s ease, opacity 0.4s ease, margin 0.4s ease;
+  margin-top: 0;
+}
+
+.property-sale__content-wrapper--open {
+  max-height: 20000px; /* 👈 Большое значение для длинного контента */
+  opacity: 1;
+  margin-top: 2.5rem;
+  transition: max-height 1.2s ease, opacity 0.5s ease 0.1s, margin 0.4s ease;
+}
+
 /* ===== АДАПТАЦИЯ ===== */
 
 @media (max-width: 1024px) {
