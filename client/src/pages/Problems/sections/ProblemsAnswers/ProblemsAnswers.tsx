@@ -6,7 +6,7 @@ export const ProblemsAnswers = () => {
       <div className="problems-answers__container">
         
         {/* Вопрос 01 */}
-        <div className="answer-item">
+        <div className="answer-item" id="answer-1">
           <div className="answer-item__number">01.</div>
           <div className="answer-item__content">
             <h3 className="answer-item__title">Что входит в услуги управляющей компании?</h3>
@@ -24,7 +24,7 @@ export const ProblemsAnswers = () => {
         </div>
 
         {/* Вопрос 02 */}
-        <div className="answer-item">
+        <div className="answer-item" id="answer-2">
           <div className="answer-item__number">02.</div>
           <div className="answer-item__content">
             <h3 className="answer-item__title">Какая комиссия управляющей компании?</h3>
@@ -35,7 +35,7 @@ export const ProblemsAnswers = () => {
         </div>
 
         {/* Вопрос 03 */}
-        <div className="answer-item">
+        <div className="answer-item" id="answer-3">
           <div className="answer-item__number">03.</div>
           <div className="answer-item__content">
             <h3 className="answer-item__title">Нужно ли платить налоги при доверительном управлении?</h3>
@@ -46,7 +46,7 @@ export const ProblemsAnswers = () => {
         </div>
 
         {/* Вопрос 04 */}
-        <div className="answer-item">
+        <div className="answer-item" id="answer-4">
           <div className="answer-item__number">04.</div>
           <div className="answer-item__content">
             <h3 className="answer-item__title">Какой срок сотрудничества возможен?</h3>
@@ -57,7 +57,7 @@ export const ProblemsAnswers = () => {
         </div>
 
         {/* Вопрос 05 */}
-        <div className="answer-item">
+        <div className="answer-item" id="answer-5">
           <div className="answer-item__number">05.</div>
           <div className="answer-item__content">
             <h3 className="answer-item__title">Кто отвечает за сохранность квартиры и имущества?</h3>
@@ -68,7 +68,7 @@ export const ProblemsAnswers = () => {
         </div>
 
         {/* Вопрос 06 */}
-        <div className="answer-item">
+        <div className="answer-item" id="answer-6">
           <div className="answer-item__number">06.</div>
           <div className="answer-item__content">
             <h3 className="answer-item__title">Какие риски существуют при доверительном управлении?</h3>
@@ -82,7 +82,7 @@ export const ProblemsAnswers = () => {
         </div>
 
         {/* Вопрос 07 */}
-        <div className="answer-item">
+        <div className="answer-item" id="answer-7">
           <div className="answer-item__number">07.</div>
           <div className="answer-item__content">
             <h3 className="answer-item__title">Кто получает деньги от аренды — собственник или управляющая компания?</h3>
@@ -93,7 +93,7 @@ export const ProblemsAnswers = () => {
         </div>
 
         {/* Вопрос 08 */}
-        <div className="answer-item">
+        <div className="answer-item" id="answer-8">
           <div className="answer-item__number">08.</div>
           <div className="answer-item__content">
             <h3 className="answer-item__title">Как оформляется доверительное управление? Какие документы нужны?</h3>
@@ -104,7 +104,7 @@ export const ProblemsAnswers = () => {
         </div>
 
         {/* Вопрос 09 */}
-        <div className="answer-item">
+        <div className="answer-item" id="answer-9">
           <div className="answer-item__number">09.</div>
           <div className="answer-item__content">
             <h3 className="answer-item__title">Какие преимущества доверительного управления по сравнению с самостоятельной сдачей квартиры?</h3>
@@ -119,7 +119,7 @@ export const ProblemsAnswers = () => {
         </div>
 
         {/* Вопрос 10 */}
-        <div className="answer-item">
+        <div className="answer-item" id="answer-10">
           <div className="answer-item__number">10.</div>
           <div className="answer-item__content">
             <h3 className="answer-item__title">Что такое доверительное управление недвижимостью и зачем оно нужно?</h3>
