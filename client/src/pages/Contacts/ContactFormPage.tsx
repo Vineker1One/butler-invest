@@ -198,7 +198,7 @@ export const ContactFormPage = () => {
                   value={phone}
                   onChange={handlePhoneChange}
                   placeholder="+7 (999) 999-99-99"
-                  className="contactPage-form__input contact-form__input--phone"
+                  className="contactPage-form__input contactPage-form__input--phone"
                 />
               </div>
               {errors.phone && (
@@ -212,7 +212,7 @@ export const ContactFormPage = () => {
               className="contactPage-form__button"
               onClick={handleButtonClick}
             >
-              Получить предложение
+              Оставить заявку
             </button>
 
             {/* Согласие */}

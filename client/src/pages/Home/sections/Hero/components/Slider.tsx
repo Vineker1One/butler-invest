@@ -106,10 +106,10 @@ export const Slider = () => {
     </button>
 
       <div className="slider__socials">
-        <a href="#" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/dvoreckiy61?igsh=NGpwZjE3dmRhNGo4&utm_source=qr" target="_blank" rel="noopener noreferrer">
           <img src={ig} alt="Instagram" />
         </a>
-        <a href="#" target="_blank" rel="noopener noreferrer">
+        <a href="https://vk.ru/dvoreckiy61" target="_blank" rel="noopener noreferrer">
           <img src={vk} alt="VK" />
         </a>
       </div>

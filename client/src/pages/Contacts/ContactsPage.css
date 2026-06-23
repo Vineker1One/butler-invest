@@ -48,6 +48,12 @@
   overflow: visible;
 }
 
+.contactPage-form__input--phone {
+    border: none;
+    flex: 1;
+    padding: 0.9rem 0;
+}
+
 .contactPage-form__title {
   text-align: center;
   font-size: 1.5rem;
@@ -628,9 +634,7 @@
     font-size: 1.8rem;
   }
   
-  .phonePage-item {
-  }
-  
+
   .phonePage-item span {
     font-size: 1.1rem;
     letter-spacing: 0.03rem;

@@ -4,6 +4,17 @@ import { ContactFormPage } from "./Contacts/ContactFormPage";
 import { ContactInfoPage } from "./Contacts/ContactInfoPage"
 
 export const ContactsPage = () => {
+    const scrollToContactInfo = (e: React.MouseEvent) => {
+        e.preventDefault();
+        const element = document.getElementById("contact-info");
+        if (element) {
+            element.scrollIntoView({ 
+                behavior: "smooth", 
+                block: "start" 
+            });
+        }
+    };
+
     return (
         <section className="contacts-page">
             {/* Фоновое изображение */}
@@ -17,13 +28,14 @@ export const ContactsPage = () => {
                 {/* Кнопки */}
                 <div className="contacts-page__buttons">
                     <a
-                        href="tel:+79034075500"
+                        href="#contact-info"
                         className="contacts-page__button"
+                        onClick={scrollToContactInfo}
                     >
                         Позвонить
                     </a>
                     <a
-                        href="https://wa.me/79034075500"
+                        href="https://t.me/dvoreckiy61"
                         className="contacts-page__button"
                     >
                         Написать
@@ -34,7 +46,9 @@ export const ContactsPage = () => {
                 <ContactFormPage />
 
                 {/* Контакты с картой */}
-                <ContactInfoPage />
+                <div id="contact-info">
+                    <ContactInfoPage />
+                </div>
             </div>
         </section>
     );

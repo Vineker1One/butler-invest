@@ -34,7 +34,7 @@ export const ContactsSection = () => {
 
             <div className="contacts-phones">
               <a href="tel:+79034075500" className="phone-item">
-                <span>+7 (903) 407-55-00</span>
+                <span>+7 (961) 330-29-29</span>
               </a>
               <a href="tel:+79612900908" className="phone-item">
                 <span>+7 (961) 290-09-08</span>
@@ -45,13 +45,13 @@ export const ContactsSection = () => {
             </div>
 
             <div className="contacts-socials">
-              <a href="https://t.me/autosalesrnd" className="social-link" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+              <a href="https://t.me/dvoreckiy61" className="social-link" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
                 {TG}
               </a>
-              <a href="https://vk.com/vlad_nedayvoz" className="social-link" target="_blank" rel="noopener noreferrer" aria-label="VKontakte">
+              <a href="https://vk.ru/dvoreckiy61" className="social-link" target="_blank" rel="noopener noreferrer" aria-label="VKontakte">
                 {VK}
               </a>
-              <a href="https://www.youtube.com/@autosalesrnd/shorts" className="social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <a href="https://youtube.com/@dvoreckiy61?si=zSoInh_o1Sx3OQ5x" className="social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                 {YT}
               </a>
             </div>

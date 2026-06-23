@@ -14,7 +14,7 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 2rem;
     
     cursor: pointer;
@@ -23,60 +23,76 @@
 }
 
 .floating-menu-btn:hover {
-    background: #F3EFE6;
     transform: translateY(-2px);
     box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
 }
-
-
-
 
 
 .floating-menu-btn__icon {
     width: 24px;
     height: 24px;
     object-fit: contain;
-    filter: brightness(0); /* Чёрная иконка */
+    filter: brightness(0);
 }
 
 
+/* 👇 Градиентный текст как в хедере */
 .floating-menu-btn__text {
-    font-family: "Gilroy", sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    color: #000;
+    font-family: "Gilroy", sans-serif;
+    background: linear-gradient(
+        182deg,
+        #151610 17.91%,
+        #755929 65.89%,
+        #FFF9BD 84.21%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
     letter-spacing: 0.05em;
     text-transform: uppercase;
 }
 
-/* ===== МЕНЮ ===== */
+/* При активной кнопке — инвертируем градиент на светлый */
+.floating-menu-btn--active .floating-menu-btn__text {
+    background: linear-gradient(
+        182deg,
+        #FFF9BD 17.91%,
+        #755929 65.89%,
+        #151610 84.21%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ===== МЕНЮ (как в хедере) ===== */
 .floating-menu-nav {
     position: fixed;
-    top: 5.5rem; /* Под кнопкой */
+    top: 5.5rem;
     right: 2rem;
-    z-index: 999;
-    
-    background: #F3EFE6;
+    width: 300px;
+    background: rgba(243, 239, 230, 0.95);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    
-    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 1rem;
     padding: 1.5rem;
-    min-width: 280px;
-    
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    z-index: 999;
     
-    /* Скрыто по умолчанию */
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-10px) scale(0.95);
-    transition: all 0.3s ease;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .floating-menu-nav--visible {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
 }
 
 .floating-menu-nav__list {
@@ -85,35 +101,37 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
+    gap: 1rem;
 }
 
-.floating-menu-nav__item {
-    border-radius: 0.8rem;
-    transition: background 0.2s ease;
-}
-
-.floating-menu-nav__item:hover {
-    background: rgba(153, 161, 128, 0.1);
-}
-
-.floating-menu-nav__item--active {
-    background: rgba(153, 161, 128, 0.2);
-}
-
+/* 👇 Ссылки как в хедере */
 .floating-menu-nav__link {
     display: block;
-    padding: 0.8rem 1.2rem;
-    color: #000;
-    text-decoration: none;
-    font-family: "Gilroy", sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 500;
-    transition: color 0.2s ease;
+    color: #1a1a1a;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    transition: all 0.2s ease;
+    font-family: "Gilroy", sans-serif;
 }
 
+.floating-menu-nav__item:last-child .floating-menu-nav__link {
+    border-bottom: none;
+}
+
+.floating-menu-nav__link:hover {
+    color: #755929;
+    padding-left: 10px;
+}
+
+.floating-menu-nav__link:active {
+    color: #151610;
+}
+
+/* 👇 Активная страница — как hover, но постоянный цвет */
 .floating-menu-nav__item--active .floating-menu-nav__link {
-    color: #99a180;
+    color: #755929;
     font-weight: 600;
 }
 
@@ -143,20 +161,19 @@
     }
 
     .floating-menu-btn__text {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
     }
 
     .floating-menu-nav {
         top: 4.5rem;
         right: 1rem;
         left: 1rem;
-        min-width: auto;
+        width: auto;
         padding: 1.2rem;
     }
 
     .floating-menu-nav__link {
-        font-size: 0.95rem;
-        padding: 0.7rem 1rem;
+        font-size: 1rem;
     }
 }
 
@@ -178,5 +195,9 @@
 
     .floating-menu-nav {
         top: 4rem;
+    }
+
+    .floating-menu-nav__link {
+        font-size: 0.95rem;
     }
 }

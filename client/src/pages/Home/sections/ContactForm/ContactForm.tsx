@@ -213,7 +213,7 @@ export const ContactForm = () => {
               className="contact-form__button"
               onClick={handleButtonClick}
             >
-              Получить предложение
+              Оставить заявку
             </button>
 
             {/* Согласие */}

@@ -116,10 +116,13 @@
   width: 3rem;
   height: 3rem;
   transition: 0.3s;
+  /* 👇 Тень вокруг иконки */
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
 }
 
 .slider__socials img:hover {
   transform: scale(1.1);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
 }
 
 /* ===== КНОПКА НАЗАД (СЛЕВА) ===== */
