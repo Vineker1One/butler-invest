@@ -23,7 +23,7 @@ const NAV_ITEMS = [
         path: "/plan",
     },
     {
-        label: "Проблемы и решения",
+        label: "Вопросы и ответы",
         path: "/problems",
     },
     {

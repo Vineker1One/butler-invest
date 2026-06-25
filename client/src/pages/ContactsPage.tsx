@@ -35,7 +35,7 @@ export const ContactsPage = () => {
                         Позвонить
                     </a>
                     <a
-                        href="https://t.me/dvoreckiy61"
+                        href="https://max.ru/u/f9LHodD0cOLoIfOQwYgpURXQyNkpjK2hbEPjA4IM26rcHl59By9yzPfiask"
                         className="contacts-page__button"
                     >
                         Написать

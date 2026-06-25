@@ -33,14 +33,11 @@ export const ContactsSection = () => {
             <h2 className="contacts-title">Контакты</h2>
 
             <div className="contacts-phones">
-              <a href="tel:+79034075500" className="phone-item">
+              <a href="tel:+79612926729" className="phonePage-item">
+                <span>+7 (961) 292-67-29</span>
+              </a>
+              <a href="tel:+79613302929" className="phonePage-item">
                 <span>+7 (961) 330-29-29</span>
-              </a>
-              <a href="tel:+79612900908" className="phone-item">
-                <span>+7 (961) 290-09-08</span>
-              </a>
-              <a href="tel:+79613287075" className="phone-item">
-                <span>+7 (961) 328-70-75</span>
               </a>
             </div>
 

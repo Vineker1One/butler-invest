@@ -7,7 +7,7 @@ const NAV_ITEMS = [
     { label: "Главная", path: "/" },
     { label: "Услуги", path: "/services" },
     { label: "Инвестиционный план", path: "/plan" },
-    { label: "Проблемы и решения", path: "/problems" },
+    { label: "Вопросы и ответы", path: "/problems" },
     { label: "Портфолио", path: "/portfolio" },
     { label: "Калькулятор", path: "/calculator" },
     { label: "Контакты", path: "/contacts" },

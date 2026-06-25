@@ -33,14 +33,11 @@ export const ContactInfoPage = () => {
             <h2 className="contactsPage-title">Контакты</h2>
 
             <div className="contactsPage-phones">
-              <a href="tel:+79034075500" className="phonePage-item">
+              <a href="tel:+79612926729" className="phonePage-item">
+                <span>+7 (961) 292-67-29</span>
+              </a>
+              <a href="tel:+79613302929" className="phonePage-item">
                 <span>+7 (961) 330-29-29</span>
-              </a>
-              <a href="tel:+79612900908" className="phonePage-item">
-                <span>+7 (961) 290-09-08</span>
-              </a>
-              <a href="tel:+79613287075" className="phonePage-item">
-                <span>+7 (961) 328-70-75</span>
               </a>
             </div>
 

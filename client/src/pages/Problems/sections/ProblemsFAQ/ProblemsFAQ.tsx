@@ -15,7 +15,7 @@ export const ProblemsFAQ = () => {
   return (
     <section className="problems-faq">
       <h1 className="problems-faq__title">
-        Проблемы/Решения/Часто задаваемые вопросы
+        Часто задаваемые вопросы/Ответы
       </h1>
       <div className="problems-faq__container">
         <div className="problems-faq__content">

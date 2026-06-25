@@ -15,7 +15,7 @@ export const InvestmentHero = () => {
       <div className="investment-hero__container">
         {/* Главный заголовок */}
         <h2 className="investment-hero__subtitle">
-          Методы инвестиций <br />
+          Сравнение с классическими инвестициями <br />
           от компании <span className="highlight-brand-investment">ДВОРЕЦКИЙ</span>
         </h2>
 
