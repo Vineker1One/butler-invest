@@ -42,8 +42,8 @@ export const ContactsPage = () => {
                     </a>
                 </div>
 
-                {/* Форма заявки */}
-                <ContactFormPage />
+                {/* Форма заявки
+                <ContactFormPage /> */}
 
                 {/* Контакты с картой */}
                 <div id="contact-info">

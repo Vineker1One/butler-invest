@@ -216,29 +216,32 @@ export const ContactForm = () => {
               Оставить заявку
             </button>
 
-            {/* Согласие */}
-            <label className={`contact-form__consent ${errors.consent ? 'error' : ''}`}>
-              <input
-                type="checkbox"
-                checked={isConsent}
-                onChange={(e) => {
-                  setIsConsent(e.target.checked);
-                  if (errors.consent) setErrors(prev => ({ ...prev, consent: false }));
-                }}
-              />
-              <span>
-                Я соглашаюсь с{" "}
-                <a href="/privacy" target="_blank" rel="noopener noreferrer">
-                  политикой конфиденциальности
-                </a>{" "}
-                и правилами обработки персональных данных.
-              </span>
-            </label>
-            {errors.consent && (
-              <span className="contact-form__error-message contact-form__error-message--consent">
-                Необходимо согласие на обработку данных
-              </span>
-            )}
+           {/* Согласие */}
+          <label className={`contact-form__consent ${errors.consent ? 'error' : ''}`}>
+            <input
+              type="checkbox"
+              checked={isConsent}
+              onChange={(e) => {
+                setIsConsent(e.target.checked);
+                if (errors.consent) setErrors(prev => ({ ...prev, consent: false }));
+              }}
+            />
+            <span>
+              Я соглашаюсь с{" "}
+              <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">
+                политикой конфиденциальности
+              </a>{" "}
+              и{" "}
+              <a href="/personal-data-processing" target="_blank" rel="noopener noreferrer">
+                правилами обработки персональных данных
+              </a>.
+            </span>
+          </label>
+          {errors.consent && (
+            <span className="contact-form__error-message contact-form__error-message--consent">
+              Необходимо согласие на обработку данных
+            </span>
+          )}
           </form>
         </div>
       </div>

@@ -1,0 +1,70 @@
+/* Базовые стили наследуются от PrivacyPolicy */
+@import "../PrivacyPolicy/PrivacyPolicy.css";
+
+/* Дополнительные стили для этой страницы */
+
+/* Версия документа */
+.policy-page__version {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+/* Таблица получателей данных */
+.policy-page__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0 2rem;
+  font-size: 0.95rem;
+  background: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.policy-page__table thead {
+  background: #99a180;
+}
+
+.policy-page__table th {
+  padding: 0.9rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #fff;
+  font-size: 0.95rem;
+  border: none;
+}
+
+.policy-page__table td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #e8e4d9;
+  color: #000;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.policy-page__table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.policy-page__table tbody tr:nth-child(even) {
+  background: #f9f7f1;
+}
+
+.policy-page__table tbody tr:hover {
+  background: #f3efe6;
+}
+
+/* Адаптивность таблицы */
+@media (max-width: 600px) {
+  .policy-page__table {
+    font-size: 0.85rem;
+  }
+
+  .policy-page__table th,
+  .policy-page__table td {
+    padding: 0.6rem 0.7rem;
+  }
+}

@@ -10,6 +10,10 @@ import { PortfolioPage } from '../pages/PortfolioPage'
 import { CalculatorPage } from '../pages/CalculatorPage'
 import { ContactsPage } from '../pages/ContactsPage'
 
+import { PrivacyPolicyPage } from '../pages/PrivacyPolicy/PrivacyPolicy'
+import { PersonalDataPolicyPage } from '../pages/PersonalDataPolicy/PersonalDataPolicy'
+import { CookiePolicyPage } from '../pages/CookiePolicy/CookiePolicy'
+
 export const AppRouter = () => {
   return (
     <BrowserRouter>
@@ -24,6 +28,10 @@ export const AppRouter = () => {
           <Route path="/portfolio" element={<PortfolioPage />} />
           <Route path="/calculator" element={<CalculatorPage />} />
           <Route path="/contacts" element={<ContactsPage />} />
+
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/personal-data-processing" element={<PersonalDataPolicyPage />} />
+          <Route path="/cookie-policy" element={<CookiePolicyPage />} />
         </Routes>
       </MainLayout>
     </BrowserRouter>

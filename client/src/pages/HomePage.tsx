@@ -6,7 +6,7 @@ import { Investments } from "./Home/sections/Investments/Investments";
 import { Compare } from "./Home/sections/Compare/Compare";
 import { Projects } from "./Home/sections/Projects/Projects";
 import { Calculator } from "./Home/sections/Calculator/Calculator";
-import { ContactForm } from "./Home/sections/ContactForm/ContactForm";
+// import { ContactForm } from "./Home/sections/ContactForm/ContactForm";
 import { ContactsSection } from "./Home/sections/ContactSections/ContactsSection";
 
 export const HomePage = () => {
@@ -19,7 +19,7 @@ export const HomePage = () => {
             <Compare />
             <Projects />
             <Calculator />
-            <ContactForm />
+            {/* <ContactForm /> */}
             <ContactsSection />
         </>
     );
